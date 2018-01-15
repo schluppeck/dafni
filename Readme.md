@@ -9,31 +9,30 @@ In the class, we acquire functional MRI data sets (in small groups) and use a co
 The module is for *10 credits* and runs for seven 2h sessions. (First iteration of the course Feb. 2017).
 
 
-| Week | Unit                             | Topic                                       |
-|:-----|:---------------------------------|:--------------------------------------------|
-| 1    | [Introduction](Introduction.md)  | Introduction, Administrivia, computers, ... |
-| 2    | [Getting data](gettingData.md)   | Data acquisition (sessions on 3T)           |
-| 3    | [FSL analysis](firstAnalysis.md) | Inspecting & analysing data in FSL          |
-| 4    | [ - ](blank.md)                  | -                                           |
-| 5    | [ - ](blank.md)                  | -                                           |
-| 6    | [ - ](blank.md)                  | -                                           |
-| 7    | [ - ](blank.md)                  | -                                           |
+| Week | Unit                                 | Topic                                         |
+|:-----|:-------------------------------------|:----------------------------------------------|
+| 1    | [Introduction](Introduction.md)      | Introduction, Administrivia, computers, ...   |
+| 2    | [Getting data](gettingData.md)       | Data acquisition (sessions on 3T)             |
+| 3    | [FSL analysis](firstAnalysis.md)     | Inspecting & analysing data in FSL            |
+| 4    | [UNIX + git](unix-2-and-versions.md) | Version control, some cool nitty-gritty       |
+| 5    | [Matlab 1](matlab-images.md)         | 2d and 3d images in Matlab, display / analyze |
+| 6    | [Matlab 2](matlab-timeseries.md)     | single + multiple 1d (timeseries) signals     |
+| 7    | [Matlab 3 + wrap-up](matlab-text.md) | reading/writing text, CSV, data files         |
 
 ## Assignment
 
-The **assignment** is a short written report:
+The coursework **assignment** is a short written report. For details, see the moodle page for this module. In brief:
 
 - 250w abstract
-- plus a main document max 1500w
-- references / citations (don't add to the wordcount)
-- max. 5 figures (which can have sub-panels, subplots)
+- plus a main document (max 1500w)
+- references / citations as for standard written work (these don't add to the wordcount)
+- max. 5 figures illustrating details of the experimental setup, analysis methodology and results (figures can have sub-panels or subplots)
 
-This report should summarise the methods and results from the analysis. Effort and attention to detail should be weighted towards a clearly written abstract (250w), methods, results and discussions. Only a brief Introduction is required.
 
 ## Links
 
-- webpage (for reading): https://schluppeck.github.io/dafni/
-- code repo (for using!): https://github.com/schluppeck/dafni/
+- for reading: [Data analysis for Neuroimaging (web)](https://schluppeck.github.io/dafni/)
+- for getting code and using!: [DAFNI Github repo](https://github.com/schluppeck/dafni/)
 
 
 ## Contacts (2017/18)
