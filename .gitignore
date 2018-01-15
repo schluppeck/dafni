@@ -1,2 +1,5 @@
 # ignore mat files that get saved by stim code
 stimulusCode/*.mat
+
+# mac specific files
+**.DS_Store
