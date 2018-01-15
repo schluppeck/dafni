@@ -1,0 +1,2 @@
+# ignore mat files that get saved by stim code
+stimulusCode/*.mat
