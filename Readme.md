@@ -30,6 +30,11 @@ The **assignment** is a short written report:
 
 This report should summarise the methods and results from the analysis. Effort and attention to detail should be weighted towards a clearly written abstract (250w), methods, results and discussions. Only a brief Introduction is required.
 
+## Links
+
+- webpage (for reading): https://schluppeck.github.io/dafni/
+- code repo (for using!): https://github.com/schluppeck/dafni/
+
 
 ## Contacts (2017/18)
 

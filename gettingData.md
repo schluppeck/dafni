@@ -8,6 +8,8 @@
 4. fMRI experiment (event-related): same scanning parameters.
 5. [additional, if time permits] EPI data (test): 5 echoes at different TEs to illustrate T2* decay
 
+## Stimulus code
+
 
 ## Materials for stimuli:
 
@@ -20,6 +22,10 @@ http://wiki.cnbc.cmu.edu/images/multiracial.zip
 
 >Stimulus images courtesy of Michael J. Tarr, Center for the Neural Basis of Cognition and Department of Psychology, Carnegie Mellon University, http://www.tarrlab.org/. Funding provided by NSF award 0339122.
 
+- Objects download:
+https://bradylab.ucsd.edu/stimuli/Exemplar.zip
+
+>Object stimuli from: Brady, T. F., Konkle, T., Alvarez, G. A. and Oliva, A. (2008). Visual long-term memory has a massive storage capacity for object details. Proceedings of the National Academy of Sciences, USA, 105 (38), 14325-14329.
 
 - Scenes download: http://timbrady.org/stimuli/Scenes.zip
 
