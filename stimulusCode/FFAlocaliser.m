@@ -27,6 +27,8 @@ fprintf('TR=%.2f, l=%.1f, #blocks=%d\n', TR, cycleLength, numBlocks)
 totalTime = TR .* cycleLength .* numBlocks;
 fprintf('runtime: %.2fs\n', TR .* cycleLength .* numBlocks)
 fprintf('%s (mm:ss)\n', duration(0,0,totalTime, 'format', 'mm:ss'))
+fprintf('one ON/OFF block = %ds\n', TR .* cycleLength);
+
 
 if ieNotDefined('subject')
   subject = 'xx'; % default
@@ -41,11 +43,12 @@ myscreen.saveData = 1;
 myscreen.datadir = './';
 myscreen.allowpause = 0;
 myscreen.eatkeys = 1;
-myscreen.displayname = 'projector';
-myscreen.background = 'black';
+myscreen.displayname = '';
+myscreen.background = 'white';
 myscreen.TR = TR;
 myscreen.cycleLength = cycleLength; % in TRs
 myscreen.subject = subject;
+myscreen.collectEyeData = 0;
 
 if debug
   % gethostname and then display the stimulus on the corresponding screen
@@ -59,12 +62,14 @@ end
 % and init myscreen
 myscreen = initScreen(myscreen);
 
+% fix keys for our scanner setup.
 myscreen.keyboard.backtick = mglCharToKeycode({'5'}); % that's the backtick
 myscreen.keyboard.nums = mglCharToKeycode({'1' '2' '3' '4'    '6' '7' '8' '9' '0'});
 
 % set up parameters for fixation cross.
 global fixStimulus
-fixStimulus.diskSize = 0.5;
+fixStimulus.fixLineWidth = 7; % big line
+fixStimulus.diskSize = 0.0; % no disk (just superimpose on stim)
 
 % set the first task to be the fixation staircase task
 [task{1} myscreen] = fixStairInitTask(myscreen);
@@ -87,8 +92,8 @@ blockInS = myscreen.cycleLength * myscreen.TR;
 task{2}{2}.seglen = ...
     [ones(1,blockInS/2) ones(1,blockInS/2)]
 
-task{2}{2}.parameter.category = [1 2 3]; % 1=face, 2=house, 3=scrambled face
-task{2}{2}.random = 1;
+task{2}{2}.parameter.category = [1 2]; % 1=faces, 2=objects
+task{2}{2}.random = 0; % face , object, face, object, ...
 
 % initialize our task
 for phaseNum = 1:length(task{2})
@@ -98,8 +103,9 @@ end
 % init the stimulus
 global stimulus;
 myscreen = initStimulus('stimulus',myscreen);
-% stimulus = initDots(stimulus,myscreen);
+% load in images and prep textures
 stimulus = initFaces(stimulus,myscreen);
+stimulus.displayWidth = 20; % decide how WIDE the stimuli should be
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % run the eye calibration
@@ -185,7 +191,10 @@ end
 % function to init the image stimulus
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function stimulus = initFaces(stimulus,myscreen)
+
+nCateogories = 2;
 disp('initFaces')
+
 
 % stim directories are hard-coded. Could do better here.
 imdir{1} = './stims/multiracial/frontal/';
@@ -196,27 +205,26 @@ imdir{2} = './stims/objects/';
 files{2} = dir([imdir{2} '*.jpg']);
 nFiles{2} = length(files{2});
 
-imdir{3} = './stims/houses/';
-files{3} = dir([imdir{3} '*.jpg']);
-nFiles{3} = length(files{3});
+% imdir{3} = './stims/houses/';
+% files{3} = dir([imdir{3} '*.jpg']);
+% nFiles{3} = length(files{3});
 
 % stimulusImages = cell(nFiles);
 
-for iCat = 1:3
+for iCat = 1:numel(imdir)
     for iFile = 1:nFiles{iCat}
       fprintf('loading file #%d, name:%s\n',iFile,files{iCat}(iFile).name);
       im = []; im2 = []; % must be a faster way to do this.
       im = imread(fullfile(imdir{iCat}, files{iCat}(iFile).name));
       im2 = permute(...
           cat(3,im, 255.*ones([size(im,1), size(im,2)])),...
-            [3,1,2]);
+            [3,2,1]);
+        
       %NB! jpeg image is read in as RGB triplet
-      % might need to change sizes, etc.
-
+      
       % grayscale option:
       %im = double(rgb2gray(imread(fullfile(imdir{iCat}, files{iCat}(iFile).name))));
       %im = flipud(im);
-
 
       mglClearScreen(1); % white bg
       stimulus.faces.tex{iCat}(iFile) = mglCreateTexture(im2);
@@ -232,10 +240,14 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function stimulus = updateFaces(stimulus,myscreen)
 
-%disp('updateFaces')
-
 if stimulus.faces.display
-  mglBltTexture(stimulus.faces.tex{ myscreen.currentCategory }(stimulus.faces.exemplar),[0 0], 0, 0, 0)
+  % pick the appropriate texture for this display
+  tex = stimulus.faces.tex{ myscreen.currentCategory }(stimulus.faces.exemplar);
+  aspectRatio = tex.imageWidth ./ tex.imageHeight;
+  % blt textures. 180º / upside down as images are read in that way.
+  mglBltTexture(tex,...
+      [0, 0, stimulus.displayWidth, stimulus.displayWidth/aspectRatio], ...
+       0, 0, 180);
 end
 
 end
