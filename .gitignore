@@ -1,5 +1,12 @@
 # ignore mat files that get saved by stim code
 stimulusCode/*.mat
 
+# matlab editor backup files
+**.m~
+
+
 # mac specific files
 **.DS_Store
+
+# local files for ds
+/admin
