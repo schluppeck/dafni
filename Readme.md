@@ -8,6 +8,7 @@ In the class, we acquire functional MRI data sets (in small groups) and use a co
 
 The module is for *10 credits* and runs for seven 2h sessions. (First iteration of the course Feb. 2017).
 
+---
 
 | Week | Unit                                 | Topic                                         |
 |:-----|:-------------------------------------|:----------------------------------------------|
@@ -19,6 +20,8 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 | 6    | [Matlab 2](matlab-timeseries.md)     | single + multiple 1d (timeseries) signals     |
 | 7    | [Matlab 3 + wrap-up](matlab-text.md) | reading/writing text, CSV, data files         |
 
+---
+
 ## Assignment
 
 The coursework **assignment** is a short written report. For details, see the moodle page for this module. In brief:
@@ -28,6 +31,7 @@ The coursework **assignment** is a short written report. For details, see the mo
 - references / citations as for standard written work (these don't add to the wordcount)
 - max. 5 figures illustrating details of the experimental setup, analysis methodology and results (figures can have sub-panels or subplots)
 
+---
 
 ## Links
 
