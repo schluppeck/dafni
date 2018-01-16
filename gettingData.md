@@ -10,6 +10,30 @@
 
 ## Stimulus code
 
+In ``matlab/mgl`` using the ``task`` library that comes with ``mgl``. Written by Alex Beckett and DS based on a version of a working code from Justin Gardner :smile:
+
+The experiment runs as a simple block design in the following order:
+
+>[faces, rest] , [objects, rest] - ...
+
+The length of each ``[stimulus, rest]`` cycle is determined by the ``cycleLength`` (in TRs).
+
+To run, make sure the ``stimulusCode`` folder is on the path and then simply run the following command. the ``Escape`` key can be used to stop the experiment at any point:
+
+```Matlab
+FFAlocaliser % quick test to see what's going on
+```
+
+To run at the MR centre, we also want to specify TR, not to run in a small window, etc. So probably worth setting a few parameters in the call like this:
+
+```Matlab
+FFAlocaliser('TR=1.5', 'debug=0', 'numBlocks=10', 'cycleLength=12')
+```
+
+- [x] working code with face and object images
+- [x] parameters to set cycle length, TR, number of block
+- [ ] write out text file in correct format for ``fsl/feat`` analysis.
+- [ ] test with actual scanning parameters
 
 ## Materials for stimuli:
 
