@@ -20,6 +20,7 @@ if ieNotDefined('debug'), debug=1; end
 if ieNotDefined('TR'), TR=2.0; end
 if ieNotDefined('cycleLength'), cycleLength = 10; end
 if ieNotDefined('numBlocks'), numBlocks = 12; end
+if ieNotDefined('trainingMode'), trainingMode=0; end
 
 % report what the parameters lead to:
 fprintf('---------\nTiming:\n')
@@ -44,16 +45,32 @@ myscreen.datadir = './';
 myscreen.allowpause = 0;
 myscreen.eatkeys = 1;
 myscreen.displayname = '';
-myscreen.background = 'white';
+myscreen.background = 'gray';
 myscreen.TR = TR;
 myscreen.cycleLength = cycleLength; % in TRs
 myscreen.subject = subject;
 myscreen.collectEyeData = 0;
 
-if debug
+% set up parameters for fixation cross.
+global fixStimulus
+fixStimulus.fixLineWidth = 7; % big line
+fixStimulus.trainingMode = trainingMode;
+fixStimulus.diskSize = 0.0; % no disk (just superimpose on stim)
+fixStimulus.fixWidth = 1;
+if debug == 1
   % gethostname and then display the stimulus on the corresponding screen
-  myscreen.screenParams{1} = {gethostname(),[],0,800,600,57,[31 23],60,1,1,1.4,[],[0 0]};
-else
+  myscreen.screenParams{1} = {gethostname(),[],0,1024,768,80,[31 23],60,1,1,1.4,[],[0 0]};
+  fixStimulus.fixWidth = 1; 
+  fixStimulus.diskSize = 0; 
+
+elseif debug == 2
+  % running at laptop on full screen
+  defaultMonitorGamma = 1.8;
+  myscreen.screenParams{1} = {gethostname(),'',1,1440, 900,57,[331.0045, 206.8778],60,1,1,defaultMonitorGamma,'',[0 0]}; 
+  fixStimulus.fixWidth = 5; % make cross large
+  fixStimulus.diskSize = 5; % allow text to be shifted
+  
+else    
   % running at 3T for experiment
   defaultMonitorGamma = 1.8;
   myscreen.screenParams{1} = {gethostname(),'',2,1024,768,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',[0 0]}; % 3T nottingham
@@ -65,11 +82,6 @@ myscreen = initScreen(myscreen);
 % fix keys for our scanner setup.
 myscreen.keyboard.backtick = mglCharToKeycode({'5'}); % that's the backtick
 myscreen.keyboard.nums = mglCharToKeycode({'1' '2' '3' '4'    '6' '7' '8' '9' '0'});
-
-% set up parameters for fixation cross.
-global fixStimulus
-fixStimulus.fixLineWidth = 7; % big line
-fixStimulus.diskSize = 0.0; % no disk (just superimpose on stim)
 
 % set the first task to be the fixation staircase task
 [task{1} myscreen] = fixStairInitTask(myscreen);
@@ -105,7 +117,7 @@ global stimulus;
 myscreen = initStimulus('stimulus',myscreen);
 % load in images and prep textures
 stimulus = initFaces(stimulus,myscreen);
-stimulus.displayWidth = 20; % decide how WIDE the stimuli should be
+stimulus.displayWidth = 10; % decide how WIDE the stimuli should be
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % run the eye calibration
