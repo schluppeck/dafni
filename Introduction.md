@@ -41,10 +41,15 @@ cp /Volumes/practicals/ds1/.bash_profile   ~/
 
 ## FSL analysis
 
+- get data from sessions ``S001``to ``S004`` into a common folder ``data``
+- make folders, copy files by "drag & drop"
 - point & click version (like some of you have already done)
 - digging into the details of how this is implemented
 - inspecting analysis output, intermediate files, ...
+```bash
+cd ~/data/S001/  # for example
 
+```
 ---
 
 ## Some UNIX
