@@ -50,6 +50,7 @@ cp /Volumes/practicals/ds1/.bash_profile   ~/
 cd ~/data/S001/  # for example
 
 ```
+
 ---
 
 ## Some UNIX
@@ -93,4 +94,17 @@ git log
 ---
 
 
-## Version control ``git``
+## ``matlab`` - reading images
+
+
+
+---
+
+
+## ``matlab`` - timeseries and subplots
+
+
+---
+
+
+## ``matlab`` - text/csv/data & wrap-up
