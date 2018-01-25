@@ -35,6 +35,8 @@ if ieNotDefined('subject')
   subject = 'xx'; % default
 end
 
+assert(iseven(cycleLength), 'an ODD cycle length will be problematic - please fix')
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % set up screen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,7 +47,7 @@ myscreen.datadir = './';
 myscreen.allowpause = 0;
 myscreen.eatkeys = 1;
 myscreen.displayname = '';
-myscreen.background = 'gray';
+myscreen.background = 'white';
 myscreen.TR = TR;
 myscreen.cycleLength = cycleLength; % in TRs
 myscreen.subject = subject;
@@ -140,6 +142,21 @@ end
 % if we got here, we are at the end of the experiment
 myscreen = endTask(myscreen,task);
 
+% save out some text files for this experiment
+makeFSLfiles(myscreen, task)
+
+end
+
+function [] = makeFSLfiles(myscreen, task)
+% makeFSLfiles - save out files of stimulus descriptions...
+%
+
+% faces:
+d = datestr(now, 30);
+
+% objects:
+
+
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,7 +172,13 @@ if task.thistrial.thisseg == 1
   fprintf('current category: %d\n', myscreen.currentCategory);
 end
 
-if (task.thistrial.thisseg <= myscreen.blockDesign(1) ) && myscreen.currentCategory > 0
+% at this point we need to figure out if we are in the first half (REST) or
+% second half (STIMULUS). each segment is 1s long by design:
+
+oneCycle = myscreen.cycleLength * myscreen.TR;
+if (task.thistrial.thisseg > (oneCycle/2) ) && myscreen.currentCategory > 0
+  myscreen.t0 = mglGetSecs();
+  fprintf('timestamp: %.2f\n', myscreen.t0);
   % if currentCategory == 0, then we are in the pre-phase of expt.
   stimulus.faces.display = 1;
   % at the beginning of each trial, pick a random image from our set of N
