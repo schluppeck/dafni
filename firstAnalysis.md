@@ -6,7 +6,7 @@ In outline, the first steps will be very similar to what you may remember from a
 
 [Have a look at the PDF](c84fim-workshop-01.pdf) to refresh your memory.
 
-The **plan for here is**
+The **plan for here is**:
 
 1. organise data into folders
 2. start up ``feat``
@@ -23,6 +23,10 @@ Do this "by hand" - using mouse clicks in the macOS operative system for now. We
 - anatomical images
 - "metadata" - [wikipedia entry on this idea](https://en.wikipedia.org/wiki/Metadata)
 
+- [ ] How can you tell (in words?)
+- [ ] What tools / commands could you choose to check / inspect?
+- [ ] What are good ways to keep track of some key information? In the same place? Somewhere else? What are the advantages / disadvantages of those options?
+
 ## Set up the analysis using the GUI
 
 Start up ``feat`` either via the ``fsl`` menu or directly.
@@ -36,3 +40,11 @@ fsl &
 # - OR -
 Feat_gui &
 ```
+
+### Key information
+
+- What is the name of the **4D data** set?
+- Check **total volumes** and **TR** are picked up correctly.
+- Consider all the options in the **Pre-stats** tab.
+- **Registration.** We to register to a **Main structural image** as well as into **Standard space**.
+- **Stats.** We want to specify a full model. We need to use
