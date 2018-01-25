@@ -1,0 +1,50 @@
+# UNIX
+
+<img src="BASH_logo-transparent-bg-bw.png" width="40%">
+
+Some more details on how to use features of UNIX/bash that are particularly helpful for organising and processing data.
+
+The people who make ``fsl`` have produced [a collection of short videos](https://www.youtube.com/playlist?list=PLvgasosJnUVnnFifxecbyEno7jnqrl8fQ) that introduce some UNIX commands that are particularly helpful for running an FMRI data analysis with their tools. 
+
+For background, there is [a really good online tutorial](http://www.ee.surrey.ac.uk/Teaching/Unix/) hosted at EE at University of Surrey. The terminal / shell.
+
+You can also have a look at the brief online course at [Software Carpentry](http://swcarpentry.github.io/shell-novice/reference), which looks really good.
+
+
+## Some basics
+
+- only basics are needed for running FSL analysis
+- lots of functionality is available through point-and-click
+- **but** command line is helpful for organising (any) research data
+- more complex analysis, e.g. ``freesurfer``, require some working knowledge
+
+
+
+
+## Version control, ``git``
+
+<img src="Git-Logo-2Color.png" width="40%">
+
+Some really useful background is available in some brief videos produced by http://github.com
+
+### What is version control?
+
+A really clear video explaing this in simple terms [What is version control?](https://git-scm.com/video/what-is-version-control)
+
+### What is ``git``
+
+Have a look at the video on [What is ``git``](https://git-scm.com/video/what-is-git)
+
+### Get going with ``git``
+
+Finally, you can actually [Get going with ``git``](https://git-scm.com/video/get-going)
+
+We don't actually need to install this in the computer labs - but on your personal machines you might have to do this. You can use ``which git`` in the Terminal. If you get a valid path back, then you know it's installed. You could also try ``git --version`` to find out a
+
+, but check out  
+  ``1:13min`` for configuring ``user.name`` and ``user.email``
+
+
+### Git basics
+
+A slightly deeper look at ``git`` in the video about [quick wins with ``git``](https://git-scm.com/video/quick-wins)
