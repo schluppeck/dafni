@@ -84,7 +84,7 @@ end
 %   e.g.:   TR = [500, 1000, 1500]; T1 = 1300
 %           flipangles = calculateFlipAngle(TR, T1)
 %
-%   see: http://mriquestions.com/optimal-flip-angle.html
+%   see: https://mriquestions.com/optimal-flip-angle.html
 %  
 % 	2006-03-25 ds written
 function flipangles = calculateFlipAngle(TR, T1)

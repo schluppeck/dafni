@@ -65,15 +65,15 @@ We will provide the stimulus code (written in Matlab / MGL) in line with what ha
 We'll run a "Faces versus houses / scenes localiser, as this works well and is a very robust experiment.
 
 - Faces download:
-http://wiki.cnbc.cmu.edu/images/multiracial.zip
+https://wiki.cnbc.cmu.edu/images/multiracial.zip
 
->Stimulus images courtesy of Michael J. Tarr, Center for the Neural Basis of Cognition and Department of Psychology, Carnegie Mellon University, http://www.tarrlab.org/. Funding provided by NSF award 0339122.
+>Stimulus images courtesy of Michael J. Tarr, Center for the Neural Basis of Cognition and Department of Psychology, Carnegie Mellon University, https://www.tarrlab.org/. Funding provided by NSF award 0339122.
 
 - Objects download:
 https://bradylab.ucsd.edu/stimuli/Exemplar.zip
 
 >Object stimuli from: Brady, T. F., Konkle, T., Alvarez, G. A. and Oliva, A. (2008). Visual long-term memory has a massive storage capacity for object details. Proceedings of the National Academy of Sciences, USA, 105 (38), 14325-14329.
 
-- Scenes download: http://timbrady.org/stimuli/Scenes.zip
+- Scenes download: https://timbrady.org/stimuli/Scenes.zip
 
 >Scene stimuli from: Konkle, T.*, Brady, T. F.*, Alvarez, G.A. and Oliva, A. (2010). Scene memory is more detailed than you think: the role of categories in visual long-term memory. Psychological Science, 21(11), 1551-1556.

@@ -4,11 +4,11 @@
 
 Some more details on how to use features of UNIX/bash that are particularly helpful for organising and processing data.
 
-The people who make ``fsl`` have produced [a collection of short videos](https://www.youtube.com/playlist?list=PLvgasosJnUVnnFifxecbyEno7jnqrl8fQ) that introduce some UNIX commands that are particularly helpful for running an FMRI data analysis with their tools. 
+The people who make ``fsl`` have produced [a collection of short videos](https://www.youtube.com/playlist?list=PLvgasosJnUVnnFifxecbyEno7jnqrl8fQ) that introduce some UNIX commands that are particularly helpful for running an FMRI data analysis with their tools.
 
-For background, there is [a really good online tutorial](http://www.ee.surrey.ac.uk/Teaching/Unix/) hosted at EE at University of Surrey. The terminal / shell.
+For background, there is [a really good online tutorial](https://www.ee.surrey.ac.uk/Teaching/Unix/) hosted at EE at University of Surrey. The terminal / shell.
 
-You can also have a look at the brief online course at [Software Carpentry](http://swcarpentry.github.io/shell-novice/reference), which looks really good.
+You can also have a look at the brief online course at [Software Carpentry](https://swcarpentry.github.io/shell-novice/reference), which looks really good.
 
 
 ## Some basics
@@ -25,7 +25,7 @@ You can also have a look at the brief online course at [Software Carpentry](http
 
 <img src="Git-Logo-2Color.png" width="40%">
 
-Some really useful background is available in some brief videos produced by http://github.com
+Some really useful background is available in some brief videos produced by https://github.com
 
 ### What is version control?
 
@@ -37,12 +37,12 @@ Have a look at the video on [What is ``git``](https://git-scm.com/video/what-is-
 
 ### Get going with ``git``
 
-Finally, you can actually [Get going with ``git``](https://git-scm.com/video/get-going)
+Finally, you can actually [Get going with ``git``](https://git-scm.com/video/get-going), in particular check out  
+  ``1:13min`` for configuring ``user.name`` and ``user.email`` - keeping in mind you'll probably want to use a value for ``user.email`` that is your generic / non-university e-mail.
 
-We don't actually need to install this in the computer labs - but on your personal machines you might have to do this. You can use ``which git`` in the Terminal. If you get a valid path back, then you know it's installed. You could also try ``git --version`` to find out a
+We don't actually need to install this in the computer labs - but on your personal machines you might have to do this. You can use ``which git`` in the Terminal. If you get a valid path back, then you know it's installed. You could also try ``git --version`` to find out which version you have installed on your machine.
 
-, but check out  
-  ``1:13min`` for configuring ``user.name`` and ``user.email``
+
 
 
 ### Git basics
