@@ -1,4 +1,4 @@
-Data analysis for Neuroimaging - C84DAN
+# Data analysis for Neuroimaging - C84DAN
 ===
 <!-- some directives for making things look a certain way -->
 <!-- page_number: true -->

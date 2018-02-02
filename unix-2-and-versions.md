@@ -20,7 +20,6 @@ You can also have a look at the brief online course at [Software Carpentry](http
 
 
 
-
 ## Version control, ``git``
 
 <img src="Git-Logo-2Color.png" width="40%">
