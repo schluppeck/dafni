@@ -1,5 +1,5 @@
 # Data analysis for Neuroimaging - C84DAN
-===
+
 <!-- some directives for making things look a certain way -->
 <!-- page_number: true -->
 
@@ -18,8 +18,8 @@
 
 ## Setting up computers, logins
 
-1. Need to run in Mac mode
-2. Each user (at a particular machine) needs to make sure that ``Terminal/shell`` is set up correctly by copying a set-up file the first time they use that computer.
+
+1. Each user (at a particular machine) needs to make sure that ``Terminal/shell`` is set up correctly by copying a set-up file the first time they use that computer.
 ```bash
 # copy across new version of .bash_profile
 cd ~ # make sure we are in ${HOMEDIR}
@@ -27,7 +27,15 @@ cp /Volumes/practicals/ds1/.bash_profile   ~/
 # restart shell
 ```
 3. Quick reality check. Look at some existing data (anatomy, fMRI) with ``fslview``
+
+---
+
+## Version control (v2.0) :wink:
+
 4. Everyone should sign up for a free ``github`` account, so we can work together on this from session 4 onwards: https://github.com/join
+
+
+---
 
 ### Todo
 
@@ -76,7 +84,7 @@ cd ~/data/S001/  # for example
 
 ## Version control ``git``
 
-- 30min lecture on principles of using version control (``git``)
+- 30min [lecture on principles of version control](version-control.pdf) (``git``)
 - start using your (free) ``github.com`` id by working on a simple project
 - make your first modifications to a local copy of code and get it into a repo.
 
