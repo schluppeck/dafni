@@ -46,9 +46,9 @@ cp /Volumes/practicals/ds1/.bash_profile   ~/
 - point & click version (like some of you have already done)
 - digging into the details of how this is implemented
 - inspecting analysis output, intermediate files, ...
+-
 ```bash
 cd ~/data/S001/  # for example
-
 ```
 
 ---

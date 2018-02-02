@@ -30,6 +30,8 @@ You can have a look at the Matlab function ``flipAnglePlots()`` to remind yourse
 
 In ``matlab/mgl`` using the ``task`` library that comes with ``mgl``. Written by Alex Beckett and DS based on a version of a working code from Justin Gardner :smile:
 
+There are a couple of short youtube videos explaining <a href="https://youtu.be/wcA_h-rrVeM" target="_blank">the FFA localiser</a> and the <a href="https://youtu.be/exqNc7q8zSs" target="_blank">fixation dimming task</a> to control attention. This should give you  a sense of what the subject is doing inside the scanner.
+
 The experiment runs as a simple block design in the following order:
 
 >[faces, rest] , [objects, rest] - ...
@@ -47,8 +49,6 @@ To run at the MR centre, we also want to specify TR, not to run in a small windo
 ```Matlab
 FFAlocaliser('TR=1.5', 'debug=0', 'numBlocks=10', 'cycleLength=12')
 ```
-
-There is also [a short video explaining the fixation task](https://www.youtube.com/watch?v=exqNc7q8zSs) and also [the ``FFAlocaliser()`](https://www.youtube.com/watch?v=wcA_h-rrVeM) experiment, so you can get a sense of what the subject is doing inside the scanner.
 
 ### Notes
 
