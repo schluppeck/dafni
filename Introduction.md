@@ -1,7 +1,7 @@
 # Data analysis for Neuroimaging - C84DAN
-
-<!-- some directives for making things look a certain way -->
 <!-- page_number: true -->
+
+## Overview
 
 ##### Denis Schluppeck
 
@@ -30,20 +30,11 @@ cp /Volumes/practicals/ds1/.bash_profile   ~/
 
 ---
 
+
 ## Version control (v2.0) :wink:
 
 4. Everyone should sign up for a free ``github`` account, so we can work together on this from session 4 onwards: https://github.com/join
 
-
----
-
-### Todo
-
-- [x] set up https://classroom.github.com/
-- [x] ``.bash_profile`` basic (local)
-- [x] add in ``.git-completion`` script (and document)
-- [ ] add info about how to change ``user.name`` and ``user.email`` in ``.gitconfig``
-- [ ] test in A5 lab on Macs.
 
 ---
 
@@ -54,9 +45,10 @@ cp /Volumes/practicals/ds1/.bash_profile   ~/
 - point & click version (like some of you have already done)
 - digging into the details of how this is implemented
 - inspecting analysis output, intermediate files, ...
--
+
 ```bash
 cd ~/data/S001/  # for example
+# run FSL analysis
 ```
 
 ---
@@ -102,8 +94,53 @@ git log
 ---
 
 
-## ``matlab`` - reading images
+## ``matlab`` - reading images (1)
 
+- we'll learn how to read imaging data into ``matlab`` (``nifti`` files) 
+- functions provided by the [``mrTools`` toolbox](http://gru.stanford.edu/doku.php?id=mrTools:overview) for Matlab
+
+```matlab
+help mlrImageReadNifti
+
+% read in some data
+data = mlrImageReadNifti('file_from_scanner.nii');
+```
+
+---
+
+## ``matlab`` - reading images (2)
+
+- revisit indexing of arrays, "slicing", etc.
+
+```matlab
+data(12, 24, :, 1) % what is this?
+data(:, 24, 24, 1) % ... and this?
+data(34, 44, 12, :) % ... or that?
+```
+
+- build a ``returnSlice()`` function, to complete a simple imageviewer:
+
+```matlab
+% function signature
+s = returnSlice(array, sliceNum, orientation);
+```
+
+--- 
+
+## ``sliceview()``
+
+<center>
+	<img src="figure_sliceview.png" width=60%>
+</center>
+
+<small>
+<pre><code>Press the following buttons to:
+up/down change slice
+o/O 	change orientation
+c/C 	change cursor
+q/	Esc quit
+</code></pre>
+</small>
 
 
 ---
@@ -111,8 +148,64 @@ git log
 
 ## ``matlab`` - timeseries and subplots
 
+<center>
+	<img src="manyTimecourse-percent.png" width=90%>
+</center>
+
 
 ---
 
 
-## ``matlab`` - text/csv/data & wrap-up
+## ``matlab`` - text/csv/data 
+
+- think about data formats / interop with other analysis & tools (``R``, ``python``, ... even UNIX tools). Sometimes a text file is best!
+
+```matlab
+% read / write delimited files
+dlmread()
+dlmwrite()
+
+% basic CSV support (no header lines!)
+csvread()
+csvwrite()
+
+% read in a simple CSV file, skipping first row (r=0)
+% csvread(file, R, C) % row R, column C (starting at 0!)
+d = csvread('timecourse.csv', 1, 0) 
+```
+
+---
+
+## wrap-up
+
+- what have we covered in the last 7 weeks?
+- where to go to from here (unleash your inner coding :tiger:)
+- try to approach each new problem, project with lots of repetition (analysis, writing, coding, ...):
+	- there must be a better way!
+	- what's the smallest unit that gets repeated all the time?
+	- can I use ``bash/unix``, ``matlab`` or another tool to automate?
+- just try things out - you'll learn tons in the process
+
+
+
+
+---
+
+## Notes
+
+Small ``awk`` program for adding a counter ``n`` and time ``t`` and turn one column txt file into csv file:
+
+
+```bash 
+awk 'NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
+     timecourse.txt > timecourse.csv
+```
+
+- with a headerline (matlab's ``csvread()`` doesn't like!)
+
+```bash
+awk 'BEGIN {print "n, t, response"}  
+     NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
+     timecourse.txt > timecourse.csv
+
+     

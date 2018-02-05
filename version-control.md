@@ -1,5 +1,5 @@
-<!-- page_number: true -->
 # Version control with ``git``
+<!-- page_number: true -->
 
 ![25%](Git-Logo-2Color.png)
 
@@ -168,6 +168,60 @@ fixes http to https
 
 ---
 
+## Let's try it
+
+- make a directory, ``cd`` into it
+- initialize repo
+
+```bash
+mkdir test && cd test
+git init
+```
+- make a text file  ``test.txt``
+- write something into it and save it
+
+---
+
+## Let's try it (2)
+
+- add to staging area 
+- ... and try to commit with a message (``-m``)
+
+```bash
+git add test.txt
+git commit -m 'my first commit'
+```
+---
+
+## Warnings?
+
+- you'll see some warning messages
+- for (only this first time), set up your ``user.name`` and ``user.email``
+
+```bash
+git config --global user.name="First Last"    # your name
+git config --global user.email="me@gmail.com" #  your email
+```
+
+- This info is stored on your machine in a little file, which you can inspect
+
+```
+more ~/.gitconfig
+```
+
+---
+
+## Now complete the commit
+
+```bash
+git status # read what's there
+
+git commit -m 'my first commit'
+
+git status # read what's there NOW
+```
+
+---
 ## Notes
 
 - Illustrations linked from https://git-scm.com/book/en/v2/ - Creative Commons license [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)
