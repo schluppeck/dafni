@@ -14,7 +14,7 @@ function myscreen = FFAlocaliser( varargin )
 eval(evalargs(varargin));
 
 % setup default arguments
-if ieNotDefined('debug'), debug=1; end
+if ieNotDefined('debug'), debug=0; end
 
 % scanning params
 if ieNotDefined('TR'), TR=2.0; end
@@ -75,7 +75,7 @@ elseif debug == 2
 else    
   % running at 3T for experiment
   defaultMonitorGamma = 1.8;
-  myscreen.screenParams{1} = {gethostname(),'',2,1024,768,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',[0 0]}; % 3T nottingham
+  myscreen.screenParams{1} = {gethostname(),'',2,1280,960,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',[0 0]}; % 3T nottingham
 end
 
 % and init myscreen
