@@ -16,24 +16,106 @@
 
 ---
 
+## Timeline
+
+
+| Unit     | Topic                                            |
+|:---------|:-------------------------------------------------|
+| 1 :star: | Introduction, Administrivia, computers, ...      |
+| 2        | Data acquisition (**scanning on 3T**)            |
+| 3        | Inspecting & analysing data in **FSL**           |
+| 4        | Version control (``git`` and ``github.com``)     |
+| 5        | Images in **Matlab**, display, analyze           |
+| 6        | Timeseries signals in **Matlab**                 |
+| 7        | Reading/writing text, CSV, data files **Matlab** |
+
+---
+
+## What's the assignment?
+
+#### A short, written report
+
+> Summarise the experimental setup, analysis methodology and results. Need to have clearly written abstract (250w), methods, results and discussions.
+
+
+#### Submission details
+
+Currently w/ Student Services, *to-be-confirmed*
+
+- turn-it-in submission on moodle page
+- **deadeline: 28 March**
+
+---
+
+## What's the assignment (2)
+
+- 250w abstract
+- plus a main document (max 1500w)
+- references / citations as for standard written work
+- max 5 figures<sup>1</sup> illustrating
+	- details of the experimental setup
+	- analysis methodology
+	- results
+
+<hr>
+<small>
+<sup>1</sup>figures can have sub-panels or subplots
+</small>
+
+---
+
+
+## :exclamation: For next time (lab 2)
+
+- sign up for 1 of 4 groups (max 7 people) - ``moodle``
+- complete visitor screening form 
+- we also need 4 volunteers (~30 min in scanner)
+
+--- 
+
+![25%](test.png)
+
+---
+
 ## Setting up computers, logins
 
 
 1. Each user (at a particular machine) needs to make sure that ``Terminal/shell`` is set up correctly by copying a set-up file the first time they use that computer.
+
 ```bash
 # copy across new version of .bash_profile
 cd ~ # make sure we are in ${HOMEDIR}
 cp /Volumes/practicals/ds1/.bash_profile   ~/
 # restart shell
 ```
-3. Quick reality check. Look at some existing data (anatomy, fMRI) with ``fslview``
 
 ---
 
+## Has setup worked? Reality check.
 
-## Version control (v2.0) :wink:
+1. If you see ``[ ran custom .bash_profile ]`` in Terminal :heavy_check_mark:
+2. Also: look at some existing anatomies with ``fslview`` :heavy_check_mark:
 
-4. Everyone should sign up for a free ``github`` account, so we can work together on this from session 4 onwards: https://github.com/join
+```bash
+which fsl # see anything?
+
+fslview & # File -> Open Standard -> Pick 1st or 2nd
+```
+
+---
+
+## Setting up computers, logins
+
+#### Cheat: Double-click ``Set up My Machine`` icon
+
+![](automatoricon.png)
+
+If you have to do this again on another machine, you can use this shortcut. It's located in ``/Volumes/practicals/ds1/``
+
+
+
+
+
 
 
 ---
@@ -74,6 +156,7 @@ cd ~/data/S001/  # for example
 
 ---
 
+
 ## Version control ``git``
 
 - 30min [lecture on principles of version control](version-control.pdf) (``git``)
@@ -94,9 +177,22 @@ git log
 ---
 
 
+## Version control (v2.0) :wink:
+
+Everyone should sign up for a free ``github`` account, so we can work together on this from session 4 onwards: https://github.com/join
+
+- it's free and useful
+- we'll want to play with this in lab #4
+- once you have an username, go to our github classroom at 
+https://classroom.github.com/a/I5Z7qarj
+
+
+---
+
+
 ## ``matlab`` - reading images (1)
 
-- we'll learn how to read imaging data into ``matlab`` (``nifti`` files) 
+- we'll learn how to read imaging data into ``matlab`` (``nifti`` files)
 - functions provided by the [``mrTools`` toolbox](http://gru.stanford.edu/doku.php?id=mrTools:overview) for Matlab
 
 ```matlab
@@ -125,7 +221,7 @@ data(34, 44, 12, :) % ... or that?
 s = returnSlice(array, sliceNum, orientation);
 ```
 
---- 
+---
 
 ## ``sliceview()``
 
@@ -156,7 +252,7 @@ q/	Esc quit
 ---
 
 
-## ``matlab`` - text/csv/data 
+## ``matlab`` - text / csv / other data
 
 - think about data formats / interop with other analysis & tools (``R``, ``python``, ... even UNIX tools). Sometimes a text file is best!
 
@@ -171,14 +267,14 @@ csvwrite()
 
 % read in a simple CSV file, skipping first row (r=0)
 % csvread(file, R, C) % row R, column C (starting at 0!)
-d = csvread('timecourse.csv', 1, 0) 
+d = csvread('timecourse.csv', 1, 0)
 ```
 
 ---
 
-## wrap-up
+## Wrap-up (Lab 7)
 
-- what have we covered in the last 7 weeks?
+- recap what have we covered in the last 7 weeks?
 - where to go to from here (unleash your inner coding :tiger:)
 - try to approach each new problem, project with lots of repetition (analysis, writing, coding, ...):
 	- there must be a better way!
@@ -187,16 +283,16 @@ d = csvread('timecourse.csv', 1, 0)
 - just try things out - you'll learn tons in the process
 
 
-
-
 ---
+
+
 
 ## Notes
 
 Small ``awk`` program for adding a counter ``n`` and time ``t`` and turn one column txt file into csv file:
 
 
-```bash 
+```bash
 awk 'NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
      timecourse.txt > timecourse.csv
 ```
@@ -207,5 +303,3 @@ awk 'NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
 awk 'BEGIN {print "n, t, response"}  
      NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
      timecourse.txt > timecourse.csv
-
-     

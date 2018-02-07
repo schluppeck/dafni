@@ -1,5 +1,17 @@
 # Getting Data
 
+## What's the plan?
+
+| Unit     | Topic                                            |
+|:---------|:-------------------------------------------------|
+| 1        | Introduction, Administrivia, computers, ...      |
+| 2 :star: | Data acquisition (**scanning on 3T**)            |
+| 3        | Inspecting & analysing data in **FSL**           |
+| 4        | Version control (``git`` and ``github.com``)     |
+| 5        | Images in **Matlab**, display, analyze           |
+| 6        | Timeseries signals in **Matlab**                 |
+| 7        | Reading/writing text, CSV, data files **Matlab** |
+
 ## Data acquisition in the scanner
 
 fMRI data will be acquired in 45min sessions (in small groups) on one of our 3T scanners. Have a look at
