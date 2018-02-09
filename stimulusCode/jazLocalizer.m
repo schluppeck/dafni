@@ -8,7 +8,7 @@
 %
 %    purpose: event-related motion localiser,
 %      
-%       e.g.: jazLocalizer( )
+%       e.g.: jazLocalizer('debug=1')
 
 
 function [  ]=jazLocalizer( varargin )
@@ -35,7 +35,7 @@ myscreen.autoCloseScreen = 1;
 % myscreen.saveData = 1;
 myscreen.allowpause = 0;
 myscreen.eatKeys = 1;
-myscreen.displayname = '3T-projector';
+myscreen.displayname = 'BOLDscreen';
 myscreen.background = 'black'; 
 % fix the TR here
 myscreen.TR = TR; % s
