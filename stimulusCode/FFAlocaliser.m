@@ -17,8 +17,8 @@ eval(evalargs(varargin));
 if ieNotDefined('debug'), debug=0; end
 
 % scanning params
-if ieNotDefined('TR'), TR=2.0; end
-if ieNotDefined('cycleLength'), cycleLength = 10; end
+if ieNotDefined('TR'), TR=1.5; end
+if ieNotDefined('cycleLength'), cycleLength = 16; end
 if ieNotDefined('numBlocks'), numBlocks = 12; end
 if ieNotDefined('trainingMode'), trainingMode=0; end
 
