@@ -30,7 +30,7 @@ if ieNotDefined('TR'), TR = 1.5; end
 % set up screen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-myscreen.screenNumber = 0;
+myscreen.screenNumber = 2;
 myscreen.autoCloseScreen = 1;
 % myscreen.saveData = 1;
 myscreen.allowpause = 0;
