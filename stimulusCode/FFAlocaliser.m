@@ -8,6 +8,8 @@
 %
 %       e.g.:
 %             FFAlocaliser()
+%
+% make sure to also look at jazLocaliser.m for event-related expt
 function myscreen = FFAlocaliser( varargin )
 
 % evaluate the input arguments
