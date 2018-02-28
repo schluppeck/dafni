@@ -24,6 +24,9 @@ You can also have a look at the brief online course at [Software Carpentry](http
 
 <img src="Git-Logo-2Color.png" width="40%">
 
+My (very brief) presentation on version control with git [as a markdown file](./version-control.md) or [as PDF](./version-control.pdf). This is what's covered in the lab class.
+ 
+
 Some really useful background is available in some brief videos produced by https://github.com
 
 ### What is version control?
