@@ -27,12 +27,12 @@ Two important sets of things to consider:
 The protocol will be pretty standard for a cognitive neuroscience scanning sessions. The plan for the time in the scanner is as follows
 
 1. Quick survey scan to allow "planning" on console **(< 10s)**
-2. field map: to show that B0 can be measured **(< 1min)**
-3. "inplane anatomy" - anatomical scan with planned slice prescription / coverage **(~2min)**
-4. fMRI experiment (block): gradient-echo EPI, TR 2s, TE 40ms, FA: 78º **(1x or 2x ~4min)**
+2. "inplane anatomy" - anatomical scan with planned slice prescription / coverage **(~2min)**
+4. fMRI experiment (block): gradient-echo EPI, TR 1.5s, TE 40ms, FA: 72º **(1x or 2x ~4min)**
 5. fMRI experiment (event-related): same scanning parameters, **(1x or 2x ~4min)**
 6. T1w-MPRAGE: to illustrate detailed (1mm isotropic) anatomy **(~5min)**
-5. [additional, if time permits] EPI data (test): 5 echoes at different TEs to illustrate T2* decay
+7. [sometimes included] EPI data (test): 5 echoes at different TEs to illustrate T2s decay
+8. [sometimes included] field map: to show that B0 can be measured **(< 1min)**
 
 You can have a look at the Matlab function ``flipAnglePlots()`` to remind yourself about why we picked the particular flip angle.
 
