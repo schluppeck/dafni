@@ -117,6 +117,8 @@ Using the function ``mlrImageReadNifti()`` and an input argument to `sliceview()
 
 - Do you need to worry about whether the data is 3d or 4d? For starters, assume that the user is doing something reasonable... but next, what if not?
 
+>The solution to this problem is available via [this page](sliceviewplus.md). But give it a serious attempt first before looking at the solution.
+
 ### Version control
 
 Now that you have figured out the logic of what needs to happen. You can start adding files (make a copy!) to your **github repository** and adding/committing the changes. Try to
