@@ -44,6 +44,7 @@ We'll be using an example scan from the faces / objects scan, so the file for ``
 <summary>Hint 1 - Work out indexing</summary><p>
 
 What's the indexing you need to fix one ``x`` value, one ``y`` value, and one ``z`` value - and get **all** values across time?
+</p>
 
 </details>
 
@@ -94,6 +95,7 @@ If you check back at the FSL/FEAT report for ``zstat1`` (now you can understand 
 
 Data are often pre-processed. Which data is "raw", which may reflect some pre-processing?
 
+</p>
 </details>
 
 <details>
