@@ -37,7 +37,7 @@ We'll be using an example scan from the faces / objects scan, so the file for ``
 **In a small group** Think about the code you need to write to plot the timeseries at the following ``[x,y,z]`` location of the dataset we've loaded in with ``mlrImageReadNifti()`` just before
 
 ```text
-[19,	13, 4]
+[19, 13, 4]
 ```
 
 <details>
@@ -54,12 +54,12 @@ An array that has size ``[1, 1, 1, 160]`` is still 4D in Matlab. What command do
 
 If you are stuck read the help on "singleton dimensions".
 
+</p>
 </details>
 
 
 <details>
 <summary>Solution</summary><p>
-
 
 <pre>
 <code>
@@ -71,7 +71,8 @@ xlabel('Time (TR)'); ylabel('fMRI response')
 title('response at [19,13,4]')
 </code>
 </pre>
-</p></details>
+</p>
+</details>
 
 
 ### A puzzle
@@ -97,7 +98,7 @@ Data are often pre-processed. Which data is "raw", which may reflect some pre-pr
 
 <details>
 <summary>Solutions</summary><p>
-
+  
 The data shown in the FSL/FEAT report is _not_ raow - but has been pre-processed (motion-corrected, temporally filtered, spatially blurred, ...). That intermediate data is by default stored in a nifti file called ``filtered_func_data`` (it will be stored as a ``hdr/img`` pair)
 
 <pre>
