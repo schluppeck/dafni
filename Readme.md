@@ -18,6 +18,7 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 | 4    | [UNIX + git](unix-2-and-versions.md) | Version control, some cool nitty-gritty       |
 | 5    | [Matlab 1](matlab-images.md)         | 2d and 3d images in Matlab, display / analyze |
 | 6    | [Matlab 2](matlab-timeseries.md)     | single + multiple 1d (timeseries) signals     |
+|      | [FSL tricks](fsl_tricks/Readme.md)   | ``bash/fsl`` tricks that might be useful      |
 | 7    | [Matlab 3 + wrap-up](matlab-text.md) | reading/writing text, CSV, data files         |
 
 ---
