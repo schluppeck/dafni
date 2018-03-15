@@ -148,11 +148,16 @@ There are also ways to further use this (logical) information - think of them as
 > ``-thr`` SOMENUMBER
 > ``-uthr`` SOME_other_NUMBER
 > ``-bin``   
-> ``-mas`` 
+> ``-mas``
 > will allow you to do some of those things
 
 These are interesting things to do - but the nitty-gritty may be beyond the scope of this class. Questions: don't hesitate to ping on moodle forum.
 
+### Activate atlas tools
+
+If you are looking at an image in **Standard space** (e.g. the MNI 152 average), in ``fslview`` you can activate the atlas tools to find out where you are, w.r.t. a probabilistic atlas. Check the help for more details.
+
+![atlas tools in fslview](atlas_tools.png)
 
 ### Other ideas
 
