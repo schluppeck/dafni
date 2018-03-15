@@ -38,6 +38,20 @@ You can have a look at the Matlab function ``flipAnglePlots()`` to remind yourse
 
 <img src="flipAngles.png" width="60%">
 
+## Scanner - actual numbers from the day.
+
+2. **inplane anatomy** - T1w, 2D MPRAGE. 24 slices, inplane voxel size: 1.5 mm, slice thickness 3 mm (same prescription as fMRI data). Matrix size 128 x 128.
+4. **fMRI data** (and all fMRI scans) 2D gradient-echo EPI, TR 1.5s, TE 40ms, FA: 72º, 160 dynamics. Voxel size 3mm isotropic. Matrix size 64 x 64.
+6. **whole head anatomy** - T1w 3D MPRAGE. Matrix size 256 x 256, 160 slices. Reconstructed as sagittal images. voxel size 1 mm isotropic. TE 3.7 ms, TR 8.13 ms, FA 8°, TI 960 ms, and linear phase encoding order.
+
+## Stimulus set-up
+
+- stimuli were presented on a BOLDscreen (CRS Ltd, Rochester, UK) - https://www.crsltd.com/tools-for-functional-imaging/mr-safe-displays/boldscreen-32-lcd-for-fmri/
+- stimulus code: inspect ``FFAlocaliser`` and ``jazLocaliser`` for lots of details. You should be able to run the code, too.
+- **timing: block design** 12s rest, 12s images (faces, objects), so 24s cycles. 10 repeats per scan - 240s or 160 dynamics (@ 1.5s). Stimuli were images from face and object image database (details below).
+- **timing: event-related design** 1.5s stimuli followed be a randomly chosen ITI between 9s and and 18s (in 1.5s increments). Stimuli were white, moving, random dots on a black background. 100% coherence, speed 4 deg/s. Scans lasted 240s or 160 dynamics (@ 1.5s).
+
+
 ## Stimulus code
 
 In ``matlab/mgl`` using the ``task`` library that comes with ``mgl``. Written by Alex Beckett and DS based on a version of a working code from Justin Gardner :smile:
