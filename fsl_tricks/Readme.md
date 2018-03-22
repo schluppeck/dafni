@@ -159,6 +159,27 @@ If you are looking at an image in **Standard space** (e.g. the MNI 152 average),
 
 ![atlas tools in fslview](atlas_tools.png)
 
+### Using ``fslmaths``, ``bet2`` and other tools in command line
+
+Have a look at the example ``bash`` script called [example_fsl_analysis.sh](example_fsl_analysis.sh) to see how you could use low-level command line tools extract a time course (``fslmeants``) ror do skull-stripping (``bet2``) or simple maths with the images (e.g. for calculating percent signal change).
+
+If you copy the script into the folder that contains your data (so, inside `S001``), then you can run the following command in the terminal - or better copy and paste individual lines one by one from the text editor and run them in sequence
+
+```bash
+sh example_fsl_analysis.sh
+
+# or better
+open example_fsl_analysis.sh
+# copy and paste into terminal and use ls and fslview to see what's happening
+```
+
+
+![example of percent signal timecourse](noisy_around_skull.png)
+
+and after some cleaning up and masking - the final image looks different
+
+![example of percent signal timecourse](masked_skull.png)
+
 ### Other ideas
 
 - command line stats using ``fslstats``
