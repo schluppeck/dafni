@@ -145,10 +145,10 @@ There are also ways to further use this (logical) information - think of them as
 
 >If you want to try this out... you can search documentation. Hint:
 > ``fslmaths`` with options
-> ``-thr`` SOMENUMBER
-> ``-uthr`` SOME_other_NUMBER
-> ``-bin``   
-> ``-mas``
+>  ``-thr`` SOMENUMBER
+>  ``-uthr`` SOME_other_NUMBER
+>  ``-bin``
+>  ``-mas``
 > will allow you to do some of those things
 
 These are interesting things to do - but the nitty-gritty may be beyond the scope of this class. Questions: don't hesitate to ping on moodle forum.
