@@ -180,6 +180,13 @@ and after some cleaning up and masking - the final image looks different
 
 ![example of percent signal timecourse](masked_skull.png)
 
+### Getting mean time series across an ROI
+
+There is a short video showing you how you can use (and create) a region of interest (aka mask) with the command ``fslmeants``. Use this in combination with the other tricks to get data at the command line. The other option is to load raw data into Matlab and manipulate there.
+
+- [link to youtube clip](http://www.youtube.com/watch?v=wgNhsE1yM_E)
+- I have also made the command history of what I typed into the prompt [available in this file here](command_history). Have a look at this, too.
+
 ### Other ideas
 
 - command line stats using ``fslstats``
