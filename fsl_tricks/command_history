@@ -1,0 +1,34 @@
+# unix commands used in 
+# youtube video explaing ROIs, mean timeseries
+# http://www.youtube.com/watch?v=wgNhsE1yM_E
+#
+# ds 2018-03-26
+
+# obvs, assumes you have FSL installes and that data file
+# present ;)
+
+fslinfo dafni_01_FSL_4_1.nii 
+fslview dafni_01_FSL_4_1.nii &
+fslmeants
+fslmeants -i dafni_01_FSL_4_1.nii -c 23 7 12
+fslmaths dafni_01_FSL_4_1.nii -Tmean mean_image 
+ls
+fslview mean_image &
+fslmaths dafni_01_FSL_4_1.nii -sub mean_image -div mean_image percent_timeseries 
+fslinfo percent_timeseries 
+fslview percent_timeseries &
+fslmeants
+fslmeants -i percent_timeseries -m mask
+
+# display the history
+history
+# display the history of commands, but cut of annoying number
+# at the start... also REDIRECT into a file called
+# command_history
+history | cut -c 8-  > command_history
+
+# and edit
+open -e command_history
+# or more unix like
+nano command_history
+
