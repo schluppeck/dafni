@@ -40,7 +40,7 @@ The coursework **assignment** is a short written report. For details, see the mo
 - for getting code and using!: [DAFNI Github repo](https://github.com/schluppeck/dafni/)
 
 
-## Contacts (2017/18)
+## Contacts (2018/19)
 
 - Denis Schluppeck
-- Ben Gurer (TA)
+- Kuan (Anthony) Beh (TA)
