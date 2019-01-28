@@ -1,4 +1,4 @@
-# Data analysis for Neuroimaging - C84DAN
+# Data analysis for Neuroimaging - PSYG4043 / C84DAN
 <!-- page_number: true -->
 
 ## Overview
@@ -9,10 +9,11 @@
 
 ## What's the plan?
 
-1. Acquire some functional MRI data in a simple, but real experiment
+1. Acquire some [functional] MRI data in a simple, but real experiment
 2. Analyze the data with ``fsl`` [(FMRIB webpage)](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki)
 3. Learn a bit about ``UNIX`` and version control, in particular ``git`` and ``github``
 4. Use ``Matlab`` to inspect and visualise some data
+5. [optional] anatomical, diffusion weighted +/- multi-echo data (T2*)
 
 ---
 
@@ -20,9 +21,9 @@
 
 
 | Unit     | Topic                                            |
-|:---------|:-------------------------------------------------|
+|:-------- |:------------------------------------------------ |
 | 1 :star: | Introduction, Administrivia, computers, ...      |
-| 2        | Data acquisition (**scanning on 3T**)            |
+| 2        | Data acquisition (**scanning on 3T at SPMIC**)   |
 | 3        | Inspecting & analysing data in **FSL**           |
 | 4        | Version control (``git`` and ``github.com``)     |
 | 5        | Images in **Matlab**, display, analyze           |
@@ -37,13 +38,14 @@
 
 > Summarise the experimental setup, analysis methodology and results. Need to have clearly written abstract (250w), methods, results and discussions.
 
+**Aim:** Get you thinking about journal-style writing, rather than essays.
 
 #### Submission details
 
-Currently w/ Student Services, *to-be-confirmed*
+Currently w/ Student Services, *date to-be-confirmed*
 
 - turn-it-in submission on moodle page
-- **deadeline: 28 March**
+- **deadeline: 27 March** (the week after last class of this module)
 
 ---
 
@@ -67,11 +69,11 @@ Currently w/ Student Services, *to-be-confirmed*
 
 ## :exclamation: For next time (lab 2)
 
-- sign up for 1 of 4 groups (max 7 people) - ``moodle``
-- complete visitor screening form 
+- sign up for 1 of 3 groups (max 7 people) - ``moodle``
+- complete visitor screening form
 - we also need 4 volunteers (~30 min in scanner)
 
---- 
+---
 
 ![25%](test.png)
 
@@ -183,7 +185,7 @@ Everyone should sign up for a free ``github`` account, so we can work together o
 
 - it's free and useful
 - we'll want to play with this in lab #4
-- once you have an username, go to our github classroom at 
+- once you have an username, go to our github classroom at
 https://classroom.github.com/a/I5Z7qarj
 
 
@@ -300,6 +302,6 @@ awk 'NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
 - with a headerline (matlab's ``csvread()`` doesn't like!)
 
 ```bash
-awk 'BEGIN {print "n, t, response"}  
+awk 'BEGIN {print "n, t, response"}
      NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
      timecourse.txt > timecourse.csv

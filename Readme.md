@@ -1,19 +1,19 @@
-# Notes for C84DAN - Data analysis for Neuroimaging
+# Notes for PSYG4043/C84DAN - Data analysis for Neuroimaging
 
 ## Summary
 
-These are the materials for a *data analysis for neuroimaging* module.
+These are the materials for a *data analysis for neuroimaging* module PSYG4043 at the University of Nottingham (core on the MSc Brain Imaging).
 
-In the class, we acquire functional MRI data sets (in small groups) and use a combination of tools to analyse the data.
+In the class, we acquire various MRI data sets - fMRI, anatomical, DTI, etc. (in small groups) and use a combination of tools to analyse the data.
 
 The module is for *10 credits* and runs for seven 2h sessions. (First iteration of the course Feb. 2017).
 
 ---
 
 | Week | Unit                                 | Topic                                         |
-|:-----|:-------------------------------------|:----------------------------------------------|
+|:---- |:------------------------------------ |:--------------------------------------------- |
 | 1    | [Introduction](Introduction.md)      | Introduction, Administrivia, computers, ...   |
-| 2    | [Getting data](gettingData.md)       | Data acquisition (sessions on 3T)             |
+| 2    | [Getting data](gettingData.md)       | Data acquisition (sessions on 3T Achieva)     |
 | 3    | [FSL analysis](firstAnalysis.md)     | Inspecting & analysing data in FSL            |
 | 4    | [UNIX + git](unix-2-and-versions.md) | Version control, some cool nitty-gritty       |
 | 5    | [Matlab 1](matlab-images.md)         | 2d and 3d images in Matlab, display / analyze |
