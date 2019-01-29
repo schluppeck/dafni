@@ -21,7 +21,7 @@
 
 
 | Unit     | Topic                                            |
-|:-------- |:------------------------------------------------ |
+|:---------|:-------------------------------------------------|
 | 1 :star: | Introduction, Administrivia, computers, ...      |
 | 2        | Data acquisition (**scanning on 3T at SPMIC**)   |
 | 3        | Inspecting & analysing data in **FSL**           |
@@ -71,24 +71,21 @@ Currently w/ Student Services, *date to-be-confirmed*
 
 - sign up for 1 of 3 groups (max 7 people) - ``moodle``
 - complete visitor screening form
-- we also need 4 volunteers (~30 min in scanner)
+- we also need 3 volunteers (~40 min in scanner)
 
----
-
-![25%](test.png)
 
 ---
 
 ## Setting up computers, logins
 
+![10%](terminal.png)
 
 1. Each user (at a particular machine) needs to make sure that ``Terminal/shell`` is set up correctly by copying a set-up file the first time they use that computer.
-
 ```bash
-# copy across new version of .bash_profile
-cd ~ # make sure we are in ${HOMEDIR}
-cp /Volumes/practicals/ds1/.bash_profile   ~/
-# restart shell
+  # copy across new version of .bash_profile
+  cd ~ # make sure we are in ${HOMEDIR}
+  cp /Volumes/practicals/ds1/.bash_profile   ~/
+  # restart shell
 ```
 
 ---
@@ -113,11 +110,6 @@ fslview & # File -> Open Standard -> Pick 1st or 2nd
 ![](automatoricon.png)
 
 If you have to do this again on another machine, you can use this shortcut. It's located in ``/Volumes/practicals/ds1/``
-
-
-
-
-
 
 
 ---
