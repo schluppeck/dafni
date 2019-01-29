@@ -36,25 +36,36 @@
 
 #### A short, written report
 
-> Summarise the experimental setup, analysis methodology and results. Need to have clearly written abstract (250w), methods, results and discussions.
+> Summarise the experimental setup, analysis methodology and results. Need to have clearly written abstract (250w), methods, results and discussions (and **figures**).
 
-**Aim:** Get you thinking about journal-style writing, rather than essays.
+**Aim:** Get you thinking about journal-style writing, rather than essays. Plus: presenting your own data, identifying key points, a story/pitch.
 
-#### Submission details
+--- 
+
+#### When to work on this? :construction_worker:
+
+Start as soon as we have the data
+- explore your analysis ideas
+- talk to us about questions you could address 
+- think about plots + data visualisations you'd like to make 
+
+
+
+#### Submission details :paperclip: :books:
 
 Currently w/ Student Services, *date to-be-confirmed*
 
 - turn-it-in submission on moodle page
-- **deadeline: 27 March** (the week after last class of this module)
+- **deadline: 27 March** (the week after last class of this module)
 
 ---
 
-## What's the assignment (2)
+## What's the assignment (2) :bar_chart: :chart_with_upwards_trend: :chart_with_downwards_trend:
 
 - 250w abstract
 - plus a main document (max 1500w)
 - references / citations as for standard written work
-- max 5 figures<sup>1</sup> illustrating
+- **max 5 figures<sup>1</sup>** illustrating
 	- details of the experimental setup
 	- analysis methodology
 	- results
@@ -78,13 +89,17 @@ Currently w/ Student Services, *date to-be-confirmed*
 
 ## Setting up computers, logins
 
-![10%](terminal.png)
+<img src="terminal.png" style="width: 15%"/>
+
+
 
 1. Each user (at a particular machine) needs to make sure that ``Terminal/shell`` is set up correctly by copying a set-up file the first time they use that computer.
 ```bash
   # copy across new version of .bash_profile
   cd ~ # make sure we are in ${HOMEDIR}
+  
   cp /Volumes/practicals/ds1/.bash_profile   ~/
+  
   # restart shell
 ```
 
@@ -105,11 +120,12 @@ fslview & # File -> Open Standard -> Pick 1st or 2nd
 
 ## Setting up computers, logins
 
+If you have to do this again on another machine, you can use this shortcut. It's located in ``/Volumes/practicals/ds1/``
+
+
 #### Cheat: Double-click ``Set up My Machine`` icon
 
 ![](automatoricon.png)
-
-If you have to do this again on another machine, you can use this shortcut. It's located in ``/Volumes/practicals/ds1/``
 
 
 ---
@@ -177,8 +193,8 @@ Everyone should sign up for a free ``github`` account, so we can work together o
 
 - it's free and useful
 - we'll want to play with this in lab #4
-- once you have an username, go to our github classroom at
-https://classroom.github.com/a/I5Z7qarj
+- once you have an username (pick one that I will recognise!), go to our github classroom at
+https://classroom.github.com/a/7ZwbkqLl
 
 
 ---
@@ -187,9 +203,13 @@ https://classroom.github.com/a/I5Z7qarj
 ## ``matlab`` - reading images (1)
 
 - we'll learn how to read imaging data into ``matlab`` (``nifti`` files)
-- functions provided by the [``mrTools`` toolbox](http://gru.stanford.edu/doku.php?id=mrTools:overview) for Matlab
+- from ``R2017b`` onwards ``nifti`` support is native, but there are also functions provided by the [``mrTools`` toolbox](http://gru.stanford.edu/doku.php?id=mrTools:overview) for Matlab
 
 ```matlab
+% > R2017b
+data = niftiread('file_from_scanner.nii');
+
+% mrTools toolbox
 help mlrImageReadNifti
 
 % read in some data
@@ -208,16 +228,18 @@ data(:, 24, 24, 1) % ... and this?
 data(34, 44, 12, :) % ... or that?
 ```
 
-- build a ``returnSlice()`` function, to complete a simple imageviewer:
+- we built a ``returnSlice()`` function, to complete imageviewer:
 
 ```matlab
 % function signature
 s = returnSlice(array, sliceNum, orientation);
 ```
+- some more coding along these lines
+
 
 ---
 
-## ``sliceview()``
+## ``sliceview3d()``
 
 <center>
 	<img src="figure_sliceview.png" width=60%>
@@ -225,9 +247,8 @@ s = returnSlice(array, sliceNum, orientation);
 
 <small>
 <pre><code>Press the following buttons to:
-up/down change slice
-o/O 	change orientation
-c/C 	change cursor
+up/down 	change slice UP/DOWN
+right/left  change slice R/L
 q/	Esc quit
 </code></pre>
 </small>
