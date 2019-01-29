@@ -4,7 +4,7 @@
 
 These are the materials for a *data analysis for neuroimaging* module PSYG4043 at the University of Nottingham (core on the MSc Brain Imaging).
 
-In the class, we acquire various MRI data sets - fMRI, anatomical, DTI, etc. (in small groups) and use a combination of tools to analyse the data.
+In the class, we acquire various MRI data sets - (incl. fMRI, anatomical, and/or DTI) in small groups. We then use a combination of tools to analyse the data.
 
 The module is for *10 credits* and runs for seven 2h sessions. (First iteration of the course Feb. 2017).
 
