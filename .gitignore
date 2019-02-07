@@ -10,3 +10,4 @@ stimulusCode/*.mat
 
 # local files for ds
 /admin
+/local
