@@ -40,14 +40,14 @@
 
 **Aim:** Get you thinking about journal-style writing, rather than essays. Plus: presenting your own data, identifying key points, a story/pitch.
 
---- 
+---
 
 #### When to work on this? :construction_worker:
 
 Start as soon as we have the data
 - explore your analysis ideas
-- talk to us about questions you could address 
-- think about plots + data visualisations you'd like to make 
+- talk to us about questions you could address
+- think about plots + data visualisations you'd like to make
 
 
 
@@ -97,9 +97,9 @@ Currently w/ Student Services, *date to-be-confirmed*
 ```bash
   # copy across new version of .bash_profile
   cd ~ # make sure we are in ${HOMEDIR}
-  
+
   cp /Volumes/practicals/ds1/.bash_profile   ~/
-  
+
   # restart shell
 ```
 
@@ -239,17 +239,16 @@ s = returnSlice(array, sliceNum, orientation);
 
 ---
 
-## ``sliceview3d()``
+## ``makeMontage('dafni_01_anatomy.nii', 25)``
 
 <center>
-	<img src="figure_sliceview.png" width=60%>
+	<img src="im-01-montage.png" width=60%>
 </center>
 
 <small>
-<pre><code>Press the following buttons to:
-up/down 	change slice UP/DOWN
-right/left  change slice R/L
-q/	Esc quit
+<pre><code>
+function [  ] = makeMontage(fname, nSamples)
+%makeMontage - make a montage from 3d/4d image
 </code></pre>
 </small>
 
@@ -272,13 +271,8 @@ q/	Esc quit
 - think about data formats / interop with other analysis & tools (``R``, ``python``, ... even UNIX tools). Sometimes a text file is best!
 
 ```matlab
-% read / write delimited files
-dlmread()
-dlmwrite()
-
-% basic CSV support (no header lines!)
-csvread()
-csvwrite()
+% read realistic behavioural data (mix of numbers, text)
+table(), writetable(), ...
 
 % read in a simple CSV file, skipping first row (r=0)
 % csvread(file, R, C) % row R, column C (starting at 0!)
@@ -318,3 +312,16 @@ awk 'NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
 awk 'BEGIN {print "n, t, response"}
      NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
      timecourse.txt > timecourse.csv
+```
+
+---
+
+### Solution in ``matlab``?
+
+Turn ``timecourse.txt`` (column of y-values), into ``timecourse.csv``:
+- where first column is a counter that goes from ``1...n``, 
+- the second column is ``t`` (in s), which goes up from ``0..1.5s..`` and
+- the third column is the ``y`` values
+
+### What about something else?
+- Excel? R? Another cool idea that's worth having in your set of tools?
