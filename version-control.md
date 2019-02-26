@@ -3,9 +3,9 @@
 
 ![25%](Git-Logo-2Color.png)
 
-##### Denis Schluppeck, 2018-01-30
+##### Denis Schluppeck, 2019-03-01
 
---- 
+---
 ## Why version control?
 
 Lots of good reasons - but the main ones<sup>[1](#myfootnote1)</sup> are:
@@ -33,12 +33,12 @@ Lots of good reasons - but the main ones<sup>[1](#myfootnote1)</sup> are:
   </figure>
 </center>
 
---- 
+---
 ## Why ``git``?
 
 There are many *version control systems* (VCS). But ``git`` comes with some advantages:
 
-- it's **distributed** (full version history in your local copy) 
+- it's **distributed** (full version history in your local copy)
 - corollary: you can work with it anywhere :airplane: or :train: (no need for network connection)
 - it's widely used<sup>1</sup>
 
@@ -49,10 +49,10 @@ There are many *version control systems* (VCS). But ``git`` comes with some adva
 <a name="myfootnote1"><sup>1</sup></a> see e.g. ["Wikipedia / git"](https://en.wikipedia.org/wiki/Git)
 
 
---- 
+---
 ## ``git`` does snapshots
 
-- think of this as snapshots 
+- think of this as snapshots
 - what's the state of each file now?
 
 <br>
@@ -66,6 +66,24 @@ There are many *version control systems* (VCS). But ``git`` comes with some adva
 ---
 
 ## How are things tagged?
+
+<center>
+  <figure>
+    <img src="Fingerprint_picture.svg" alt="fingerprint" height="400p"/>
+  </figure>
+</center>
+
+<hr>
+
+<tiny>
+	<a name="myfootnote1"><sup>2</sup></a> [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)
+
+</tiny>
+
+
+---
+## How are things tagged?
+
 
 - each **file** has a unique *fingerprint* (``shasum``)
 - if the file changes, the *fingerprint* changes, too!
@@ -88,7 +106,7 @@ hexadecimal numbers?
 
 ## ``shasum`` of a file
 
-```bash 
+```bash
 shasum Introduction.md
 # b5acbb35abd2511a4c05e48ef58f8990f139793a  Introduction.md
 ```
@@ -100,7 +118,7 @@ shasum Introduction.md
 <br>
 
 
-```bash 
+```bash
 shasum Introduction.md
 # 502bbcb5ab4f0d8127396675dd7d17d7d8b55b0a  Introduction.md
 ```
@@ -112,7 +130,7 @@ shasum Introduction.md
 
 ## How are things tagged (2)?
 
-A similar trick works for a list of directory contents (the "tree") 
+A similar trick works for a list of directory contents (the "tree")
 
 :arrow_right: **tree hash**
 
@@ -140,7 +158,7 @@ A similar trick works for a list of directory contents (the "tree")
 
 <small>
 
-```bash 
+```bash
 $ git cat-file -p HEAD
 
 tree 80fc45cae348efbdbbb652642cf4c22e1ddaaf80
@@ -184,7 +202,7 @@ git init
 
 ## Let's try it (2)
 
-- add to staging area 
+- add to staging area
 - ... and try to commit with a message (``-m``)
 
 ```bash
@@ -220,6 +238,16 @@ git commit -m 'my first commit'
 
 git status # read what's there NOW
 ```
+
+---
+
+## If you want this on github
+
+Currently the repository is local to the machine you are working on, if you want to share with your friends and colleagues on ``github.com``, follow instructions at:
+
+https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line
+
+
 
 ---
 ## Notes
