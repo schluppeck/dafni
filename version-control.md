@@ -217,8 +217,8 @@ git commit -m 'my first commit'
 - for (only this first time), set up your ``user.name`` and ``user.email``
 
 ```bash
-git config --global user.name="First Last"    # your name
-git config --global user.email="me@gmail.com" #  your email
+git config --global user.name "First Last"    # your name
+git config --global user.email "me@gmail.com" #  your email
 ```
 
 - This info is stored on your machine in a little file, which you can inspect
