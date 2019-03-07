@@ -23,8 +23,8 @@ which niftiread % should return a path
 ### now load and display image:
 
 ```matlab
-% cd to a folder with a nifti file in it:
-cd ~/dafniData/*_FSL_4_1.feat/
+% cd to a folder with a nifti file in it (like the one from last time):
+cd ~/dafniData/
 % try out  - make sure you have ; at end of line
 data = niftiread('mprage.nii');
 
