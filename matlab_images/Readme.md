@@ -77,6 +77,7 @@ The following information should help tackle the problem:
 
 - Matlab provides a rich set of visualisation functions + helpers. Make sure you don't re-invent the wheel
 - Look at examples / check out options that can modify the behaviour of existing functions.
+- you can **re-arrange** the order of dimensions in an array. Check out [this explanation on permuting dimensions](permuting.md) -- nd I will also explain this in a walk through.
 - see also ``imagesc``, ``min/max`` (or ``prctile``), ``colorbar``, ``doc images``
 
 ### Version control
