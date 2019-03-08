@@ -8,11 +8,11 @@ Our images are stored in a 3d cube and the order is not quite what we want. The 
 
 In our anatomical images, the dimensions are like this. **Note that even though we might be tempted to make the first image dimension X** that's not the case. The pixel display is arranged in the same way as you'd see the matrix display in text.
 
-| data dimension | plotting axis | anatomical          |
-|:-------------- |:------------- |:------------------- |
-| 1              | y (!) not x   | anterior->posterior |
-| 2              | x             | inferior->superior  |
-| 3              | z             | right-left          |
+| data dimension | matlab data | plotting axis | anatomical          |
+|:---------------|:------------|:--------------|:--------------------|
+| 1              | "rows"      | y (!) not x   | anterior->posterior |
+| 2              | "columns"   | x             | inferior->superior  |
+| 3              | "slices"    | z             | right-left          |
 
 
 <center>
@@ -70,14 +70,27 @@ The third / final direction in the original image is *right-left*.
 
 ### the desired orientations
 
-
-| data dimension | plotting axis | anatomical          |
-|:-------------- |:------------- |:------------------- |
-| 1              | y (!) not x   | anterior->posterior |
-| 2              | x             | ~~inferior->superior~~  **right-left** |
-| 3              | z             | ~~right-left~~    **inferior-superior**      |
+| data dimension | matlab data | plotting axis | anatomical                              |
+|:---------------|:------------|:--------------|:----------------------------------------|
+| 1              | "rows"      | y (!) not x   | anterior->posterior                     |
+| 2              | "columns"   | x             | ~~inferior->superior~~  **right-left**  |
+| 3              | "slices"    | z             | ~~right-left~~    **inferior-superior** |
 
 
 <center>
 <img src="mprage-rearranged.png" alt="" width="50%">
 </center>
+
+
+**What does this all mean?** - conclusion of this detailed look is that the dimensions 2 and 3 in these anatomical images are in an order that makes the ``montage`` function not produce nice *axial slices*. We need to `permute` them.
+
+```Matlab
+dPermuted = permute(d, [1, 3, 2]);
+
+figure, imagesc(dPermuted(:,:,80));
+ylabel('first dimension of array')
+xlabel('third dimension')
+colormap(gray)
+axis image
+
+```
