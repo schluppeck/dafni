@@ -87,10 +87,24 @@ The third / final direction in the original image is *right-left*.
 ```Matlab
 dPermuted = permute(d, [1, 3, 2]);
 
-figure, imagesc(dPermuted(:,:,80));
+figure, imagesc(dPermuted(:,:,130));
+caxis([0 1.28e3]); % make the range of intensities better [0, 1280]
 ylabel('first dimension of array')
 xlabel('third dimension')
 colormap(gray)
 axis image
 
+```
+
+
+### final step - how to add in an extra singleton dimensions
+
+For `montage()` to do the right thing, we need to permute the array to also include a singleton 3rd dimension (see **echo360** recording for an explanation).
+
+```Matlab
+dPermutedForMontage = permute(d, [1, 3, 4, 2]); % 4th original dim was size 1!
+
+figure
+montage(dPermutedForMontage)
+caxis([0 1.28e3]); % make the range of intensities better [0, 1280]
 ```
