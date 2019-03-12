@@ -8,7 +8,7 @@ There are blocks of ``faces``, ``objects`` and ``scenes`` that are displayed on 
 
 
 
-There are many studies that have used versions of this stimulus. Here we stick with the parameters used by Watson (@david_m_watson) and others. He also wrote the code for this version that runs under ``matlab`` and ``mgl``). See e.g. papers like the following to get a sense:
+There are many studies that have used versions of this stimulus. Here we stick with the parameters used by Watson (@david_m_watson) and others. He also wrote the code for this version that runs under ``matlab`` and ``mgl``. See e.g. papers like the following to get a sense:
 
 >Watson, D. M., Hartley, T., & Andrews, T. J. (2014). Patterns of response to visual scenes are linked to the low-level properties of the image. NeuroImage, 99, 402-410.
 
