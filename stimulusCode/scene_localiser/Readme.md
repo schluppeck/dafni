@@ -2,7 +2,13 @@
 
 The ``scene_localiser()`` experiment is a randomised block-design experiment.
 
-There are many studies that have used versions of this stimulus. Here we stick (roughly) with the parameters used by Watson (@david_m_watson) and others. See e.g. papers like the following to get a sense:
+There are blocks of ``faces``, ``objects`` and ``scenes`` that are displayed on a textured background, to minimize low-level visual confounds:
+
+<img src="images/face_female01_045.png" width="30%"></img> <img src="images/object01.png" width="30%"></img> <img src="images/scene_natural01.png" width="30%"></img>
+
+
+
+There are many studies that have used versions of this stimulus. Here we stick with the parameters used by Watson (@david_m_watson) and others. He also wrote the code for this version that runs under ``matlab`` and ``mgl``). See e.g. papers like the following to get a sense:
 
 >Watson, D. M., Hartley, T., & Andrews, T. J. (2014). Patterns of response to visual scenes are linked to the low-level properties of the image. NeuroImage, 99, 402-410.
 
