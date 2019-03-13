@@ -83,7 +83,7 @@ The plot you will have produced in Matlab may look something like the following.
 
 If you check back at the FSL/FEAT report for ``zstat1`` (now you can understand why I picked that particular coordinate!), you will see the following timeseries plot.
 
-![fsl/feat timeseries](tsplot_zstat1.png)
+![fsl/feat timeseries](./tsplot_zstat1.png)
 
 **Close, but not quite the same -- What is going on here??**
 
@@ -104,22 +104,33 @@ The data shown in the FSL/FEAT report is _not_ raow - but has been pre-processed
 <pre>
 <code>
 % specifying path also works!
-[data_f hdr_f] = mlrImageReadNifti('dafni_01_FSL_4_1.feat/filtered_func_data.img');
-ts_f = squeeze( data_f(19,13,4,:) );  % nest, so it can go on 1 line
+hdr_f = niftiinfo('__WIP_fMRI_SENSE_20190215100331_401.feat/filtered_func_data.nii.gz');
+
+data_f = niftiread('__WIP_fMRI_SENSE_20190215100331_401.feat/filtered_func_data.nii.gz');
+
+ts_f = squeeze( data_f(40,15,15,:) );  % nest, so it can go on 1 line
 
 figure, plot(ts_f, 'r-', 'linewidth', 2)
 xlabel('Time (TR)'); ylabel('fMRI response')
-title('*filtered* data at [19,13,4]')
+title('*filtered* data at [40,15,15]')
 
 % can also look at both of them at the same times:
 % but note! different y-axes
-t = hdr.pixdim(5) .* (1:numel(ts)); % TR -> s
-figure, plotyy(t, ts, t, ts_f);
+t = hdr_f.PixelDimensions(4) .* (1:numel(ts_f)); % TR -> s
+figure
+[AX,H1,H2] = plotyy(t, ts, t, ts_f);
+set(H1,'color', [1 0 0]);
+set(H2,'color', [0 0.2 1]);
+title('raw - red; filtered - blue')
+xlabel('Time (s)')
+ylabel('fMRI response (image intensity)')
 
 </code>
 </pre>
 </p>
 </details>
+
+![matlab timeseries](timeseries_scan401+40+15+15+filtered.png)
 
 ### * Ninja skill
 
@@ -129,28 +140,33 @@ Getting the timeseries for many voxels at the same time can be done by using a l
 
 First we need to grab the design matrix from FSL/FEAT. We could copy and paste from the text file for that analysis, but there is a neater way.
 
-I called my analysis ``analysis.fsf`` when I ran FEAT on the faces / objects dataset (#4). FEAT spits out the design matrix in a slightly unusual format (VEST). There is an FSL command line tool to turn it into a text file. **In the Terminal**:
+I called my analysis ``design.fsf`` when I ran FEAT on the faces / objects dataset (#4). FEAT spits out the design matrix in a slightly unusual format (VEST). There is an FSL command line tool to turn it into a text file. **In the Terminal**:
 
 ```bash
-Vest2Text analysis.mat analysis.txt
+Vest2Text design.mat design.txt
 ```
 
 Then we can use Matlab to load the design matrix.
 
 ```matlab
-X = load('analysis.txt') % make sure the file is in the current folder!
+X = load('design.txt') % make sure the file is in the current folder!
 % also add a column of ones!
 X = [X, ones(size(X,1),1)];
 
 % and inspect
 figure, imagesc(X), colormap(gray)
 ```
+![design matrix](designMatrix.png)
 
 And now for the linear regression:
 
 ```matlab
 % solve (for beta):
 % data = X * \beta + \epsilon
+
+% little gotcha... ts is INTEGERS (ask DS for nitty gritty)
+
+ts = double(ts); % turn into normal matlab numbers
 
 beta = X\ts;
 beta_f = X\ts_f; % the filtered version
