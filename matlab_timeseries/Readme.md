@@ -2,42 +2,40 @@
 
 The aims of this lesson are:
 
-  - show solution / approach for retro-fitting ``sliceview()`` program (last time)
+  - show solution / approach for ``makeMontage()`` program (last time)
+  - revisit linear regression, GLM, ideas around analysing fMRI data.
   - load in a text file that represents the design matrix ``X`` (as made by fsl/FEAT)
-  - load in 4d image (nifti) and select out a particular voxel's timecourse
-  - write the code that will to the *linear regression*  
+  - load in 4d image (nifti) and select out a particular voxel's timecourse - **plot/visualize**
+  - write the code that will to the *linear regression*
   - (if time / for after class) look at how *t-stat* can be calculated, given residuals, design matrix and contrast vector.
 
-*We will be working on a script.*
+>Rather than trying come up with a function that does all this, we will be working on a _script_, as you might do in an interactive analysis session.
+
+## Data
+
+I am assuming here, that you ran the `fsl` analysis on data from subject #2 in our 2018/19 cohort:
+
+- we started with a file called ``__WIP_fMRI_SENSE_20190215100331_401.nii``
+- your ``fsl/feat`` directory will therefore be called: ``__WIP_fMRI_SENSE_20190215100331_401.feat`` (*if not, adjust the follwing steps as necessary to grab the appropriate files*)
 
 ## Reading images into ``matlab``
 
-### paths, etc
-
-As in the last session, make sure that the ``mrTools`` toolbox is on the path:
-
-```Matlab
-which mlrImageReadNifti
-% should return a valid path!
-% if not, you'll need to run
-addpath(genpath('/Volumes/practicals/ds1/mrTools'))
-```
-
-### now load some data:
-
-We'll be using an example scan from the faces / objects scan, so the file for ``S001`` is ``dafni_01_FSL_4_1.nii``. You should also snoop around the ``dafni_01_FSL_4_1.feat`` folder that got created by FSL/FEAT -- we'll need this for the next step.
+We'll be using an example scan from the faces / objects / scenes scan. , so the file for subject ``dafni02`` is ``__WIP_fMRI_SENSE_20190215100331_401.nii``. You should also snoop around the ``__WIP_fMRI_SENSE_20190215100331_401.nii`` folder that got created by FSL/FEAT -- we'll need this for the next step.
 
 ```matlab
 % try out  - make sure you have ; at end of line
-[data hdr] = mlrImageReadNifti('dafni_01_FSL_4_1.nii');
+hdr = niftiinfo('__WIP_fMRI_SENSE_20190215100331_401.nii')
+data = niftiread('__WIP_fMRI_SENSE_20190215100331_401.nii');
 ```
+
+Inspect the variables ``hdr`` (a struct with many fields containing info) and ``data`` (a 4d array)
 
 ### and plot the time series
 
-**In a small group** Think about the code you need to write to plot the timeseries at the following ``[x,y,z]`` location of the dataset we've loaded in with ``mlrImageReadNifti()`` just before
+**In a small group** Think about the code you need to write to plot the timeseries at the following ``[x,y,z]`` location of the dataset we've loaded in with ``niftiread()`` just now:
 
 ```text
-[19, 13, 4]
+[40,15,15]
 ```
 
 <details>
@@ -51,7 +49,7 @@ What's the indexing you need to fix one ``x`` value, one ``y`` value, and one ``
 <details>
 <summary>Hint 2 - Dimensions</summary><p>
 
-An array that has size ``[1, 1, 1, 160]`` is still 4D in Matlab. What command do you need to make this the size ``[160]`` - 1D?
+An array that has size ``[1, 1, 1, 294]`` is still 4D in Matlab. What command do you need to make this the size ``[294]`` - 1D?
 
 If you are stuck read the help on "singleton dimensions".
 
@@ -64,12 +62,12 @@ If you are stuck read the help on "singleton dimensions".
 
 <pre>
 <code>
-[data hdr] = mlrImageReadNifti('dafni_01_FSL_4_1.nii');
-ts = squeeze( data(19,13,4,:) );  % nest, so it can go on 1 line
+data = niftiread('__WIP_fMRI_SENSE_20190215100331_401.nii');
+ts = squeeze( data(40,15,15,:) );  % nest, so it can go on 1 line
 
 figure, plot(ts, 'r-', 'linewidth', 2)
 xlabel('Time (TR)'); ylabel('fMRI response')
-title('response at [19,13,4]')
+title('response at [40,15,15]')
 </code>
 </pre>
 </p>
@@ -80,7 +78,7 @@ title('response at [19,13,4]')
 
 The plot you will have produced in Matlab may look something like the following.
 
-![matlab timeseries](timeseries_scan4+19+13+4.png)
+![matlab timeseries](timeseries_scan401+40+15+15.png)
 
 
 If you check back at the FSL/FEAT report for ``zstat1`` (now you can understand why I picked that particular coordinate!), you will see the following timeseries plot.
@@ -100,7 +98,7 @@ Data are often pre-processed. Which data is "raw", which may reflect some pre-pr
 
 <details>
 <summary>Solutions</summary><p>
-  
+
 The data shown in the FSL/FEAT report is _not_ raow - but has been pre-processed (motion-corrected, temporally filtered, spatially blurred, ...). That intermediate data is by default stored in a nifti file called ``filtered_func_data`` (it will be stored as a ``hdr/img`` pair)
 
 <pre>
@@ -161,7 +159,7 @@ beta_f = X\ts_f; % the filtered version
 We can now think about the beta weights - but also reconstruct the best linear fit:
 
 ```matlab
-% model fit is beta weights times the column of X  
+% model fit is beta weights times the column of X
 model = X*beta; % matrix multiply!
 model_f = X*beta_f;
 
@@ -190,3 +188,15 @@ title('Voilà - filtered data')
 ```
 
 ![the final result](linear-regression.png)
+
+
+### Notes for pre-2017b matlab
+
+If you are trying this out in older versions of Matlab, ``niftiread()`` is not available. You could instead use the ``mrTools`` toolbox and use ``mlrImageReadNifti()`` to load `NIFTI` files:
+
+```Matlab
+which mlrImageReadNifti
+% should return a valid path!
+% if not, you'll need to run
+addpath(genpath('/Volumes/practicals/ds1/mrTools'))
+```
