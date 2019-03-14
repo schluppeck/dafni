@@ -90,7 +90,7 @@ Now that you have figured out the logic of what needs to happen. You can start a
 - add useful commit messages
 - after you have ``commit``ed some changes, also ``git push`` to github.com
 
-## Bonus, making montages of rendered FSL images  
+## Bonus, making montages of rendered FSL images
 
 The images produced by FSL in our analysis are also candidates for displaying in matlab figures (for your report?). However, displaying them with the correct colors using ``makeMontage()`` is not trivial... however simple slices are doable!
 
@@ -118,6 +118,12 @@ colorbar
 - one way to solve the problem makes use of a function that ships with the matlab image processing toolbox. To use it, you'll have to manipulate your data using ``permute``, ``reshape`` and similar functions. If you get images as follows, you are nearly there... don't hesitate to ask for help!
 
 ![all slices](./figure_montageAll.png)
+
+## Solution:
+
+- you can check out my walk through <a href="https://www.youtube.com/watch?v=HiCjcHZjUp0" target="_new"> in this youtube video</a>
+- there is also [an m-file](./makeMontage.m) 
+
 
 ### [pre-2017b] paths, etc
 
