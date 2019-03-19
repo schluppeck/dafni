@@ -42,9 +42,9 @@ dafni_01_FSL_6_1.feat/
 4. [Rendering stats images](#render_stats)
 5. [Rendering stats images (highres)](#render_hires)
 6. [Identifying clusters (from labels)](#cluster_id)
-
-
-anatomy_gif
+7. [Switch on atlas tools](#activate_atlas)
+8. [FSL command line tools, bet, ...](#fsl_commandline)
+9. [Get mean timecourse in ROI](#roi_mean)
 
 
 ### Opening the html report, Finder <a name="html_report"></a>
@@ -166,13 +166,13 @@ There are also ways to further use this (logical) information - think of them as
 
 These are interesting things to do - but the nitty-gritty may be beyond the scope of this class. Questions: don't hesitate to ping on moodle forum.
 
-### Activate atlas tools
+### Activate atlas tools <a name="activate_atlas"></a>
 
 If you are looking at an image in **Standard space** (e.g. the MNI 152 average), in ``fslview`` you can activate the atlas tools to find out where you are, w.r.t. a probabilistic atlas. Check the help for more details.
 
 ![atlas tools in fslview](atlas_tools.png)
 
-### Using ``fslmaths``, ``bet2`` and other tools in command line
+### Using ``fslmaths``, ``bet2`` and other tools in command line <a name="fsl_commandline"></a>
 
 Have a look at the example ``bash`` script called [example_fsl_analysis.sh](example_fsl_analysis.sh) to see how you could use low-level command line tools extract a time course (``fslmeants``) ror do skull-stripping (``bet2``) or simple maths with the images (e.g. for calculating percent signal change).
 
@@ -193,7 +193,7 @@ and after some cleaning up and masking - the final image looks different
 
 ![example of percent signal timecourse](masked_skull.png)
 
-### Getting mean time series across an ROI
+### Getting mean time series across an ROI <a name="roi_mean"></a>
 
 There is a short video showing you how you can use (and create) a region of interest (aka mask) with the command ``fslmeants``. Use this in combination with the other tricks to get data at the command line. The other option is to load raw data into Matlab and manipulate there.
 
