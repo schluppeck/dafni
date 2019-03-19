@@ -14,6 +14,8 @@ You might find some of this helpful for completing the assignment - but also for
 
 To give you some concrete examples, I assume you are running ``Terminal`` and have access to the ``dafni`` dataset 1 (which should be stored in ``S001`` unless you made some deliberate choice to rename at some point).
 
+If you are using a different dataset, adjust accordingly. Names *inside* ``feat`` directories are consistent (a nice design choice by the `fsl` team).
+
 Raw data files are:
 
 ```bash
@@ -34,7 +36,18 @@ dafni_01_FSL_6_1.feat/
 
 ## Code snippets, ideas
 
-### Opening the html report, Finder
+1. [Opening the html report](#html_report)
+2. [Turning anatomy file into animated gif](#anatomy_gif)
+3. [Turning anatomy file 3-midsection view/PNG](#anatomy_midslice)
+4. [Rendering stats images](#render_stats)
+5. [Rendering stats images (highres)](#render_hires)
+6. [Identifying clusters (from labels)](#cluster_id)
+7. [Switch on atlas tools](#activate_atlas)
+8. [FSL command line tools, bet, ...](#fsl_commandline)
+9. [Get mean timecourse in ROI](#roi_mean)
+
+
+### Opening the html report, Finder <a name="html_report"></a>
 
 Don't forget to use TAB-completing whenever you can!
 
@@ -49,7 +62,7 @@ open -a "Google Chrome" report.hml
 open .
 ```
 
-### Turning anatomy image into animated GIF
+### Turning anatomy image into animated GIF  <a name="anatomy_gif"></a>
 
 ```bash
 pwd
@@ -63,7 +76,7 @@ fslanimate dafni_01_FSL_3_1.nii inplane.gif
 open -a "Google Chrome" inplane.gif
 ```
 
-### Turning anatomy image into mid-slice image (for report?)
+### Turning anatomy image into mid-slice image (for report?) <a name="anatomy_midslice"></a>
 
 ```bash
 pwd
@@ -80,7 +93,7 @@ open S001-midplanes.png
 slicer   # without input args
 ```
 
-### Rendering stats images
+### Rendering stats images <a name="render_stats"></a>
 
 Lots of info / help on how to use a GUI tool called ``Renderstats_gui`` on [this FSL wiki page](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Miscvis?highlight=%28%5CbCategoryOther%5Cb%29)
 
@@ -107,7 +120,7 @@ NB! ``slicer`` has many other options - play around with them. These datasets al
 
 ![stats results](stats_test.png)
 
-### Rendering on high-resolution anatomies
+### Rendering on high-resolution anatomies  <a name="render_hires"></a>
 
 If you have registered your data into standard (or another high-resolution) space, you can also get ``FEAT`` to make nice, superimposed images with the following:
 
@@ -123,7 +136,7 @@ Select the ``.feat`` directory you want to "convert" and click "Go" to let the c
 ![example image montage](rendered_thresh_zfstat1.png)
 
 
-### Which cluster is which?
+### Which cluster is which? <a name="cluster_id"></a>
 
 To visualise the cluster assignments that ``FEAT`` does, you can inspect
 
@@ -153,13 +166,13 @@ There are also ways to further use this (logical) information - think of them as
 
 These are interesting things to do - but the nitty-gritty may be beyond the scope of this class. Questions: don't hesitate to ping on moodle forum.
 
-### Activate atlas tools
+### Activate atlas tools <a name="activate_atlas"></a>
 
 If you are looking at an image in **Standard space** (e.g. the MNI 152 average), in ``fslview`` you can activate the atlas tools to find out where you are, w.r.t. a probabilistic atlas. Check the help for more details.
 
 ![atlas tools in fslview](atlas_tools.png)
 
-### Using ``fslmaths``, ``bet2`` and other tools in command line
+### Using ``fslmaths``, ``bet2`` and other tools in command line <a name="fsl_commandline"></a>
 
 Have a look at the example ``bash`` script called [example_fsl_analysis.sh](example_fsl_analysis.sh) to see how you could use low-level command line tools extract a time course (``fslmeants``) ror do skull-stripping (``bet2``) or simple maths with the images (e.g. for calculating percent signal change).
 
@@ -180,7 +193,7 @@ and after some cleaning up and masking - the final image looks different
 
 ![example of percent signal timecourse](masked_skull.png)
 
-### Getting mean time series across an ROI
+### Getting mean time series across an ROI <a name="roi_mean"></a>
 
 There is a short video showing you how you can use (and create) a region of interest (aka mask) with the command ``fslmeants``. Use this in combination with the other tricks to get data at the command line. The other option is to load raw data into Matlab and manipulate there.
 
