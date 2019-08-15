@@ -111,6 +111,7 @@ myscreen.TR = TR;
 myscreen.cycleLength = cycleLength; % in TRs
 myscreen.subject = subject;
 myscreen.collectEyeData = false;
+myscreen.volume = 0; % quiet
 
 myscreen = initScreen(myscreen);
 
