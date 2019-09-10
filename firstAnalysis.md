@@ -7,7 +7,7 @@ In outline, the first steps will be very similar to what you may remember from a
 ## Can we make to this, today?
 
 <center>
-<img src="./fsl-analysis-facesVobjects.png" width=60%>
+<img src="fsl-analysis-facesVobjects.png" width=60%>
 </center>
 
 ---
