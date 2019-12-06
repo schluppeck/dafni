@@ -49,4 +49,4 @@ We don't actually need to install this in the computer labs - but on your person
 
 ### Git basics
 
-A slightly deeper look at ``git`` in the video about [quick wins with ``git``](https://git-scm.com/video/quick-wins)
+:film_strip: A slightly deeper look at ``git`` in the video about [quick wins with ``git``](https://git-scm.com/video/quick-wins)
