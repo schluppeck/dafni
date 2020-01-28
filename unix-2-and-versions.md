@@ -31,15 +31,15 @@ Some really useful background is available in some brief videos produced by http
 
 ### What is version control?
 
-A really clear video explaing this in simple terms [What is version control?](https://git-scm.com/video/what-is-version-control)
+:film_strip: A really clear video explaing this in simple terms [What is version control?](https://git-scm.com/video/what-is-version-control)
 
 ### What is ``git``
 
-Have a look at the video on [What is ``git``](https://git-scm.com/video/what-is-git)
+:film_strip: Have a look at the video on [What is ``git``](https://git-scm.com/video/what-is-git)
 
 ### Get going with ``git``
 
-Finally, you can actually [Get going with ``git``](https://git-scm.com/video/get-going), in particular check out  
+:film_strip: Finally, you can actually [Get going with ``git``](https://git-scm.com/video/get-going), in particular check out  
   ``1:13min`` for configuring ``user.name`` and ``user.email`` - keeping in mind you'll probably want to use a value for ``user.email`` that is your generic / non-university e-mail.
 
 We don't actually need to install this in the computer labs - but on your personal machines you might have to do this. You can use ``which git`` in the Terminal. If you get a valid path back, then you know it's installed. You could also try ``git --version`` to find out which version you have installed on your machine.
@@ -49,4 +49,4 @@ We don't actually need to install this in the computer labs - but on your person
 
 ### Git basics
 
-A slightly deeper look at ``git`` in the video about [quick wins with ``git``](https://git-scm.com/video/quick-wins)
+:film_strip: A slightly deeper look at ``git`` in the video about [quick wins with ``git``](https://git-scm.com/video/quick-wins)
