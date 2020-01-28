@@ -4,7 +4,7 @@
 
 ## Summary
 
-These are the materials for a *data analysis for neuroimaging* module PSYG4043 at the University of Nottingham, a core module on the MSc Cognitive Neuroscience (formerly ~~Brain Imaging~~).
+These are the materials for a *data analysis for neuroimaging* module [PSYG4043] at the University of Nottingham, a core module on the [*MSc Cognitive Neuroscience*](https://www.nottingham.ac.uk/pgstudy/courses/psychology/cognitive-neuroscience-msc.aspx) (formerly ~~Brain Imaging~~).
 
 
 In the class, we acquire various MRI data sets - (incl. fMRI, anatomical, and/or DTI) in small groups. We then use a combination of tools to analyse the data.
@@ -41,6 +41,11 @@ The coursework **assignment** is a short written report. For details, see the mo
 
 - for reading: [Data analysis for Neuroimaging (web)](https://schluppeck.github.io/dafni/)
 - for getting code and using!: [DAFNI Github repo](https://github.com/schluppeck/dafni/)
+
+## Contacts (2019/20)
+
+- Denis Schluppeck, [@schluppeck](https://twitter.com/schluppeck)
+- Kuan (Anthony) Beh (TA)
 
 
 ## Contacts (2018/19)
