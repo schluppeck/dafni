@@ -306,15 +306,19 @@ d = csvread('timecourse.csv', 1, 0)
 
 ---
 
+# Random technical stuff
 
+Some notes of manipulating text files in the shell (using `awk`) and (viz timing files, etc.)
 
-## Notes
+---
 
-Small ``awk`` program for adding a counter ``n`` and time ``t`` and turn one column txt file into csv file:
+## Notes - text hacking in shell
+
+Small ``awk`` program for adding a counter ``n`` and time ``t`` and turn one column `txt` file into `csv` file:
 
 
 ```bash
-awk 'NF    {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
+awk 'NF {print NR-1 ", " (NR-1)*1.5 ", "  $1}' \
      timecourse.txt > timecourse.csv
 ```
 
@@ -336,4 +340,4 @@ Turn ``timecourse.txt`` (column of y-values), into ``timecourse.csv``:
 - the third column is the ``y`` values
 
 ### What about something else?
-- Excel? R? Another cool idea that's worth having in your set of tools?
+- `Excel`? `R`? Another cool idea that's worth having in your set of tools?
