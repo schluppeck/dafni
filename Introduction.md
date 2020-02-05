@@ -1,19 +1,34 @@
+---
+marp: true
+---
+
 # Data analysis for Neuroimaging - PSYG4043 / C84DAN
 <!-- page_number: true -->
 
 ## Overview
 
-##### Denis Schluppeck
+### Denis Schluppeck
 
 ---
 
 ## What's the plan?
 
 1. Acquire some [functional] MRI data in a simple, but real experiment
+
 2. Analyze the data with ``fsl`` [(FMRIB webpage)](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki)
+
 3. Learn a bit about ``UNIX`` and version control, in particular ``git`` and ``github``
 4. Use ``Matlab`` to inspect and visualise some data
+
 5. [optional] anatomical, diffusion weighted +/- multi-echo data (T2*)
+
+---
+
+## Learning objectives
+
+1. Build a better understanding of principles (and practice of) magnetic resonance imaging
+
+2. 
 
 ---
 
@@ -34,7 +49,7 @@
 
 ## What's the assignment?
 
-#### A short, written report
+### A short, written report
 
 > Summarise the experimental setup, analysis methodology and results. Need to have clearly written abstract (250w), methods, results and discussions (and **figures**).
 
@@ -56,7 +71,7 @@ Start as soon as we have the data
 Currently w/ Student Services, *date to-be-confirmed*
 
 - turn-it-in submission on moodle page
-- **deadline: 27 March** (the week after last class of this module)
+- **deadline: end of March** (the week after last class of this module - check moodle page for details)
 
 ---
 
@@ -84,48 +99,40 @@ Currently w/ Student Services, *date to-be-confirmed*
 - complete visitor screening form
 - we also need 3 volunteers (~40 min in scanner)
 
-
----
-
-## Setting up computers, logins
-
-<img src="terminal.png" style="width: 15%"/>
-
-
-
-1. Each user (at a particular machine) needs to make sure that ``Terminal/shell`` is set up correctly by copying a set-up file the first time they use that computer.
-```bash
-  # copy across new version of .bash_profile
-  cd ~ # make sure we are in ${HOMEDIR}
-
-  cp /Volumes/practicals/ds1/.bash_profile   ~/
-
-  # restart shell
-```
-
----
-
-## Has setup worked? Reality check.
-
-1. If you see ``[ ran custom .bash_profile ]`` in Terminal :heavy_check_mark:
-2. Also: look at some existing anatomies with ``fslview`` :heavy_check_mark:
-
-```bash
-which fsl # see anything?
-
-fslview & # File -> Open Standard -> Pick 1st or 2nd
-```
-
 ---
 
 ## Setting up computers, logins
 
 If you have to do this again on another machine, you can use this shortcut. It's located in ``/Volumes/practicals/ds1/``
 
-
-#### Cheat: Double-click ``Set up My Machine`` icon
+#### Cheat: Double-click ``Set up My Machine - version 6`` icon
 
 ![](automatoricon.png)
+
+---
+
+## Note
+
+Each user (at a particular machine) needs to make sure that ``Terminal/shell`` is set up correctly – if you move machines between labs (or want to do things elsewhere, repeat the above step!)
+
+---
+
+## Has setup worked? Reality check.
+
+<img src="terminal.png" style="width: 15%"/>
+
+1. If you see ``[ ran custom .bash_profile ]`` in Terminal :heavy_check_mark:
+2. Also: look at some existing anatomies with ``fsleyes`` :heavy_check_mark:
+
+```bash
+which fsl # see anything?
+
+fsleyes & # File -> Add Standard -> Pick 1st or 2nd
+```
+
+---
+
+<img src="fsleyes.png" style="width: 80%" caption="FSLEYES"/>
 
 
 ---
@@ -259,7 +266,7 @@ function [  ] = makeMontage(fname, nSamples)
 ## ``matlab`` - timeseries and subplots
 
 <center>
-	<img src="manyTimecourse-percent.png" width=90%>
+	<img src="manyTimecourse-percent.png" width=60%>
 </center>
 
 
@@ -291,6 +298,18 @@ d = csvread('timecourse.csv', 1, 0)
 	- can I use ``bash/unix``, ``matlab`` or another tool to automate?
 - just try things out - you'll learn tons in the process
 
+
+---
+
+## For next time
+
+- make sure you pick a timeslot on **moodle** page.
+
+- make sure you complete screening form (and/or get in touch with any concerns)
+
+- to volunteer for a scan, send me an e-mail: <a href="mailto:denis.schluppeck@nottingham.ac.uk?subject=SPMIC-scanning%2014-feb">denis.schluppeck@nottingham.ac.uk</a>  
+
+- next week: see you at `SPMIC` for your timeslot - if you don't know where on campus, google `SPMIC`... first hit is imaging centre w/ directions
 
 ---
 
