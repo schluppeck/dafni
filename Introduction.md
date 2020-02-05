@@ -19,6 +19,7 @@ size: 4:3
 2. Analyze the data with ``fsl`` [(FMRIB webpage)](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki)
 
 3. Learn a bit about ``UNIX`` and version control, in particular ``git`` and ``github``
+
 4. Use ``Matlab`` to inspect and visualise some data
 
 5. [optional] anatomical, diffusion weighted +/- multi-echo data (T2*)
@@ -29,22 +30,26 @@ size: 4:3
 
 1. Build a better understanding of principles (and practice of) magnetic resonance imaging
 
-2. 
+2. Learn about state of the art analysis tools for (f)MRI
+
+3. Appreciate usefulness of scripting, `unix`, version control for reproducibility / transparency of work
+
+4. Discover `matlab` for data visualisation
 
 ---
 
 ## Timeline
 
 
-| Unit     | Topic                                            |
-|:---------|:-------------------------------------------------|
-| 1 :star: | Introduction, Administrivia, computers, ...      |
-| 2        | Data acquisition (**scanning on 3T at SPMIC**)   |
-| 3        | Inspecting & analysing data in **FSL**           |
-| 4        | Version control (``git`` and ``github.com``)     |
-| 5        | Images in **Matlab**, display, analyze           |
-| 6        | Timeseries signals in **Matlab**                 |
-| 7        | Reading/writing text, CSV, data files **Matlab** |
+| Unit     | Topic                                                         |
+|:---------|:--------------------------------------------------------------|
+| 1 :star: | Introduction, Administrivia, computers, ...                   |
+| 2        | Data acquisition (**scanning on 3T at SPMIC**)                |
+| 3        | Inspecting & analysing data in **FSL**                        |
+| 4        | Version control (``git`` and ``github.com``)                  |
+| 5        | Images in **Matlab**, display, analyze                        |
+| 6        | Timeseries signals in **Matlab**                              |
+| 7        | **wrapup** + Reading/writing text, CSV, data files **Matlab** |
 
 ---
 
@@ -133,7 +138,7 @@ fsleyes & # File -> Add Standard -> Pick 1st or 2nd
 
 ---
 
-<img src="fsleyes.png" style="width: 80%" caption="FSLEYES"/>
+<img src="fsleyes.png" style="width: 90%" caption="FSLEYES"/>
 
 
 ---
@@ -243,7 +248,7 @@ s = returnSlice(array, sliceNum, orientation);
 ## ``makeMontage('dafni_01_anatomy.nii', 25)``
 
 <center>
-<img src="im-01-montage.png" width=50%/>
+<img src="im-01-montage.png" style="width: 50%" />
 </center>
 <small>
 <pre><code>function [  ] = makeMontage(fname, nSamples)
@@ -256,7 +261,7 @@ s = returnSlice(array, sliceNum, orientation);
 ## ``matlab`` - timeseries and subplots
 
 <center>
-<img src="manyTimecourse-percent.png" width=60%>
+<img src="manyTimecourse-percent.png" style="width: 80%" />
 </center>
 
 ---
