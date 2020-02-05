@@ -1,5 +1,6 @@
 ---
 marp: true
+size: 4:3
 ---
 
 # Data analysis for Neuroimaging - PSYG4043 / C84DAN
@@ -154,9 +155,9 @@ cd ~/data/S001/  # for example
 
 ## Some UNIX
 
-- only basics are needed for running FSL analysis
+- only basics needed for running ``fsl``
 - lots of functionality is available through point-and-click
-- **but** command line is helpful for organising (any) research data
+- **but** command line is helpful for organising data!
 - more complex analysis, e.g. ``freesurfer``, require some working knowledge
 
 ```bash
@@ -209,18 +210,11 @@ https://classroom.github.com/a/7ZwbkqLl
 
 ## ``matlab`` - reading images (1)
 
-- we'll learn how to read imaging data into ``matlab`` (``nifti`` files)
-- from ``R2017b`` onwards ``nifti`` support is native, but there are also functions provided by the [``mrTools`` toolbox](http://gru.stanford.edu/doku.php?id=mrTools:overview) for Matlab
+- we'll learn/revisirt how to read imaging data into ``matlab`` (``nifti`` files)
 
 ```matlab
 % > R2017b
 data = niftiread('file_from_scanner.nii');
-
-% mrTools toolbox
-help mlrImageReadNifti
-
-% read in some data
-data = mlrImageReadNifti('file_from_scanner.nii');
 ```
 
 ---
@@ -249,29 +243,23 @@ s = returnSlice(array, sliceNum, orientation);
 ## ``makeMontage('dafni_01_anatomy.nii', 25)``
 
 <center>
-	<img src="im-01-montage.png" width=60%>
+<img src="im-01-montage.png" width=50%/>
 </center>
-
 <small>
-<pre><code>
-function [  ] = makeMontage(fname, nSamples)
+<pre><code>function [  ] = makeMontage(fname, nSamples)
 %makeMontage - make a montage from 3d/4d image
 </code></pre>
 </small>
 
-
 ---
-
 
 ## ``matlab`` - timeseries and subplots
 
 <center>
-	<img src="manyTimecourse-percent.png" width=60%>
+<img src="manyTimecourse-percent.png" width=60%>
 </center>
 
-
 ---
-
 
 ## ``matlab`` - text / csv / other data
 
