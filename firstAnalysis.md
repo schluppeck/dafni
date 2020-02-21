@@ -7,7 +7,7 @@ In outline, the first steps will be very similar to what you may remember from a
 ## Can we make to this, today?
 
 <center>
-<img src="fsl-analysis-facesVobjects.png" width=60%/>
+<img src="fsl-analysis-facesVobjects.png" width="60%" />
 </center>
 
 ---
@@ -57,16 +57,19 @@ cd ~/data/subject-A/
 
 ## Some initial steps / warm-up
 
-1. Orient the MPRAGE image into the "standard" orientation that most tools will expect:
+1. Orient the MPRAGE image into the "standard" orientation that most tools will expect. This is not always necessary, but if there are issues with "alignment" in your fMRI analysis, this step can help:
 
 ```bash
 # navigate into data directory
-cd ~/data/S002/
+cd ~/data/subject-A/
 
 # identify the MPRAGE image.
 # mine is: ` ???  `
 
 fslreorient2std *sMPRAGE*.nii  mprage
+
+# if you want to skipt this step, you could also just move / rename
+immv *sMPRAGE*.nii mprage
 ```
 
 2. skull strip that anatomy
@@ -84,7 +87,7 @@ Start up ``feat`` either via the ``fsl`` menu or directly.
 
 ```bash
 # navigate into data directory
-cd ~/data/S002/
+cd ~/data/subject-A/
 
 # then pick FEAT FMRI analysis
 fsl &
