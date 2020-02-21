@@ -7,7 +7,7 @@ In outline, the first steps will be very similar to what you may remember from a
 ## Can we make to this, today?
 
 <center>
-<img src="fsl-analysis-facesVobjects.png" width=60%>
+<img src="fsl-analysis-facesVobjects.png" width=60%/>
 </center>
 
 ---
@@ -43,13 +43,13 @@ Do this "by hand" - using mouse clicks in the macOS operative system for now. We
 ```bash
 # first an "umbrella" folder, then one for subject 2
 mkdir ~/data/
-mkdir ~/data/S002/
+mkdir ~/data/subject-A/
 
 # navigate into data directory
-cd ~/data/S002/
+cd ~/data/subject-A/
 
 # COPY the files from
-# /Volumes/practicals/ds1/2019-dafni/dafni_02
+# /Volumes/practicals/ds1/2020-dafni/subject-A
 # TO here (.)
 #
 # HOW?
@@ -57,21 +57,26 @@ cd ~/data/S002/
 
 ## Some initial steps / warm-up
 
-Orient the MPRAGE image into the "standard" orientation that most tools will expect:
+1. Orient the MPRAGE image into the "standard" orientation that most tools will expect:
 
 ```bash
 # navigate into data directory
 cd ~/data/S002/
 
 # identify the MPRAGE image.
-# mine is: dafni_02-WIP_sMPRAGEs3-20190215100331-701.nii mprage
+# mine is: ` ???  `
 
 fslreorient2std *sMPRAGE*.nii  mprage
+```
 
+2. skull strip that anatomy
+
+```bash
 # inspect, if ok, then skull strip and also make a  mask (-m)
 bet mprage mprage_brain -m
 ```
 
+3. look at the images using `fsleyes`
 
 ## Set up the analysis using the GUI
 
