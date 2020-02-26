@@ -4,9 +4,9 @@
 
 The aims of this page are:
 
-  - show you a couple of command line tricks for creating images / stats with exisiting ``fsl`` tools
-  - explain a bit more about the intermediate and summary results of a ``fsl/FEAT`` analysis so you can make use of them
-  - point you in the right direction for finding more help
+- show you a couple of command line tricks for creating images / stats with exisiting ``fsl`` tools
+- explain a bit more about the intermediate and summary results of a ``fsl/FEAT`` analysis so you can make use of them
+- point you in the right direction for finding more help
 
 You might find some of this helpful for completing the assignment - but also for future reference!
 
@@ -45,7 +45,7 @@ dafni_01_FSL_6_1.feat/
 7. [Switch on atlas tools](#activate_atlas)
 8. [FSL command line tools, bet, ...](#fsl_commandline)
 9. [Get mean timecourse in ROI](#roi_mean)
-
+10. [Motion correct two fMRI scans and "average" them](#motion_comp_av)
 
 ### Opening the html report, Finder <a name="html_report"></a>
 
@@ -199,6 +199,35 @@ There is a short video showing you how you can use (and create) a region of inte
 
 - [link to youtube clip](http://www.youtube.com/watch?v=wgNhsE1yM_E)
 - I have also made the command history of what I typed into the prompt [available in this file here](command_history). Have a look at this, too.
+
+### Averaging to fMRI scans with same timing (after motioncomp) <a name="motion_comp_av"></a>
+
+Assuming you have two fMRI scans that are exact repeats of the same experiment, say a visual experiment with same stimulus order... one thing you might want to do is to simple average them: take an average of the first time point in both scans, then the second time point, etc. This is a quick and dirty way of combining data - maybe running statistical analysis on each file separately and then combining those would be better... but it's still useful to have this trick up your sleave!
+
+Let's say you have `scan1.nii` and `scan2.nii`
+
+Idea:
+
+1. take the first time point of `scan1` and use this as a reference for motion compensation
+2. motion comp both scans (using that reference)
+3. use image maths to combine the timeseries data into one average
+
+```bash
+# 1 - use fslroi to slice of 1 timepoint starting at 0
+#
+fslroi scan1 ref 0 1
+
+# 2 - use mcflirt command line using this new 'ref' file
+mcflirt -in scan1 -out scan1_mcf -r ref.nii
+mcflirt -in scan2 -out scan2_mcf -r ref.nii
+
+# 3 - now use fslmatnhs to do voxel (and timepointswise addition and divide by 2)
+fslmaths scan1_mcf.nii -add scan2_mcf.nii -div 2 scanAv
+
+# 4 - inspect result:
+fsleyes scanAv.nii
+```
+
 
 ### Other ideas
 
