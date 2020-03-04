@@ -24,7 +24,7 @@ which niftiread % should return a path
 
 ```matlab
 % cd to a folder with a nifti file in it (like the one from last time):
-cd ~/dafniData/
+cd ~/data/subject-C/
 % try out  - make sure you have ; at end of line
 data = niftiread('mprage.nii');
 
@@ -45,7 +45,7 @@ colormap(gray)
 The user starts calls the function from the command line with a filename and a number that specifies how many images / tiles to display in the montage. E.g.
 
 ```matlab
-makeMontage('dafni_01_FSL_7_1.nii', 25)
+makeMontage('mprage.nii', 25)
 ```
 
 results in
