@@ -2,30 +2,45 @@
 
 The aims of this lesson are:
 
-  - show solution / approach for ``makeMontage()`` program (last time)
-  - revisit linear regression, GLM, ideas around analysing fMRI data.
+  - answer any questions about ``makeMontage()`` program (last time)
+  - ( revisit linear regression, GLM, ideas around analysing fMRI data. )
   - load in a text file that represents the design matrix ``X`` (as made by fsl/FEAT)
   - load in 4d image (nifti) and select out a particular voxel's timecourse - **plot/visualize**
-  - write the code that will to the *linear regression*
+  - load in timeseries for one particular voxel (output by `feat` analysis in `tsplot` folder)
+  - (optional) write the code that will to the *linear regression*
   - (if time / for after class) look at how *t-stat* can be calculated, given residuals, design matrix and contrast vector.
 
 >Rather than trying come up with a function that does all this, we will be working on a _script_, as you might do in an interactive analysis session.
 
 ## Data
 
-I am assuming here, that you ran the `fsl` analysis on data from subject #2 in our 2018/19 cohort:
+I am assuming here, that you ran the `fsl` analysis on data from one of the subjects (A, B, C) in our 2019/20 cohort:
 
-- we started with a file called ``__WIP_fMRI_SENSE_20190215100331_401.nii``
-- your ``fsl/feat`` directory will therefore be called: ``__WIP_fMRI_SENSE_20190215100331_401.feat`` (*if not, adjust the follwing steps as necessary to grab the appropriate files*)
+- we started with a file called ``CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.nii``
+- your ``fsl/feat`` directory will therefore be called: ``CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.feat`` (*if not, adjust the follwing steps as necessary to grab the appropriate files*)
+
+## A quick look at a statistical map and time series
+
+Assuming you want to look at the results for the **faces** versus rest comparison, here is a one way using the interactive features of `fsleyes` et al
+
+```bash
+# go into the directory
+cd CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.feat
+# load the filtered data... and superimpose the thresholded map in "hot", clipping
+# values below 2.3 (within 2.3 std of 0). The `inf` means don't clip from above...
+fsleyes filtered_func_data.nii.gz thresh_zstat1.nii.gz -cm hot -cr 2.3 inf &
+```
+
+**Open up a timeseries view**, too and then move your cursor around to inspect the fMRI data in the context of the statistical map. This allows you to hover around and identify intersting `[x,y,z]` locations in the dataset.
 
 ## Reading images into ``matlab``
 
-We'll be using an example scan from the faces / objects / scenes scan. , so the file for subject ``dafni02`` is ``__WIP_fMRI_SENSE_20190215100331_401.nii``. You should also snoop around the ``__WIP_fMRI_SENSE_20190215100331_401.nii`` folder that got created by FSL/FEAT -- we'll need this for the next step.
+We'll be using an example scan from the faces / objects / scenes scan. , so the file for subject ``C`` is ``CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.nii``. You should also snoop around the ``CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.feat`` folder that got created by FSL/FEAT -- we'll need this for the next step.
 
 ```matlab
 % try out  - make sure you have ; at end of line
-hdr = niftiinfo('__WIP_fMRI_SENSE_20190215100331_401.nii')
-data = niftiread('__WIP_fMRI_SENSE_20190215100331_401.nii');
+hdr = niftiinfo('CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.nii')
+data = niftiread('CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.nii');
 ```
 
 Inspect the variables ``hdr`` (a struct with many fields containing info) and ``data`` (a 4d array)
@@ -35,7 +50,7 @@ Inspect the variables ``hdr`` (a struct with many fields containing info) and ``
 **In a small group** Think about the code you need to write to plot the timeseries at the following ``[x,y,z]`` location of the dataset we've loaded in with ``niftiread()`` just now:
 
 ```text
-[40,15,15]
+[45,16,12]
 ```
 
 <details>
@@ -49,7 +64,7 @@ What's the indexing you need to fix one ``x`` value, one ``y`` value, and one ``
 <details>
 <summary>Hint 2 - Dimensions</summary><p>
 
-An array that has size ``[1, 1, 1, 294]`` is still 4D in Matlab. What command do you need to make this the size ``[294]`` - 1D?
+An array that has size ``[1, 1, 1, 192]`` is still 4D in Matlab. What command do you need to make this the size ``[192]`` - 1D?
 
 If you are stuck read the help on "singleton dimensions".
 
@@ -62,12 +77,12 @@ If you are stuck read the help on "singleton dimensions".
 
 <pre>
 <code>
-data = niftiread('__WIP_fMRI_SENSE_20190215100331_401.nii');
-ts = squeeze( data(40,15,15,:) );  % nest, so it can go on 1 line
+data = niftiread('CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.nii');
+ts = squeeze( data(45,16,11,:) );  % nest, so it can go on 1 line
 
 figure, plot(ts, 'r-', 'linewidth', 2)
 xlabel('Time (TR)'); ylabel('fMRI response')
-title('response at [40,15,15]')
+title('response at [45,16,12]')
 </code>
 </pre>
 </p>
@@ -76,7 +91,7 @@ title('response at [40,15,15]')
 
 ### A puzzle
 
-The plot you will have produced in Matlab may look something like the following.
+The plot you will have produced in Matlab may look something like the following (the data here is actually from a previous run... so not perfectly the same, but the logic still counts:)
 
 ![matlab timeseries](timeseries_scan401+40+15+15.png)
 
@@ -87,6 +102,7 @@ If you check back at the FSL/FEAT report for ``zstat1`` (now you can understand 
 
 **Close, but not quite the same -- What is going on here??**
 
+Adapt the following code to work with your dataset. What needs to change?
 
 <details>
 <summary>Hint 1</summary><p>
@@ -99,7 +115,7 @@ Data are often pre-processed. Which data is "raw", which may reflect some pre-pr
 <details>
 <summary>Solutions</summary><p>
 
-The data shown in the FSL/FEAT report is _not_ raow - but has been pre-processed (motion-corrected, temporally filtered, spatially blurred, ...). That intermediate data is by default stored in a nifti file called ``filtered_func_data`` (it will be stored as a ``hdr/img`` pair)
+The data shown in the FSL/FEAT report is _not_ raw - but has been pre-processed (motion-corrected, temporally filtered, spatially blurred, ...). That intermediate data is by default stored in a nifti file called ``filtered_func_data`` 
 
 <pre>
 <code>

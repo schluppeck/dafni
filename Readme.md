@@ -36,6 +36,8 @@ The coursework **assignment** is a short written report. For details, see the mo
 - references / citations as for standard written work (these don't add to the wordcount)
 - max. 5 figures illustrating details of the experimental setup, analysis methodology and results (figures can have sub-panels or subplots)
 
+For more details have a look at [this page in the `assignment` folder](assignment/Readme.md).
+
 ---
 
 ## Links
