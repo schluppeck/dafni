@@ -35,8 +35,8 @@ fps = 120;
 hvFlip = [false false];  % no mirror - mgl presents lr flipped already
 
 
-TR = 1.5;  % in secs
-cycleLength = 12;  % Full OFF/ON cycle in TRs
+TR = 2;  % in secs
+cycleLength = 8;  % Full OFF/ON cycle in TRs
 global imdir; imdir = './images';
 global stimfile; stimfile = './blocklist.csv';
 
@@ -97,7 +97,7 @@ myscreen.screenParams{1} = {[], ... % computer name
                             displayDistance, ... % display distance TODO
                             displaySize, ... % display size TODO
                             fps, ... % FPS
-                            true, ... % auto-close screen
+                            false, ... % auto-close screen
                             true, ...  % save data
                             1.8, ... % gamma correction
                             '', ... % calibration file
@@ -111,7 +111,6 @@ myscreen.TR = TR;
 myscreen.cycleLength = cycleLength; % in TRs
 myscreen.subject = subject;
 myscreen.collectEyeData = false;
-myscreen.volume = 0; % quiet
 
 myscreen = initScreen(myscreen);
 
@@ -201,7 +200,7 @@ fprintf(1, 'Loading images...\n');
 
 % Extract n blocks and trials
 numBlocks = size(stimlist, 1);
-trialsPerBlock = size(stimlist, 2);
+trialsPerBlock = size(stimlist, 2) - 1; % Only using 8 of the 9 stimuli
 
 % Choose random trial (not 1st one) in each block to show gray im
 imStimulus.grayTrials = randi([2, trialsPerBlock], [1, numBlocks]);
