@@ -22,8 +22,8 @@ Raw data files are:
 dafni_01_FSL_2_1.nii
 dafni_01_FSL_3_1.nii
 dafni_01_FSL_4_1.nii
-dafni_01_FSL_5_1.nii		
-dafni_01_FSL_6_1.nii		
+dafni_01_FSL_5_1.nii
+dafni_01_FSL_6_1.nii
 dafni_01_FSL_7_1.nii
 ```
 
@@ -41,11 +41,12 @@ dafni_01_FSL_6_1.feat/
 3. [Turning anatomy file 3-midsection view/PNG](#anatomy_midslice)
 4. [Rendering stats images](#render_stats)
 5. [Rendering stats images (highres)](#render_hires)
-6. [Identifying clusters (from labels)](#cluster_id)
-7. [Switch on atlas tools](#activate_atlas)
-8. [FSL command line tools, bet, ...](#fsl_commandline)
-9. [Get mean timecourse in ROI](#roi_mean)
-10. [Motion correct two fMRI scans and "average" them](#motion_comp_av)
+6. [Opening rendered images in `fsleyes`](#render_fsleyes)
+7. [Identifying clusters (from labels)](#cluster_id)
+8. [Switch on atlas tools](#activate_atlas)
+9. [FSL command line tools, bet, ...](#fsl_commandline)
+10. [Get mean timecourse in ROI](#roi_mean)
+11. [Motion correct two fMRI scans and "average" them](#motion_comp_av)
 
 ### Opening the html report, Finder <a name="html_report"></a>
 
@@ -135,6 +136,19 @@ Select the ``.feat`` directory you want to "convert" and click "Go" to let the c
 
 ![example image montage](rendered_thresh_zfstat1.png)
 
+### Opening rendered images in `fsleyes` <a name="render_fsleyes"></a>
+
+`fsl` keeps a copy of the rendered images as `nifti` files. If you want to use the viewer programme `fsleyes` to look at them, you need to make sure you are using the corrct color map (command line option `-cm`)
+
+```bash
+# to look at the rendered thresholded map for contrast 1
+fsleyes rendered_thresh_zstat1 -cm render1 &
+
+# and if you have overlaid onto a high-res, you an also try
+fsleyes hr/rendered_thresh_zstat1 -cm render1 &
+```
+
+![rendered zstat images in fsleyes](render_fsleyes.png)
 
 ### Which cluster is which? <a name="cluster_id"></a>
 
@@ -145,9 +159,12 @@ pwd
 # make sure you are in dafni_01_FSL_4_1.feat
 
 # load up fslview (with a EPI image as default bg)
-fslview example_func &
+# fslview example_func &  # older versions of fsl!
 
-# File -> Add... and choose e.g. cluster_mask_zstat4)
+# newer versions.
+fsleyes example_func &
+
+# File -> Add from file... and choose e.g. cluster_mask_zstat4)
 ```
 
 ![cluster mask examples](cluster_mask_screenshot.png)
@@ -168,7 +185,7 @@ These are interesting things to do - but the nitty-gritty may be beyond the scop
 
 ### Activate atlas tools <a name="activate_atlas"></a>
 
-If you are looking at an image in **Standard space** (e.g. the MNI 152 average), in ``fslview`` you can activate the atlas tools to find out where you are, w.r.t. a probabilistic atlas. Check the help for more details.
+If you are looking at an image in **Standard space** (e.g. the MNI 152 average), in ~~``fslview``~~ ``fsleyes`` you can activate the atlas tools to find out where you are, w.r.t. a probabilistic atlas. Check the help for more details.
 
 ![atlas tools in fslview](atlas_tools.png)
 
@@ -183,9 +200,9 @@ sh example_fsl_analysis.sh
 
 # or better
 open example_fsl_analysis.sh
-# copy and paste into terminal and use ls and fslview to see what's happening
+# copy and paste into terminal and use ls and 
+# fsleyes / fslview to see what's happening
 ```
-
 
 ![example of percent signal timecourse](noisy_around_skull.png)
 
@@ -227,7 +244,6 @@ fslmaths scan1_mcf.nii -add scan2_mcf.nii -div 2 scanAv
 # 4 - inspect result:
 fsleyes scanAv.nii
 ```
-
 
 ### Other ideas
 
