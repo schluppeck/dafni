@@ -2,6 +2,12 @@
 
 <img src="dafni-splash.png" width="80%"><br>
 
+## 2020 Update - COVID-19
+
+<p style="color:red">
+Please have a look at <a href="assignment/corona.md">some additional notes / help related to UNUK closure</a>
+</p>. I will try to keep everyone posted on any other developments via e-mail.
+
 ## Summary
 
 These are the materials for a *data analysis for neuroimaging* module [PSYG4043] at the University of Nottingham, a core module on the [*MSc Cognitive Neuroscience*](https://www.nottingham.ac.uk/pgstudy/courses/psychology/cognitive-neuroscience-msc.aspx) (formerly ~~Brain Imaging~~).
