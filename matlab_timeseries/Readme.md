@@ -19,6 +19,13 @@ I am assuming here, that you ran the `fsl` analysis on data from one of the subj
 - we started with a file called ``CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.nii``
 - your ``fsl/feat`` directory will therefore be called: ``CogNeuro03-301-WIP_MB2_TASKfMRI_singleechoTR2.feat`` (*if not, adjust the follwing steps as necessary to grab the appropriate files*)
 
+## 2020-03 additional text data
+
+For those unable to run things under `macOS` or `linux` (as suggested in a couple of steps below), you can find the text files for the voxel ``[35,16,11]`` and the design matrix file here:
+
+- [voxel timecourse](./2020-textfile+35+16+11.txt)
+- [design matrix](./2020-designmatrix.txt)
+
 ## A quick look at a statistical map and time series
 
 Assuming you want to look at the results for the **faces** versus rest comparison, here is a one way using the interactive features of `fsleyes` et al
