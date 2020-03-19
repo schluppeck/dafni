@@ -4,9 +4,9 @@
 
 ## 2020 Update - COVID-19
 
-<p style="color:red">
-Please have a look at <a href="assignment/corona.md">some additional notes / help related to UNUK closure</a>
-</p>. I will try to keep everyone posted on any other developments via e-mail.
+<span style="color:red">
+Please have a look at <a href="assignment/corona.md">some additional notes / help related to UNUK closure</a>.
+</span> I will try to keep everyone posted on any other developments via e-mail.
 
 ## Summary
 
