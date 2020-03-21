@@ -76,5 +76,5 @@ https://farm8.staticflickr.com/7342/26661994064_4966d46cb3_c.jpg
 
 ## Notes
 
-- [A blog post on rendering brains](http://www.psychology.nottingham.ac.uk/staff/ds1/rendering-brains/)
+- [A blog post on rendering brains](http://schluppeck.github.io/ds1/rendering-brains/)
 - Open source 3D creation and rendering - not really neuroscience, but fun nonetheless, http://blender.org
