@@ -25,7 +25,7 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 | 2    | [Getting data](gettingData.md)       | Data acquisition (sessions on 3T Achieva)     |
 | 3    | [FSL analysis](firstAnalysis.md)     | Inspecting & analysing data in FSL            |
 | 4a   | [UNIX + git](unix-2-and-versions.md) | Version control, some cool nitty-gritty       |
-| 4b   | [more FSL](more-fsl-analysis.md)     | FSL analysis 2 - more features of `fsl/feat`  |
+| 4b   |                                      | FSL analysis 2 - more features of `fsl/feat`  |
 | 5    | [Matlab 1](matlab-images.md)         | 2d and 3d images in Matlab, display / analyze |
 | 6    | [Matlab 2](matlab-timeseries.md)     | single + multiple 1d (timeseries) signals     |
 |      | [FSL tricks](fsl_tricks/Readme.md)   | ``bash/fsl`` tricks that might be useful      |
