@@ -2,11 +2,6 @@
 
 <img src="dafni-splash.png" width="80%"><br>
 
-## 2020 Update - COVID-19
-
-<span style="color:red">
-Please have a look at <a href="assignment/corona.md">some additional notes / help related to UNUK closure</a>.
-</span> I will try to keep everyone posted on any other developments via e-mail.
 
 ## Summary
 
@@ -50,6 +45,12 @@ For more details have a look at [this page in the `assignment` folder](assignmen
 
 - for reading: [Data analysis for Neuroimaging (web)](https://schluppeck.github.io/dafni/)
 - for getting code and using!: [DAFNI Github repo](https://github.com/schluppeck/dafni/)
+
+## Contacts (2021/22)
+
+- Denis Schluppeck, [@schluppeck](https://twitter.com/schluppeck)
+- Jeyoung Jung, jeyoung.jung@nottingham.ac.uk
+
 
 ## Contacts (2019/20)
 
