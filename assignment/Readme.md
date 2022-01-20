@@ -1,5 +1,7 @@
 ## 2019/20 details on the assignment
 
+<span style="color:darkred">Note! The details here relate to a previous assessment. An updated version will be posted closer to the deadline.</span>
+
 The following will hopefully clarify some of the questions you might have about the assignment. There are also some suggestions for ideas you can explore, that are specific to this year's dataset.
 
 ### Summary

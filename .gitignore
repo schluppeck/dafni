@@ -1,6 +1,9 @@
 # ignore mat files that get saved by stim code
 stimulusCode/*.mat
 
+# also local materials (like temporary downloads, docs)
+local_materials/*
+
 # matlab editor backup files
 **.m~
 
