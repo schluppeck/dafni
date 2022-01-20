@@ -14,17 +14,15 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 
 ---
 
-| Week | Unit                                 | Topic                                         |
-|:-----|:-------------------------------------|:----------------------------------------------|
-| 1    | [Introduction](Introduction.md)      | Introduction, Administrivia, computers, ...   |
-| 2    | [Getting data](gettingData.md)       | Data acquisition (sessions on 3T Achieva)     |
-| 3    | [FSL analysis](firstAnalysis.md)     | Inspecting & analysing data in FSL            |
-| 4a   | [UNIX + git](unix-2-and-versions.md) | Version control, some cool nitty-gritty       |
-| 4b   |                                      | FSL analysis 2 - more features of `fsl/feat`  |
-| 5    | [Matlab 1](matlab-images.md)         | 2d and 3d images in Matlab, display / analyze |
-| 6    | [Matlab 2](matlab-timeseries.md)     | single + multiple 1d (timeseries) signals     |
-|      | [FSL tricks](fsl_tricks/Readme.md)   | ``bash/fsl`` tricks that might be useful      |
-| 7    | [Matlab 3 + wrap-up](matlab-text.md) | reading/writing text, CSV, data files         |
+| Week | Unit                                 | Topic                                            |
+|:-----|:-------------------------------------|:-------------------------------------------------|
+| 1    | [Introduction](Introduction.md)      | Introduction, Administrivia, computers, ... (DS  |
+| 2    | [Getting data](gettingData.md)       | Data acquisition (sessions on 3T Achieva)   (DS) |
+| 3a   | [Organising your data](organising-data.md) | Organising data (folders, meta-data, etc)  |
+| 3b   | [UNIX + git](unix-2-and-versions.md) | Version control, some cool nitty-gritty       |
+| 4    | [FSL analysis](firstAnalysis.md)     | Inspecting & analysing data in FSL            |
+| 5    | [SPM analysis](spmAnalysis.md)       | Alternative ways of inspecting & analysing data: SPM  (JJ) |
+| 6    | [Visual display](visual-display.md)  | displaying fMRI results with different toolboxes (JJ)| 7    | [Wrap-up](wrap-up.md) |  Module wrap-up and preparing for the assignment         |
 
 ---
 
