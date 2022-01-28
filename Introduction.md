@@ -8,7 +8,7 @@ size: 4:3
 
 ## Overview
 
-### Denis Schluppeck
+### Denis Schluppeck, JeYoung Jung
 
 ---
 
@@ -16,11 +16,11 @@ size: 4:3
 
 1. Acquire some [functional] MRI data in a simple, but real experiment
 
-2. Analyze the data with ``fsl`` [(FMRIB webpage)](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki)
+2. Analyze the data with two commonly used software packages ``spm`` (matlab) and ``fsl`` 
 
-3. Learn a bit about ``UNIX`` and version control, in particular ``git`` and ``github``
+3. Learn a bit about ``UNIX``, organising data and code: version control, in particular ``git`` and ``github``
 
-4. Use ``Matlab`` to inspect and visualise some data
+4. Use different tools to inspect and visualise data
 
 5. [optional] anatomical, diffusion weighted +/- multi-echo data (T2*)
 
@@ -34,7 +34,7 @@ size: 4:3
 
 3. Appreciate usefulness of scripting, `unix`, version control for reproducibility / transparency of work
 
-4. Discover `matlab` for data visualisation
+4. Discover `matlab`, toolboxes for data visualisation
 
 ---
 
@@ -45,8 +45,8 @@ size: 4:3
 |:---------|:--------------------------------------------------------------|
 | 1 :star: | Introduction, Administrivia, computers, ...                   |
 | 2        | Data acquisition (**scanning on 3T at SPMIC**)                |
-| 3        | Inspecting & analysing data in **FSL**                        |
-| 4        | Version control (``git`` and ``github.com``)                  |
+| 3        | Inspecting & analysing data in **SPM**                        |
+| 4        | **FSL** + Version control (``git`` and ``github.com``)                  |
 | 5        | Images in **Matlab**, display, analyze                        |
 | 6        | Timeseries signals in **Matlab**                              |
 | 7        | **wrapup** + Reading/writing text, CSV, data files **Matlab** |
@@ -70,8 +70,6 @@ Start as soon as we have the data
 - talk to us about questions you could address
 - think about plots + data visualisations you'd like to make
 
-
-
 #### Submission details :paperclip: :books:
 
 Currently w/ Student Services, *date to-be-confirmed*
@@ -87,9 +85,9 @@ Currently w/ Student Services, *date to-be-confirmed*
 - plus a main document (max 1500w)
 - references / citations as for standard written work
 - **max 5 figures<sup>1</sup>** illustrating
-	- details of the experimental setup
-	- analysis methodology
-	- results
+  - details of the experimental setup
+  - analysis methodology
+  - results
 
 <hr>
 <small>
@@ -98,22 +96,20 @@ Currently w/ Student Services, *date to-be-confirmed*
 
 ---
 
-
 ## :exclamation: For next time (lab 2)
 
 - sign up for 1 of 3 groups (max 7 people) - ``moodle``
 - complete visitor screening form
-- we also need 3 volunteers (~40 min in scanner)
+- we also need a volunteer (~40 min in scanner)
 
 ---
 
 ## Setting up computers, logins
 
-If you have to do this again on another machine, you can use this shortcut. It's located in ``/Volumes/practicals/ds1/``
+Let's check log-ins and make sure we can find:
 
-#### Cheat: Double-click ``Set up My Machine - version 6`` icon
-
-![](automatoricon.png)
+- Terminal
+- Matlab & set up paths for SPM
 
 ---
 
@@ -123,12 +119,25 @@ Each user (at a particular machine) needs to make sure that ``Terminal/shell`` i
 
 ---
 
-## Has setup worked? Reality check.
+## Set up colors in terminal
 
-<img src="terminal.png" style="width: 15%"/>
 
-1. If you see ``[ ran custom .bash_profile ]`` in Terminal :heavy_check_mark:
-2. Also: look at some existing anatomies with ``fsleyes`` :heavy_check_mark:
+```bash
+alias ls='ls -G'
+
+# or append to bash_profile
+echo "alias ls='ls -G'" >> ~/.bash_profile
+```
+
+<img src="bash-setup-02.jpg" style="width:80%"/>
+
+ in Terminal :heavy_check_mark:
+
+---
+
+## Has setup worked? `fsl`
+
+Look at some existing anatomies with ``fsleyes`` :heavy_check_mark:
 
 ```bash
 which fsl # see anything?
@@ -137,13 +146,14 @@ fsleyes & # File -> Add Standard -> Pick 1st or 2nd
 ```
 
 ---
+##  do you see
 
 <img src="fsleyes.png" style="width: 90%" caption="FSLEYES"/>
 
 
 ---
 
-## FSL analysis
+## SPM/FSL analysis
 
 - get data from sessions ``S001``to ``S004`` into a common folder ``data``
 - make folders, copy files by "drag & drop"
@@ -153,7 +163,8 @@ fsleyes & # File -> Add Standard -> Pick 1st or 2nd
 
 ```bash
 cd ~/data/S001/  # for example
-# run FSL analysis
+# run SPM analysis in matlab (JJ)
+# run FSL analysis (DS)
 ```
 
 ---
@@ -178,7 +189,6 @@ cd ~/data/S001/  # for example
 ```
 
 ---
-
 
 ## Version control ``git``
 
@@ -209,9 +219,7 @@ Everyone should sign up for a free ``github`` account, so we can work together o
 - once you have an username (pick one that I will recognise!), go to our github classroom at
 https://classroom.github.com/a/7ZwbkqLl
 
-
 ---
-
 
 ## ``matlab`` - reading images (1)
 
@@ -264,20 +272,16 @@ s = returnSlice(array, sliceNum, orientation);
 <img src="manyTimecourse-percent.png" style="width: 80%" />
 </center>
 
+
+
 ---
 
-## ``matlab`` - text / csv / other data
+## Using toolboxes to visualise data (JJ)
 
-- think about data formats / interop with other analysis & tools (``R``, ``python``, ... even UNIX tools). Sometimes a text file is best!
+- glass brains
+- SPMs, cluster maps on anatomical images.
+- cut-aways, ...
 
-```matlab
-% read realistic behavioural data (mix of numbers, text)
-table(), writetable(), ...
-
-% read in a simple CSV file, skipping first row (r=0)
-% csvread(file, R, C) % row R, column C (starting at 0!)
-d = csvread('timecourse.csv', 1, 0)
-```
 
 ---
 
@@ -285,10 +289,10 @@ d = csvread('timecourse.csv', 1, 0)
 
 - recap what have we covered in the last 7 weeks?
 - where to go to from here (unleash your inner coding :tiger:)
-- try to approach each new problem, project with lots of repetition (analysis, writing, coding, ...):
-	- there must be a better way!
-	- what's the smallest unit that gets repeated all the time?
-	- can I use ``bash/unix``, ``matlab`` or another tool to automate?
+- try to approach each new problem, project where you find lots of repetition (analysis, writing, coding, ...):
+  - there must be a better way!
+  - what's the smallest unit that gets repeated all the time?
+  - can I use ``bash/unix``, ``matlab`` or another tool to automate?
 - just try things out - you'll learn tons in the process
 
 
@@ -296,11 +300,9 @@ d = csvread('timecourse.csv', 1, 0)
 
 ## For next time
 
-- make sure you pick a timeslot on **moodle** page.
-
 - make sure you complete screening form (and/or get in touch with any concerns)
 
-- to volunteer for a scan, send me an e-mail: <a href="mailto:denis.schluppeck@nottingham.ac.uk?subject=SPMIC-scanning%2014-feb">denis.schluppeck@nottingham.ac.uk</a>  
+- to volunteer for a scan, send me an e-mail: <a href="mailto:denis.schluppeck@nottingham.ac.uk?subject=SPMIC-scanning,%202022-10-07">denis.schluppeck@nottingham.ac.uk</a>  
 
 - next week: see you at `SPMIC` for your timeslot - if you don't know where on campus, google `SPMIC`... first hit is imaging centre w/ directions
 
