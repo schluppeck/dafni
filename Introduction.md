@@ -216,8 +216,7 @@ Everyone should sign up for a free ``github`` account, so we can work together o
 
 - it's free and useful
 - we'll want to play with this in lab #4
-- once you have an username (pick one that I will recognise!), go to our github classroom at
-https://classroom.github.com/a/7ZwbkqLl
+- once you have an username (pick one that I will recognise!), go to our github classroom ... details to follow
 
 ---
 
