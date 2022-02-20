@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 # Version control with ``git``
 <!-- page_number: true -->
 
