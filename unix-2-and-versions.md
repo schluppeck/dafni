@@ -18,13 +18,11 @@ You can also have a look at the brief online course at [Software Carpentry](http
 - **but** command line is helpful for organising (any) research data
 - more complex analysis, e.g. ``freesurfer``, require some working knowledge
 
-
-
 ## Version control, ``git``
 
 <img src="Git-Logo-2Color.png" width="40%">
 
-My (very brief) presentation on version control with git [as a markdown file](./version-control.md) or [as PDF](./version-control.pdf). This is what's covered in the lab class.
+My (very brief) presentation on version control with git [as a markdown file](./version-control.md) or <a href="./version-control.html" target=_new>[as an HTML presentation]</a>, or [PDF](./version-control.pdf). This is what's covered in the lab class.
  
 
 Some really useful background is available in some brief videos produced by https://github.com
