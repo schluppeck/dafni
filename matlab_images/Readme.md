@@ -1,4 +1,4 @@
-# Brain images in Matlab
+# Brain images in Matlab (DS)
 
 The aims of this lesson are:
 
@@ -31,7 +31,7 @@ data = niftiread('mprage.nii');
 % then manipulate in matlab
 ```
 
-Good commands to play around with are ``image``, ``imagesc``, ... You should also look back the ``returnSlice()``, the function we wrote for the Matlab course earlier in the year.
+Good commands to play around with are ``image``, ``imagesc``, ... You should also look back the ``returnSlice()``, the function we wrote for the Matlab course earlier in the year. If you haven't written this function, we can do a quick walk-through at the front of class to make this useful little helper function.
 
 ```Matlab
 figure
