@@ -20,7 +20,7 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 | 3b   | [SPM analysis](spmAnalysis.md)                                 | Inspecting & analysing data: SPM                          |
 | 4a   | [UNIX + git](unix-2-and-versions.md)                           | Version control, some cool nitty-gritty (DS)              |
 | 4b   | [FSL analysis](firstAnalysis.md)                               | Inspecting & analysing data in FSL                        |
-| 5    | [Making figures in Matlab](visual-display.md)                  | Using Matlab to make publication-ready figures   (DS)     |
+| 5    | [Making figures in Matlab](matlab-images.md)                  | Using Matlab to make publication-ready figures   (DS)     |
 | 6    | [Visual display](visual-display.md)                            | Displaying fMRI results with different tools (JJ)         |
 | 7    | [Wrap-up](wrap-up.md)                                          | Module wrap-up and preparing for the assignment      (DS) |
 
