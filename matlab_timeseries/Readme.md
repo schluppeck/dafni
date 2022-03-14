@@ -12,6 +12,10 @@ The aims of this lesson are:
 
 >Rather than trying come up with a function that does all this, we will be working on a _script_, as you might do in an interactive analysis session.
 
+## 2021/22 - Matlab code
+
+<span style="color:darkgreen;">In class, I worked on a matlab script, which is <a href="testGLManalysis.m">available here</a>.</span>
+
 ## Data
 
 I am assuming here, that you ran the `fsl` analysis on data from one of the subjects (A, B, C) in our 2019/20 cohort:
