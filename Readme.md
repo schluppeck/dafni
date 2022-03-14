@@ -22,7 +22,7 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 | 4b   | [FSL analysis](firstAnalysis.md)                               | Inspecting & analysing data in FSL                        |
 | 5    | [Making figures in Matlab](matlab-images.md)                  | Using Matlab to make publication-ready figures   (DS)     |
 | 6    | [Visual display](visual-display.md)                            | Displaying fMRI results with different tools (JJ)         |
-| 7    | [Wrap-up](wrap-up.md)                                          | Module wrap-up and preparing for the assignment      (DS) |
+| 7    | [Wrap-up](wrap-up.md), [GLM/Timeseries](matlab-timeseries.md)                                           | Module wrap-up and preparing for the assignment      (DS) |
 
 ---
 
