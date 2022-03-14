@@ -1,8 +1,6 @@
-## 2019/20 details on the assignment
+## 2021/22 details on the assignment
 
-<span style="color:darkred">Note! The details here relate to a previous assessment. An updated version will be posted closer to the deadline.</span>
-
-The following will hopefully clarify some of the questions you might have about the assignment. There are also some suggestions for ideas you can explore, that are specific to this year's dataset.
+*Visual information about faces and objects are processed in distinct cortical areas*. Discuss and present an analysis of a standard localiser experiment (based on functional magnetic resonance imaging data).
 
 ### Summary
 
@@ -11,8 +9,12 @@ Aim: demonstrate ability to perform GLM style analysis with a tool like `fsl` an
 
 - 250w abstract
 - plus a main document (max 1500w)
+- keep introduction brief (max 400-500w)
+- use a journal style presentation // you are free to decide stylistic details, but make sure you aim for uncluttered / direct style (rely use APA style guide, if in doubt)
 - references / citations as for standard written work (these don't add to the wordcount)
 - max. 5 figures illustrating details of the experimental setup, analysis methodology and results (figures can have sub-panels or subplots)
+
+- you can use a github repository (preferred) or an Appendix (not included in word limit) to share examples of scripts, code, etc.
 
 ### FAQ
 
