@@ -1,4 +1,4 @@
-# Notes for PSYG4043/C84DAN - Data analysis for Neuroimaging
+# Notes for PSYG4043 - Data analysis for Neuroimaging
 
 <img src="dafni-splash.png" width="80%"><br>
 
@@ -14,7 +14,7 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 
 | Week | Unit                                                           | Topic                                                     |
 | :--- | :------------------------------------------------------------- | :-------------------------------------------------------- |
-| 1    | [Introduction](Introduction.md), [(Slides)](Introduction.html) | Introduction, Administrivia, computers, ... (DS, JJ)      |
+| 1    | [Introduction](Introduction.md), [(Slides)](Introduction.html) | Introduction, Administrivia, computers, ... (JJ, DS)      |
 | 2    | [Getting data](gettingData.md)                                 | Data acquisition (sessions on 3T Achieva)   (DS)          |
 | 3a   | [Organising your data](organising-data.md)                     | Organising data (folders, meta-data, etc)  (JJ)           |
 | 3b   | [SPM analysis](spmAnalysis.md)                                 | Inspecting & analysing data: SPM                          |
@@ -22,13 +22,13 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 | 4b   | [FSL analysis](firstAnalysis.md)                               | Inspecting & analysing data in FSL                        |
 | 5    | [Making figures in Matlab](matlab-images.md)                  | Using Matlab to make publication-ready figures   (DS)     |
 | 6    | [Visual display](visual-display.md)                            | Displaying fMRI results with different tools (JJ)         |
-| 7    | [Wrap-up](wrap-up.md), [GLM/Timeseries](matlab-timeseries.md)                                           | Module wrap-up and preparing for the assignment      (DS) |
+| 7    | [Wrap-up](wrap-up.md), [GLM/Timeseries](matlab-timeseries.md)                                           | Module wrap-up and preparing for the assignment      (JJ) |
 
 ---
 
 ## Attendance monitoring
 
-[Quick link](attendance/Readme.md) to the QR codes for attendance monitoring at UoN.
+Reminder to use QR codes for attendance monitoring at UoN.
 
 ## Assignment
 
@@ -47,6 +47,12 @@ For more details have a look at [this page in the `assignment` folder](assignmen
 
 - for reading: [Data analysis for Neuroimaging (web)](https://schluppeck.github.io/dafni/)
 - for getting code and using!: [DAFNI Github repo](https://github.com/schluppeck/dafni/)
+
+## Contacts (2022/23)
+
+- **Jeyoung Jung**, jeyoung.jung@nottingham.ac.uk (module convenor)
+- Denis Schluppeck, [@schluppeck](https://twitter.com/schluppeck)
+
 
 ## Contacts (2021/22)
 

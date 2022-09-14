@@ -3,12 +3,12 @@ marp: true
 size: 4:3
 ---
 
-# Data analysis for Neuroimaging - PSYG4043 / C84DAN
+# Data analysis for Neuroimaging - PSYG4043
 <!-- page_number: true -->
 
 ## Overview
 
-### Denis Schluppeck, JeYoung Jung
+### JeYoung Jung, Denis Schluppeck
 
 ---
 
