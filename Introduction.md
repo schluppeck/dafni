@@ -28,7 +28,7 @@ size: 4:3
 
 ## Learning objectives
 
-1. Build a better understanding of principles (and practice of) magnetic resonance imaging
+1. Build a better understanding of principles (and practice of) magnetic resonance imaging, **incl. safety**
 
 2. Learn about state of the art analysis tools for (f)MRI
 
@@ -50,6 +50,115 @@ size: 4:3
 | 5        | Images in **Matlab**, display, analyze                        |
 | 6        | Timeseries signals in **Matlab**                              |
 | 7        | **wrapup** + Reading/writing text, CSV, data files **Matlab** |
+
+---
+
+## :exclamation: For next time (lab 2)
+
+- sign up for 1 of 3 groups (max 7 people) - ``moodle``
+- complete visitor screening form
+- we also need a volunteer (~30 min in scanner) // **different screening + consent form**
+
+---
+## MRI<br>safety
+![bg contain](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Magnetic_Resonance_imaging_warning.jpg/737px-Magnetic_Resonance_imaging_warning.jpg)
+
+---
+
+## Visitor screening form
+
+![](screening_visitor.png)
+
+---
+
+## Safety Questions (1)
+
+1.	Do you have any implants in your body? 
+e.g. replacement joints, drug pumps			           
+
+2.	Do you have aneurysm clips?
+(clips put around blood vessels during surgery)			
+
+3.	Do you have a pacemaker or artificial heart valve?
+(These stop working near MR Scanners)			
+
+4.	Have you ever had any surgery? Please give brief details*
+ (*We do not need to know about uncomplicated caesarean
+ delivery, vasectomy or termination of pregnancy)			
+
+---
+
+5.	Do you have any foreign bodies in your body (e.g. shrapnel)?
+
+6.	Do you wear a hearing aid or cochlear implant?			
+
+7.	Will you remove all metal including coins, body-piercing 
+jewellery, false-teeth, hearing aids etc before entering 
+the magnet hall?  (lockers available by the changing rooms)	
+
+---
+
+## Volunteers
+
+For those wanting to go into the scanner: a few more detailed questions and
+
+- contact of GP (why? discuss)
+- information sheet
+- consent form (ethics!)
+- tattoo form (if applicable)
+
+---
+## Setting up computers, logins
+
+Let's check log-ins and make sure we can find:
+
+- Terminal
+- Matlab & set up paths for SPM
+
+---
+
+## Note
+
+Each user (at a particular machine) needs to make sure that ``Terminal/shell`` is set up correctly – if you move machines between labs (or want to do things elsewhere, repeat the above step!)
+
+---
+
+## Set up colors in terminal
+
+
+```bash  
+alias ls="ls --color=auto"
+# or append to .zshrc 
+echo "alias ls='ls --color=auto' " >> ~/.zshrc
+```
+
+<img src="bash-setup-02.jpg" style="width:80%"/>
+
+ in Terminal :heavy_check_mark:
+
+---
+
+## Has setup worked? `fsl`
+
+Look at some existing anatomies with ``fsleyes`` :heavy_check_mark:
+
+```bash
+which fsl # see anything?
+
+fsleyes & # File -> Add Standard -> Pick 1st or 2nd
+```
+
+---
+##  do you see
+
+<img src="fsleyes.png" style="width: 90%" caption="FSLEYES"/>
+
+
+---
+
+# JJ
+
+## Assignment, etc.
 
 ---
 
@@ -93,62 +202,6 @@ Currently w/ Student Services, *date to-be-confirmed*
 <small>
 <sup>1</sup>figures can have sub-panels or subplots
 </small>
-
----
-
-## :exclamation: For next time (lab 2)
-
-- sign up for 1 of 3 groups (max 7 people) - ``moodle``
-- complete visitor screening form
-- we also need a volunteer (~40 min in scanner)
-
----
-
-## Setting up computers, logins
-
-Let's check log-ins and make sure we can find:
-
-- Terminal
-- Matlab & set up paths for SPM
-
----
-
-## Note
-
-Each user (at a particular machine) needs to make sure that ``Terminal/shell`` is set up correctly – if you move machines between labs (or want to do things elsewhere, repeat the above step!)
-
----
-
-## Set up colors in terminal
-
-
-```bash
-alias ls='ls -G'
-
-# or append to bash_profile
-echo "alias ls='ls -G'" >> ~/.bash_profile
-```
-
-<img src="bash-setup-02.jpg" style="width:80%"/>
-
- in Terminal :heavy_check_mark:
-
----
-
-## Has setup worked? `fsl`
-
-Look at some existing anatomies with ``fsleyes`` :heavy_check_mark:
-
-```bash
-which fsl # see anything?
-
-fsleyes & # File -> Add Standard -> Pick 1st or 2nd
-```
-
----
-##  do you see
-
-<img src="fsleyes.png" style="width: 90%" caption="FSLEYES"/>
 
 
 ---
