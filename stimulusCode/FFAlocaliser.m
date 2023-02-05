@@ -20,6 +20,8 @@ if ieNotDefined('debug'), debug=0; end
 
 % scanning params
 if ieNotDefined('TR'), TR=1.5; end
+if ieNotDefined('flipHV'), flipHV = [0 0]; end
+
 if ieNotDefined('cycleLength'), cycleLength = 16; end
 if ieNotDefined('numBlocks'), numBlocks = 10; end
 if ieNotDefined('trainingMode'), trainingMode=0; end
@@ -49,35 +51,36 @@ myscreen.datadir = './';
 myscreen.allowpause = 0;
 myscreen.eatkeys = 1;
 myscreen.displayname = '';
-myscreen.background = 'white';
+myscreen.background = 'gray';
 myscreen.TR = TR;
 myscreen.cycleLength = cycleLength; % in TRs
 myscreen.subject = subject;
 myscreen.collectEyeData = 0;
 
+
 % set up parameters for fixation cross.
 global fixStimulus
-fixStimulus.fixLineWidth = 7; % big line
+fixStimulus.fixLineWidth = 0.2; % big line, device units with mglMetal (!)
 fixStimulus.trainingMode = trainingMode;
 fixStimulus.diskSize = 0.0; % no disk (just superimpose on stim)
 fixStimulus.fixWidth = 1;
 if debug == 1
   % gethostname and then display the stimulus on the corresponding screen
-  myscreen.screenParams{1} = {gethostname(),[],0,1024,768,80,[31 23],60,1,1,1.4,[],[0 0]};
+  myscreen.screenParams{1} = {gethostname(),[],0,1024,768,80,[31 23],60,1,1,1.4,[],flipHV};
   fixStimulus.fixWidth = 1; 
   fixStimulus.diskSize = 0; 
 
 elseif debug == 2
   % running at laptop on full screen
   defaultMonitorGamma = 1.8;
-  myscreen.screenParams{1} = {gethostname(),'',1,1440, 900,57,[331.0045, 206.8778],60,1,1,defaultMonitorGamma,'',[0 0]}; 
+  myscreen.screenParams{1} = {gethostname(),'',1,1440, 900,57,[331.0045, 206.8778],60,1,1,defaultMonitorGamma,'',flipHV}; 
   fixStimulus.fixWidth = 5; % make cross large
   fixStimulus.diskSize = 5; % allow text to be shifted
   
 else    
   % running at 3T for experiment
   defaultMonitorGamma = 1.8;
-  myscreen.screenParams{1} = {gethostname(),'',2,1280,960,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',[0 0]}; % 3T nottingham
+  myscreen.screenParams{1} = {gethostname(),'',2,1280,960,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',flipHV}; % 3T nottingham
 end
 
 % and init myscreen
@@ -125,13 +128,16 @@ stimulus.displayWidth = 10; % decide how WIDE the stimuli should be
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % run the eye calibration
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-myscreen = eyeCalibDisp(myscreen);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% myscreen = eyeCalibDisp(myscreen);
+% skip this...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Main display loop
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 phaseNum = 1;
+myscreen.t0 = mglGetSecs();
+
 while (phaseNum <= length(task{2})) && ~myscreen.userHitEsc
   % update the dots
   [task{2} myscreen phaseNum] = updateTask(task{2},myscreen,phaseNum);
@@ -179,7 +185,7 @@ end
 
 oneCycle = myscreen.cycleLength * myscreen.TR;
 if (task.thistrial.thisseg > (oneCycle/2) ) && myscreen.currentCategory > 0
-  myscreen.t0 = mglGetSecs();
+  myscreen.t0 = mglGetSecs(myscreen.t0);
   fprintf('timestamp: %.2f\n', myscreen.t0);
   % if currentCategory == 0, then we are in the pre-phase of expt.
   stimulus.faces.display = 1;
@@ -197,7 +203,7 @@ end
 function [task myscreen] = updateScreenCallback(task, myscreen)
 
 global stimulus
-mglClearScreen(1); % white
+mglClearScreen(0.5); % 
 
 if stimulus.faces.display
   stimulus = updateFaces(stimulus,myscreen);
@@ -232,19 +238,20 @@ function stimulus = initFaces(stimulus,myscreen)
 nCateogories = 2;
 disp('initFaces')
 
+MAX_IMAGES_TO_LOAD = 10;
 
 % stim directories are hard-coded. Could do better here.
 imdir{1} = './stims/multiracial/frontal/';
 files{1} = dir([imdir{1} '*.jpg']);
-nFiles{1} = length(files{1});
+nFiles{1} = min(MAX_IMAGES_TO_LOAD, length(files{1}));
 
 imdir{2} = './stims/objects/';
 files{2} = dir([imdir{2} '*.jpg']);
-nFiles{2} = length(files{2});
+nFiles{2} = min(MAX_IMAGES_TO_LOAD, length(files{2}));
 
 % imdir{3} = './stims/houses/';
 % files{3} = dir([imdir{3} '*.jpg']);
-% nFiles{3} = length(files{3});
+% nFiles{3} = min(MAX_IMAGES_TO_LOAD, length(files{3}));
 
 % stimulusImages = cell(nFiles);
 
@@ -253,17 +260,25 @@ for iCat = 1:numel(imdir)
       fprintf('loading file #%d, name:%s\n',iFile,files{iCat}(iFile).name);
       im = []; im2 = []; % must be a faster way to do this.
       im = imread(fullfile(imdir{iCat}, files{iCat}(iFile).name));
-      im2 = permute(...
-          cat(3,im, 255.*ones([size(im,1), size(im,2)])),...
-            [3,2,1]);
-        
-      %NB! jpeg image is read in as RGB triplet
+
+      %NB! jpeg image is read in as RGB triplet, but we want RGBA
+      imdims = size(im);
+      im2 = reshape(im, imdims(1).*imdims(2), []); % x*y, RGBA
+      im2(:,4) = 255.0; % add transparency layer and also makes it FLOAT!!
+      
+      WHITE_CUTOFF = 200;
+      GRAY_VAL = 127;
+      
+      % place on textured noise?
+      idx = im2(:,1) > WHITE_CUTOFF & im2(:,2) > WHITE_CUTOFF & im2(:,3) > WHITE_CUTOFF; 
+      im2(idx,4) = 0; % make transparent.
+      im2 = permute(reshape(im2, imdims(1), imdims(2), []), [3, 1, 2]);
+      % keyboard
       
       % grayscale option:
       %im = double(rgb2gray(imread(fullfile(imdir{iCat}, files{iCat}(iFile).name))));
-      %im = flipud(im);
 
-      mglClearScreen(1); % white bg
+      mglClearScreen(0.5); % white bg
       stimulus.faces.tex{iCat}(iFile) = mglCreateTexture(im2);
     end
     stimulus.faces.n{iCat} = nFiles{iCat};
@@ -281,10 +296,11 @@ if stimulus.faces.display
   % pick the appropriate texture for this display
   tex = stimulus.faces.tex{ myscreen.currentCategory }(stimulus.faces.exemplar);
   aspectRatio = tex.imageWidth ./ tex.imageHeight;
-  % blt textures. 180º / upside down as images are read in that way.
+  % usedt o blt textures. 180º / upside down as images are read in that way.
+  % now with mglMetal
   mglBltTexture(tex,...
       [0, 0, stimulus.displayWidth, stimulus.displayWidth/aspectRatio], ...
-       0, 0, 180);
+       0, 0, 0);
 end
 
 end

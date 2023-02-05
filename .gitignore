@@ -6,6 +6,7 @@ local_materials/*
 
 # matlab editor backup files
 **.m~
+**.asv
 
 
 # mac specific files
