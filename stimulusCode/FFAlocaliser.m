@@ -60,27 +60,35 @@ myscreen.collectEyeData = 0;
 
 % set up parameters for fixation cross.
 global fixStimulus
-fixStimulus.fixLineWidth = 0.2; % big line, device units with mglMetal (!)
+fixStimulus.fixLineWidth = 0.1; % big line, device units with mglMetal (!)
 fixStimulus.trainingMode = trainingMode;
 fixStimulus.diskSize = 0.0; % no disk (just superimpose on stim)
 fixStimulus.fixWidth = 1;
+
 if debug == 1
   % gethostname and then display the stimulus on the corresponding screen
-  myscreen.screenParams{1} = {gethostname(),[],0,1024,768,80,[31 23],60,1,1,1.4,[],flipHV};
+  % myscreen.screenParams{1} = {gethostname(),[],0,1024,768,80,[31 23],60,1,1,1.4,[],flipHV};
+  
+  myscreen.screenParams{1} = struct('computerName', gethostname(),...
+            'displayName',[], 'screenNumber', 0, ...
+		    'screenWidth', 1024, 'screenHeight', 768, 'displayDistance', 80,...
+		    'displaySize',[31 23], 'framesPerSecond', 60, 'autoCloseScreen', 1, ...
+		    'saveData', 1, 'calibType', 1, 'monitorGamma', 1.4, 'calibFilename',[], ...
+		    'flipHV', flipHV, 'digin',[],  'hideCursor', 1, 'displayPos', [],  'backtickChar', '5');
+
   fixStimulus.fixWidth = 1; 
   fixStimulus.diskSize = 0; 
-
-elseif debug == 2
-  % running at laptop on full screen
-  defaultMonitorGamma = 1.8;
-  myscreen.screenParams{1} = {gethostname(),'',1,1440, 900,57,[331.0045, 206.8778],60,1,1,defaultMonitorGamma,'',flipHV}; 
-  fixStimulus.fixWidth = 5; % make cross large
-  fixStimulus.diskSize = 5; % allow text to be shifted
   
 else    
   % running at 3T for experiment
   defaultMonitorGamma = 1.8;
-  myscreen.screenParams{1} = {gethostname(),'',2,1280,960,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',flipHV}; % 3T nottingham
+  % myscreen.screenParams{1} = {gethostname(),'',2,1280,960,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',flipHV}; % 3T nottingham
+    myscreen.screenParams{1} = struct('computerName', gethostname(),...
+            'displayName',[], 'screenNumber', 2, ...
+		    'screenWidth', 1280, 'screenHeight', 960, 'displayDistance', 231,...
+		    'displaySize',[83 3*83/4], 'framesPerSecond', 60, 'autoCloseScreen', 1, ...
+		    'saveData', 1, 'calibType', 1, 'monitorGamma', defaultMonitorGamma, 'calibFilename',[], ...
+		    'flipHV', flipHV, 'digin',[],  'hideCursor', 1, 'displayPos', [],  'backtickChar', '5');
 end
 
 % and init myscreen
@@ -238,7 +246,7 @@ function stimulus = initFaces(stimulus,myscreen)
 nCateogories = 2;
 disp('initFaces')
 
-MAX_IMAGES_TO_LOAD = 10;
+MAX_IMAGES_TO_LOAD = 50;
 
 % stim directories are hard-coded. Could do better here.
 imdir{1} = './stims/multiracial/frontal/';
