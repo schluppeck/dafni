@@ -4,18 +4,12 @@
 
 | Unit     | Topic                                            |
 |:---------|:-------------------------------------------------|
-| 1        | Introduction, Administrivia, computers, ...      |
 | 2 :star: | Data acquisition (**scanning on 3T**)            |
-| 3        | Inspecting & analysing data in **FSL**           |
-| 4        | Version control (``git`` and ``github.com``)     |
-| 5        | Images in **Matlab**, display, analyze           |
-| 6        | Timeseries signals in **Matlab**                 |
-| 7        | Reading/writing text, CSV, data files **Matlab** |
 
 ## Data acquisition in the scanner
 
 fMRI data will be acquired in 45min sessions (in small groups) on one of our 3T scanners. Have a look at
-[the webpage for the 3T Philips Achieva](https://www.nottingham.ac.uk/research/groups/spmic/facilities/3-tesla-philips-achieva-mri-scanner.aspx) to learn a bit more about the machine we will be using.
+[the webpage for the 3T Philips Achieva](https://www.nottingham.ac.uk/research/groups/spmic/facilities/3-tesla-philips-achieva-mri-scanner.aspx) to learn a bit more about the machine we will be using. This year is likely to be the last one for this particular machine, as the SPMIC is actively looking to decommision it.
 
 Two important sets of things to consider:
 
@@ -27,16 +21,26 @@ Two important sets of things to consider:
 The protocol will be pretty standard for a cognitive neuroscience scanning sessions. The plan for the time in the scanner is as follows
 
 1. Quick survey scan to allow "planning" on console **(< 10s)**
-2. "inplane anatomy" - anatomical scan with planned slice prescription / coverage **(~2min)**
-4. fMRI experiment (block): gradient-echo EPI, TR 1.5s, TE 40ms, FA: 72º **(1x or 2x ~4min)**
-5. fMRI experiment (event-related): same scanning parameters, **(1x or 2x ~4min)**
-6. T1w-MPRAGE: to illustrate detailed (1mm isotropic) anatomy **(~5min)**
-7. [sometimes included] EPI data (test): 5 echoes at different TEs to illustrate T2s decay
-8. [sometimes included] field map: to show that B0 can be measured **(< 1min)**
+2. A test EPI to make sure that the slice positioning for the fMRI experiment is ok.
+3. fMRI experiment (block): gradient-echo EPI, TR 1.5s **(~4min)**
+4. T1w-MPRAGE: to illustrate detailed (1mm isotropic) anatomy **(~5min)**
+5. T2w-anatomy: higher resolution inplane, but thicker slices
+6. fMRI experiment (block): gradient-echo EPI, TR 1.5s **(~4min)** (a finger-tapping experiment as opposed to a visual experiment)
 
-You can have a look at the Matlab function ``flipAnglePlots()`` to remind yourself about why we picked the particular flip angle.
+## Scanner - actual numbers from the day (2022/23).
 
-<img src="flipAngles.png" width="60%">
+For each of four subjects (``sub-01`` .. ``sub-02``) we collected most of those scans. Look at the `Readme.md` file in each folder for any notes (eg `sub-02` has one scan with TR=2s, because of the sample protocol I had picked.) 
+
+Data shared via `OneDrive` link on a moodle message to the participants on the module.
+
+### A note on the block-design parameters.
+
+- the visual scan (faces versus objects) used a `rest-A-rest-B-...` pattern.
+- the finger tapping scan follwed the same timing. `rest-LEFT-rest-RIGHT...`
+
+Each `rest-stimulus` block took 24s (so 16 TRs at 1.5s... or 12 TRs for the one scan with a 2s TR).
+
+The code for these experiments is in the `stimulusCode` folder (`FFAlocaliser()` and `M1localiser()`). Ask DS for details on how this works, if you are interested in generating stimuli.
 
 ## Scanner - actual numbers from the day (2019/20).
 
