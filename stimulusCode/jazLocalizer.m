@@ -23,14 +23,16 @@ if ieNotDefined('stimtype')
   % stimtype = 1: % movshon noise
 end
 
-if ieNotDefined('debug'), debug = 1; end
+if ieNotDefined('debugflag'), debugflag = 1; end
 if ieNotDefined('TR'), TR = 1.5; end
+
+fprintf('debugflag: %s\n', debugflag)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % set up screen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-myscreen.screenNumber = 2;
+myscreen.screenNumber = 0;
 myscreen.autoCloseScreen = 1;
 % myscreen.saveData = 1;
 myscreen.allowpause = 0;
@@ -45,7 +47,7 @@ myscreen.TR = TR; % s
 % (even if mglScreenParams.mat isn't set up correctly), provide some info
 % here 
 
-if debug 
+if debugflag
     % debugging on laptop
     myscreen.screenParams{1} = {gethostname(),[],0,1024,768,231, [83 3*83/4],60,1,1,1.4,[],[0 0]};
     disp(['running on: ' gethostname()])  
