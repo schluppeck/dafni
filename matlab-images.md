@@ -59,4 +59,42 @@ ylabel('fMRI response')
 You can try to download [my version from this link](https://uniofnottm-my.sharepoint.com/:u:/g/personal/denis_schluppeck_nottingham_ac_uk/EdBs0igKBxdJsf3EEGfRtLQBIOP-PMBGmR9q79K-NzhUPQ?e=5FMC2c)
  [requires UoN login]
 
- 
+## Follow-up, solutions
+
+- have a look at my solution of [makeMontage.m](./matlab_images/makeMontage.m) -- this is not exactly the file I worked with in class, but follows exactly the same logic.
+
+- for `returnTimecourse()` there is a way you could handle multiple voxels in one go for indexing. The ideas you have to work with are:
+
+- idea 1: only partially reshape the 4d data. Eg an array that is 64x64x24x160 can be reshaped into a 2d array where the first dimensions is all of space, and the second dimensions is all of time. That's like turning the 3d image at each time point into one of the data "snakes".
+- 
+```matlab
+% load 4d data
+data = niftiread('filtered_func_data.nii.gz');
+% reshape ...
+sz = size(data);
+sz_space = sz(1)*sz(2)*sz(3)
+sz_time = sz(4) 
+data_snake = reshape(data,[sz_space sz_time]);
+size(data_snake)
+```
+
+- idea 2: turn the 3d voxel locations indices (sub) to linear indices (ind) using the matlab function `sub2ind()`
+
+- you will need the `sz_space` to know how to turn e.g. a list of `x`, `y`, `z` values into the linear indices...
+
+```matlab
+x = [30,31,32]; 
+y = [5,5,5]; 
+z = [2,2,2];
+t = [1, 1, 1];
+linear_idx = sub2ind(size(data),x,y,z,t);
+
+% then
+tcourses = data_snake(linear_idx,:);
+% make sure they are columns
+tcourses = tcourses';
+
+figure()
+plot(tcourses);
+
+```
