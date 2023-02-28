@@ -52,3 +52,11 @@ ylabel('fMRI response')
 ### `plot()` throws errors
 
 - if you get weird errors from `plot()` then check whether you are doing the right thing to get a 1-d vector for plotting (maybe check with `size()`?!)
+
+
+## if you don't have the `feat` folder
+
+You can try to download [my version from this link](https://uniofnottm-my.sharepoint.com/:u:/g/personal/denis_schluppeck_nottingham_ac_uk/EdBs0igKBxdJsf3EEGfRtLQBIOP-PMBGmR9q79K-NzhUPQ?e=5FMC2c)
+ [requires UoN login]
+
+ 
