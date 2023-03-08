@@ -1,3 +1,7 @@
+## 2022/23 details on the assignment
+
+Please refer to the moodle page for the module for any changes from previous years.
+
 ## 2021/22 details on the assignment
 
 *Visual information about faces and objects are processed in distinct cortical areas*. Discuss and present an analysis of a standard localiser experiment (based on functional magnetic resonance imaging data).
