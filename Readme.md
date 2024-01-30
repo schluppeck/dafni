@@ -14,7 +14,7 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 
 | Week | Unit                                                           | Topic                                                     |
 | :--- | :------------------------------------------------------------- | :-------------------------------------------------------- |
-| 1    | [Introduction](Introduction.md), [(PDF)](Introduction.pdf)     | Introduction, Administrivia, computers, ... (JJ, DS)      |
+| 1    | [Introduction](Introduction.md), [(HTML)](Introduction.html), [(PDF)](Introduction.pdf)     | Introduction, Administrivia, computers, ... (JJ, DS)      |
 | 2    | [Getting data](gettingData.md)                                 | Data acquisition (sessions on 3T)   (DS)          |
 | 3a   | [Organising your data](organising-data.md)                     | Organising data (folders, meta-data, etc)  (JJ)           |
 | 3b   | [SPM analysis](spmAnalysis.md)                                 | Inspecting & analysing data: SPM                          |
