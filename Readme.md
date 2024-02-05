@@ -12,17 +12,17 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 
 ---
 
-| Week | Unit                                                           | Topic                                                     |
-| :--- | :------------------------------------------------------------- | :-------------------------------------------------------- |
-| 1    | [Introduction](Introduction.md), [(PDF)](Introduction.pdf)     | Introduction, Administrivia, computers, ... (JJ, DS)      |
-| 2    | [Getting data](gettingData.md)                                 | Data acquisition (sessions on 3T Achieva)   (DS)          |
-| 3a   | [Organising your data](organising-data.md)                     | Organising data (folders, meta-data, etc)  (JJ)           |
-| 3b   | [SPM analysis](spmAnalysis.md)                                 | Inspecting & analysing data: SPM                          |
-| 4a   | [UNIX + git](unix-2-and-versions.md)                           | Version control, some cool nitty-gritty (DS)              |
-| 4b   | [FSL analysis](firstAnalysis.md)                               | Inspecting & analysing data in FSL                        |
-| 5    | [Making figures in Matlab](matlab-images.md)                  | Using Matlab to make publication-ready figures   (DS)     |
-| 6    | [Visual display](visual-display.md)                            | Displaying fMRI results with different tools (JJ)         |
-| 7    | [Wrap-up](wrap-up.md), [GLM/Timeseries](matlab-timeseries.md)                                           | Module wrap-up and preparing for the assignment      (JJ) |
+| Week | Unit                                                             | Topic                                                     |
+| :--- | :--------------------------------------------------------------- | :-------------------------------------------------------- |
+| 1    | [Introduction](Introduction.md), [(PDF)](Introduction.pdf)       | Introduction, Administrivia, computers, ... (JJ, DS)      |
+| 2    | [Getting data](gettingData.md), [(TIMING)](scanning/report.html) | Data acquisition (sessions on 3T Achieva)   (DS)          |
+| 3a   | [Organising your data](organising-data.md)                       | Organising data (folders, meta-data, etc)  (JJ)           |
+| 3b   | [SPM analysis](spmAnalysis.md)                                   | Inspecting & analysing data: SPM                          |
+| 4a   | [UNIX + git](unix-2-and-versions.md)                             | Version control, some cool nitty-gritty (DS)              |
+| 4b   | [FSL analysis](firstAnalysis.md)                                 | Inspecting & analysing data in FSL                        |
+| 5    | [Making figures in Matlab](matlab-images.md)                     | Using Matlab to make publication-ready figures   (DS)     |
+| 6    | [Visual display](visual-display.md)                              | Displaying fMRI results with different tools (JJ)         |
+| 7    | [Wrap-up](wrap-up.md), [GLM/Timeseries](matlab-timeseries.md)    | Module wrap-up and preparing for the assignment      (JJ) |
 
 ---
 
