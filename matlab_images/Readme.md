@@ -24,14 +24,17 @@ which niftiread % should return a path
 
 ```matlab
 % cd to a folder with a nifti file in it (like the one from last time):
-cd ~/data/subject-C/
+% cd ~/data/subject-C/
+% for the 2022/23 data
+cd ~/Desktop/sub-03/
+
 % try out  - make sure you have ; at end of line
-data = niftiread('mprage.nii');
+data = niftiread('mprage.nii.gz');
 
 % then manipulate in matlab
 ```
 
-Good commands to play around with are ``image``, ``imagesc``, ... You should also look back the ``returnSlice()``, the function we wrote for the Matlab course earlier in the year. If you haven't written this function, we can do a quick walk-through at the front of class to make this useful little helper function.
+Good commands to play around with are ``image``, ``imagesc``, ... You could also look back the ``returnSlice()``, the function  from the `learningMatlab` materials I shared earlier in the year. If you haven't written this function, we can do a quick walk-through at the front of class to make this useful little helper function.
 
 ```Matlab
 figure
@@ -45,7 +48,7 @@ colormap(gray)
 The user starts calls the function from the command line with a filename and a number that specifies how many images / tiles to display in the montage. E.g.
 
 ```matlab
-makeMontage('mprage.nii', 25)
+makeMontage('mprage.nii.gz', 25)
 ```
 
 results in

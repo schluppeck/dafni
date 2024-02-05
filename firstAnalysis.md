@@ -171,3 +171,27 @@ It's worth taking a step back and thinking about how running through the analysi
 - Do you prefer one method/tool over another?
 - What do you think the advantages are of using a tool that you run from within a `unix` environment? Downsides?
 
+## Notes from 2023-02-21 session
+
+For details on all the files that get created during running of `feat` you can also look at [this detailed description online](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FEAT/UserGuide#FEAT_Output).
+
+### History of my commands in the shell
+
+```bash   
+ls
+imcp sub-03_20230207104025_401.nii mprage
+ls
+imcp sub-03_20230207104025_301.nii fmri
+ls
+bet mprage mprage_brain -m
+ls
+fsl &
+more Readme.md
+ls
+cd fmri.feat
+ls
+open . 
+fsleyes &
+fsleyes thresh_zstat3 &
+ls
+```

@@ -48,3 +48,25 @@ We don't actually need to install this in the computer labs - but on your person
 ### Git basics
 
 :film_strip: A slightly deeper look at ``git`` in the video about [quick wins with ``git``](https://git-scm.com/video/quick-wins)
+
+
+### History of my comands in shell 2023-02-21
+
+```bash
+ls -l
+cd myFirstRepo
+nano Readme.md 
+ls
+ls -l
+more Readme.md
+ls
+git init
+git status
+git add Readme.md
+git status
+git commit
+git status
+git commit -m "this is the first commit. yay"
+git status
+git log
+```

@@ -8,8 +8,8 @@
 
 ## Data acquisition in the scanner
 
-fMRI data will be acquired in 45min sessions (in small groups) on one of our 3T scanners. Have a look at
-[the webpage for the 3T Philips Achieva](https://www.nottingham.ac.uk/research/groups/spmic/facilities/3-tesla-philips-achieva-mri-scanner.aspx) to learn a bit more about the machine we will be using. This year is likely to be the last one for this particular machine, as the SPMIC is actively looking to decommision it.
+fMRI data will be acquired in ~30min sessions (in small groups) on one of our 3T scanners. Have a look at
+[the webpage for the 3T scanners on campus](https://www.nottingham.ac.uk/research/groups/spmic/facilities/facilities.aspx) to learn a bit more about the machines.  Up until last year we ran our experiments on the 3t Achieva, but the SPMIC has now decommisioned that machine to make space for the [new, national 11.7T facility](https://www.nottingham.ac.uk/research/groups/spmic/research/national-facility-for-ultra-high-field-11.7t-human-mri-scanning/index.aspx) which is currently being planned in detail.
 
 Two important sets of things to consider:
 
@@ -26,6 +26,11 @@ The protocol will be pretty standard for a cognitive neuroscience scanning sessi
 4. T1w-MPRAGE: to illustrate detailed (1mm isotropic) anatomy **(~5min)**
 5. T2w-anatomy: higher resolution inplane, but thicker slices
 6. fMRI experiment (block): gradient-echo EPI, TR 1.5s **(~4min)** (a finger-tapping experiment as opposed to a visual experiment)
+
+## Scanner - actual numbers from the day (2023/24).
+
+*details to be updated*
+
 
 ## Scanner - actual numbers from the day (2022/23).
 

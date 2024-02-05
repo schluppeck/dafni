@@ -1,13 +1,13 @@
 # Looking at time series - linear regression reprise
 
-The aims of this lesson are:
+JJ
 
-  - show solution / approach for retro-fitting ``sliceview()`` program (last time)
-  - load in a text file that represents the design matrix ``X`` (as made by fsl/FEAT)
-  - load in 4d image (nifti) and select out a particular voxel's timecourse
-  - write the code that will to the *linear regression*  
-  - **(if time / for after class)** look at how *t-stat* can be calculated, given residuals, design matrix and contrast vector.
+The aims of this lesson are. Use `spm` and assorted tools (in `matlab` if you want) to:
 
-*We will be working on a script.*
+- load in 4d image (nifti) and select out a particular voxel's timecourse
+- inspect the data that gives rise to the design matrix again. Where is that information stored in `spm`? Can you make a figure of it?
+- Go through the logic of how how *t-stat* is calculated, given $\beta$-weights, residuals, design matrix and contrast vector.
 
-Look at the files and exercises in the [matlab_timeseries folder](./matlab_timeseries/Readme.md).
+*Think about storing your work in a script, so you can modify and adjust it later.*
+
+*Can you find a way to turn some of this information into a figure for your report?*
