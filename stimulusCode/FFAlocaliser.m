@@ -6,8 +6,13 @@
 %    purpose: code for doing face and object area localiser.
 %             images courtesy of Tim Andrews (York) and others.
 %
+%             
+%
+%             
+%
 %       e.g.:
 %             FFAlocaliser()
+%             FFAlocaliser('displayname=3T-GE-debug', 'TR=1.5')
 %
 % make sure to also look at jazLocaliser.m for event-related expt
 function myscreen = FFAlocaliser( varargin )
@@ -17,6 +22,8 @@ eval(evalargs(varargin));
 
 % setup default arguments
 if ieNotDefined('debug'), debug=0; end
+if ieNotDefined('displayname'), displayname = ''; end
+
 
 % scanning params
 if ieNotDefined('TR'), TR=1.5; end
@@ -50,7 +57,7 @@ myscreen.saveData = 1;
 myscreen.datadir = './';
 myscreen.allowpause = 0;
 myscreen.eatkeys = 1;
-myscreen.displayname = '';
+myscreen.displayname = displayname;
 myscreen.background = 'gray';
 myscreen.TR = TR;
 myscreen.cycleLength = cycleLength; % in TRs
@@ -65,6 +72,7 @@ fixStimulus.trainingMode = trainingMode;
 fixStimulus.diskSize = 0.0; % no disk (just superimpose on stim)
 fixStimulus.fixWidth = 1;
 
+% by default the screen params should come from mglEditScreenParams setup!!
 if debug == 1
   % gethostname and then display the stimulus on the corresponding screen
   % myscreen.screenParams{1} = {gethostname(),[],0,1024,768,80,[31 23],60,1,1,1.4,[],flipHV};
@@ -79,23 +87,25 @@ if debug == 1
   fixStimulus.fixWidth = 1; 
   fixStimulus.diskSize = 0; 
   
-else    
-  % running at 3T for experiment
-  defaultMonitorGamma = 1.8;
-  % myscreen.screenParams{1} = {gethostname(),'',2,1280,960,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',flipHV}; % 3T nottingham
-    myscreen.screenParams{1} = struct('computerName', gethostname(),...
-            'displayName',[], 'screenNumber', 2, ...
-		    'screenWidth', 1280, 'screenHeight', 960, 'displayDistance', 231,...
-		    'displaySize',[83 3*83/4], 'framesPerSecond', 60, 'autoCloseScreen', 1, ...
-		    'saveData', 1, 'calibType', 1, 'monitorGamma', defaultMonitorGamma, 'calibFilename',[], ...
-		    'flipHV', flipHV, 'digin',[],  'hideCursor', 1, 'displayPos', [],  'backtickChar', '5');
+elseif debug == 2 
+    fprintf('should not need this code!!')
+    % don't run this code now...     
+    % running at 3T for experiment
+    %   defaultMonitorGamma = 1.8;
+    %   % myscreen.screenParams{1} = {gethostname(),'',2,1280,960,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',flipHV}; % 3T nottingham
+    %     myscreen.screenParams{1} = struct('computerName', gethostname(),...
+    %             'displayName',displayname, 'screenNumber', 2, ...
+    % 		    'screenWidth', 1280, 'screenHeight', 960, 'displayDistance', 231,...
+    % 		    'displaySize',[83 3*83/4], 'framesPerSecond', 60, 'autoCloseScreen', 1, ...
+    % 		    'saveData', 1, 'calibType', 1, 'monitorGamma', defaultMonitorGamma, 'calibFilename',[], ...
+    % 		    'flipHV', flipHV, 'digin',[],  'hideCursor', 1, 'displayPos', [],  'backtickChar', '5');
 end
 
 % and init myscreen
 myscreen = initScreen(myscreen);
 
 % fix keys for our scanner setup.
-myscreen.keyboard.backtick = mglCharToKeycode({'5'}); % that's the backtick
+% myscreen.keyboard.backtick = mglCharToKeycode({'5'}); % that's the backtick
 myscreen.keyboard.nums = mglCharToKeycode({'1' '2' '3' '4'    '6' '7' '8' '9' '0'});
 
 % set the first task to be the fixation staircase task
@@ -132,7 +142,7 @@ global stimulus;
 myscreen = initStimulus('stimulus',myscreen);
 % load in images and prep textures
 stimulus = initFaces(stimulus,myscreen);
-stimulus.displayWidth = 10; % decide how WIDE the stimuli should be
+stimulus.displayWidth = 18; %  WAS 10!! decide how WIDE the stimuli should be
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % run the eye calibration
@@ -249,12 +259,14 @@ disp('initFaces')
 MAX_IMAGES_TO_LOAD = 50;
 
 % stim directories are hard-coded. Could do better here.
-imdir{1} = './stims/multiracial/frontal/';
-files{1} = dir([imdir{1} '*.jpg']);
+% imdir{1} = './stims/multiracial/frontal/';
+imdir{1} = './scene_localiser/images/';
+files{1} = dir([imdir{1} 'face_*.png']);
 nFiles{1} = min(MAX_IMAGES_TO_LOAD, length(files{1}));
 
-imdir{2} = './stims/objects/';
-files{2} = dir([imdir{2} '*.jpg']);
+% imdir{2} = './stims/objects/';
+imdir{2} ='./scene_localiser/images/';
+files{2} = dir([imdir{2} 'object*.png']);
 nFiles{2} = min(MAX_IMAGES_TO_LOAD, length(files{2}));
 
 % imdir{3} = './stims/houses/';
@@ -274,7 +286,7 @@ for iCat = 1:numel(imdir)
       im2 = reshape(im, imdims(1).*imdims(2), []); % x*y, RGBA
       im2(:,4) = 255.0; % add transparency layer and also makes it FLOAT!!
       
-      WHITE_CUTOFF = 200;
+      WHITE_CUTOFF = 254;
       GRAY_VAL = 127;
       
       % place on textured noise?

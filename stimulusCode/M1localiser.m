@@ -15,6 +15,7 @@ eval(evalargs(varargin));
 
 % setup default arguments
 if ieNotDefined('debug'), debug=0; end
+if ieNotDefined('displayname'), displayname = ''; end
 
 % scanning params
 if ieNotDefined('TR'), TR=1.5; end
@@ -48,7 +49,7 @@ myscreen.saveData = 1;
 myscreen.datadir = './';
 myscreen.allowpause = 0;
 myscreen.eatkeys = 1;
-myscreen.displayname = '';
+myscreen.displayname = displayname;
 myscreen.background = 'gray';
 myscreen.TR = TR;
 myscreen.cycleLength = cycleLength; % in TRs
@@ -76,16 +77,17 @@ if debug == 1
   fixStimulus.fixWidth = 1; 
   fixStimulus.diskSize = 0; 
   
-else    
+elseif debug == 2
+  % not really needed anymore (as mglEditScreenParams takes over!)
   % running at 3T for experiment
   defaultMonitorGamma = 1.8;
   % myscreen.screenParams{1} = {gethostname(),'',2,1280,960,231,[83 3*83/4],60,1,1,defaultMonitorGamma,'',flipHV}; % 3T nottingham
-    myscreen.screenParams{1} = struct('computerName', gethostname(),...
-            'displayName',[], 'screenNumber', 2, ...
-		    'screenWidth', 1280, 'screenHeight', 960, 'displayDistance', 231,...
-		    'displaySize',[83 3*83/4], 'framesPerSecond', 60, 'autoCloseScreen', 1, ...
-		    'saveData', 1, 'calibType', 1, 'monitorGamma', defaultMonitorGamma, 'calibFilename',[], ...
-		    'flipHV', flipHV, 'digin',[],  'hideCursor', 1, 'displayPos', [],  'backtickChar', '5');
+    % myscreen.screenParams{1} = struct('computerName', gethostname(),...
+    %         'displayName',[], 'screenNumber', 2, ...
+    %         'screenWidth', 1280, 'screenHeight', 960, 'displayDistance', 231,...
+    %         'displaySize',[83 3*83/4], 'framesPerSecond', 60, 'autoCloseScreen', 1, ...
+    %         'saveData', 1, 'calibType', 1, 'monitorGamma', defaultMonitorGamma, 'calibFilename',[], ...
+    %         'flipHV', flipHV, 'digin',[],  'hideCursor', 1, 'displayPos', [],  'backtickChar', '5');
 end
 
 % and init myscreen
