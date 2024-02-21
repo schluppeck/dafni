@@ -151,7 +151,11 @@ Feat_gui &
 - **Stats.** We want to specify a full model. To do this, we need to use the timing information from the experiment. **Can you remember what this was?**
 - Let's use the **Model Setup Wizard** button, as our experimental design nicely fits one of the pre-prepared options. Timing??
 
-For FSL design matrix rules, this means for two EVs and "square wave" settings, you can use:
+
+
+#### Explanatory variables
+
+For FSL design matrix rules, this means for two EVs and "square wave" settings, you can use the following. I called the two EVs "faces" and "objects". You can use F and O instead -- the calculations will be the same, just the naming in figures, data will obviously be different.
 
 | setting     | Faces  | Objects |
 | :---------- | :----- | :------ |
@@ -161,6 +165,21 @@ For FSL design matrix rules, this means for two EVs and "square wave" settings, 
 | Phase       | **36** | **12**  |
 | Stop After  | -1     | -1      |
 | Convolution | Gamma  | Gamma   |
+
+#### Contrasts
+
+Remember that we were planning to look for regions in the brains of our participants  
+
+- (A) where there was a response to any kind of visual stimulus
+- (B) where there was a **significantly higher** response during face presentations than object presentations and
+- (C) vice versa: whhich parts of the brain responded more to objects that faces.
+
+The contrasts in the following achieve this. Go back to recordings for some more details
+
+<img src="./2024-evs.png" width="45%" /> 
+<img src="./2024-contrasts.png" width="45%" /> 
+ 
+
 
 ## Eye candy
 
