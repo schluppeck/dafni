@@ -41,8 +41,12 @@ Do this "by hand" - using mouse clicks in the macOS operative system for now. We
 ## Analysis steps
 
 ### Create a directory in your home, move data
+ 
+ [The OneDrive location of the zip-file (2023/24)](https://tinyurl.com/2024-msc-data)
+ -- this will only work for people who have a University of Nottingham User ID. If you haven't already downloaded these data, do so now and keep track of where the data get stored (`~/Downloads` ?)
 
-[The OneDrive location of the zip-file](https://uniofnottm-my.sharepoint.com/:u:/g/personal/denis_schluppeck_nottingham_ac_uk/EXKeZytRmJxOlJ0qX_152lABI9ElAZoMzfXtFYkiajdeMw?e=sd7cW5?download=1) -- this will only work for people who have a University of Nottingham User ID. If you haven't already downloaded these data, do so now and keep track of where the data get stored (`~/Downloads` ?)
+
+>~~[The OneDrive location of the zip-file 2022](https://uniofnottm-my.sharepoint.com/:u:/g/personal/denis_schluppeck_nottingham_ac_uk/EXKeZytRmJxOlJ0qX_152lABI9ElAZoMzfXtFYkiajdeMw?e=sd7cW5?download=1)~~
 
 
 ```bash
@@ -108,7 +112,8 @@ For our 2022/23 data... the reconstructed files are already in standard space, s
 
 ```bash
 # inspect, if ok, then skull strip and also make a  mask (-m)
-bet mprage mprage_brain -m
+# for the 2023/24 data, we should also use the -B option (!)
+bet mprage mprage_brain -m -B
 ```
 
 3. look at the images using `fsleyes`
@@ -146,7 +151,16 @@ Feat_gui &
 - **Stats.** We want to specify a full model. To do this, we need to use the timing information from the experiment. **Can you remember what this was?**
 - Let's use the **Model Setup Wizard** button, as our experimental design nicely fits one of the pre-prepared options. Timing??
 
+For FSL design matrix rules, this means for two EVs and "square wave" settings, you can use:
 
+| setting     | Faces  | Objects |
+| :---------- | :----- | :------ |
+| Skip        | 36     | 36      |
+| Off         | 36     | 36      |
+| On          | 12     | 12      |
+| Phase       | **36** | **12**  |
+| Stop After  | -1     | -1      |
+| Convolution | Gamma  | Gamma   |
 
 ## Eye candy
 
