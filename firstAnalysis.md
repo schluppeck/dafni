@@ -183,6 +183,8 @@ The contrasts in the following achieve this. Go back to recordings for some more
 
 ## Eye candy
 
+<strong>You can also have a quick look at a short demo / tutorial video I made for this</strong> first: [youtube link](https://www.youtube.com/watch?v=fEyRu5YgPOw)
+
 Register onto a nicer image:
 
 ```bash
