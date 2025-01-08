@@ -8,7 +8,7 @@ These are the materials for a *data analysis for neuroimaging* module [PSYG4043]
 
 In the class, we acquire various MRI data sets - (emphasis on fMRI, anatomical, and/or DTI) in small groups. We then use a combination of tools to analyse the data.
 
-The module is for *10 credits* and runs for seven 2h sessions. (First iteration of the course Feb. 2017).
+The module is for *10 credits* and runs for seven 2h sessions.
 
 
 | Week | Unit                                                           | Topic                                                     |
@@ -22,8 +22,6 @@ The module is for *10 credits* and runs for seven 2h sessions. (First iteration 
 | 5    | [Visual display](visual-display.md)                            | Displaying fMRI results with different tools (JJ)         |
 | 6    | [Wrap-up](wrap-up.md), [GLM/Timeseries](matlab-timeseries.md)                                           | Module wrap-up and preparing for the assignment      (JJ) |
 | 7    | [Making figures in Matlab](matlab-images.md)                  | Using Matlab to make publication-ready figures   (DS)     |
-
-
 
 ## Attendance monitoring
 
@@ -47,30 +45,7 @@ For more details have a look at [this page in the `assignment` folder](assignmen
 - for reading: [Data analysis for Neuroimaging (web)](https://schluppeck.github.io/dafni/)
 - for getting code and using!: [DAFNI Github repo](https://github.com/schluppeck/dafni/)
 
-## Contacts (2023/24)
+## Contacts (2024/25)
 
 - **Jeyoung Jung**, jeyoung.jung@nottingham.ac.uk (module convenor)
 - Denis Schluppeck
-
-
-## Contacts (2022/23)
-
-- **Jeyoung Jung**, jeyoung.jung@nottingham.ac.uk (module convenor)
-- Denis Schluppeck, [@schluppeck](https://twitter.com/schluppeck)
-
-
-## Contacts (2021/22)
-
-- Denis Schluppeck, [@schluppeck](https://twitter.com/schluppeck)
-- Jeyoung Jung, jeyoung.jung@nottingham.ac.uk
-
-
-## Contacts (2019/20)
-
-- Denis Schluppeck, [@schluppeck](https://twitter.com/schluppeck)
-- Kuan (Anthony) Beh (demonstrator)
-
-## Contacts (2018/19)
-
-- Denis Schluppeck
-- Kuan (Anthony) Beh (demonstrator)
