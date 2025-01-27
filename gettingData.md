@@ -83,46 +83,6 @@ For each person we obtained several scans. See `json` sidecar copied along for s
 ... then each repeated for a total of 10 stimulus-rest blocks 
 ```
 
-## File organisation 
-
-The zip file contains data from the 4 participants in the following layout:
-
-```text
-.
-├── Readme.md
-├── sub-01
-├── sub-02
-│   ├── sub-02-FLAIR.png
-│   ├── sub-02-MPRAGE.png
-│   ├── sub-02-flair.json
-│   ├── sub-02-flair.nii.gz
-│   ├── sub-02-fmri01.nii.gz
-│   ├── sub-02-fmri02.nii.gz
-│   ├── sub-02-mprage.json
-│   └── sub-02-mprage.nii.gz
-├── sub-03
-└── sub-04
-
-```
-
-
-## Notes
-
-For FSL design matrix rules, this means for EVs
-
-| setting     | Faces  | Objects |
-| :---------- | :----- | :------ |
-| Skip        | 36     | 36      |
-| Off         | 36     | 36      |
-| On          | 12     | 12      |
-| Phase       | **36** | **12**  |
-| Stop After  | -1     | -1      |
-| Convolution | Gamma  | Gamma   |
-
-
-
-
-
 ## Previous scanning sessions
 
 - [2022-23 cohort](./2022-23-scanning.md)
@@ -134,20 +94,10 @@ For FSL design matrix rules, this means for EVs
 - [2017-18 cohort](./2017-18-scanning.md)
 
 
-
-### Notes
-
-- [x] working code with face and object images
-- [x] parameters to set cycle length, TR, number of block
-- [x] youtube clip explaining the fixation task and experiment
-- [X] write out text file in correct format for ``fsl/feat`` analysis.
-- [X] test with actual scanning parameters
-
 ### Materials for stimuli:
 
-We will provide the stimulus code (written in Matlab / MGL) in line with what happened in - [Learning Matlab / C84NIM](https://github.com/schluppeck/learningMatlab) - a pre-requisite for this course.
 
-We'll run a "Faces versus houses / scenes localiser, as this works well and is a very robust experiment.
+We'll run a "Faces versus objects / scenes localiser, as this works well and is a very robust experiment.
 
 - Faces download:
 https://wiki.cnbc.cmu.edu/images/multiracial.zip
