@@ -6,6 +6,8 @@
 |:---------|:-------------------------------------------------|
 | 2 :star: | Data acquisition (**scanning on 3T**)            |
 
+<b style="color:darkorange;">-- Watch out for changes for 2024/25 -- </b>
+
 ## Data acquisition in the scanner
 
 fMRI data will be acquired in ~30min sessions (in small groups) on one of our 3T scanners. Have a look at

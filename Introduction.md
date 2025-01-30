@@ -10,19 +10,23 @@ size: 4:3
 
 ### JeYoung Jung, Denis Schluppeck
 
+### 2025
+
 ---
 
 ## What's the plan?
 
 1. Acquire some [functional] MRI data in a simple, but real experiment
 
-2. Analyze the data with two commonly used software packages ``spm`` (matlab) and ``fsl`` 
+2. Analyze the data a commonly used software package ``spm`` (matlab) 
 
 3. Learn a bit about ``UNIX``, organising data and code: version control, in particular ``git`` and ``github``
 
 4. Use different tools to inspect and visualise data
 
-5. [optional] anatomical, diffusion weighted +/- multi-echo data (T2*)
+5. Revisit some `matlab` to learn how to make publication-ready figures
+
+6. Wrap-up and prepare for the assignment 
 
 ---
 
@@ -44,12 +48,13 @@ size: 4:3
 | Unit     | Topic                                                         |
 |:---------|:--------------------------------------------------------------|
 | 1 :star: | Introduction, Administrivia, computers, ...                   |
-| 2        | Data acquisition (**scanning on 3T at SPMIC**)                |
-| 3        | Inspecting & analysing data in **SPM**                        |
-| 4        | **FSL** + Version control (``git`` and ``github.com``)                  |
-| 5        | Images in **Matlab**, display, analyze                        |
-| 6        | Timeseries signals in **Matlab**                              |
-| 7        | **wrapup** + Reading/writing text, CSV, data files **Matlab** |
+| 2        | Data acquisition (**scanning on 3T at SPMIC**) (DS)           |
+| 3        | Inspecting & analysing data in **SPM** (JJ)                   |
+| 4 :book: | **unix** + Version control (``git`` and ``github.com``)       |
+| 5        | Displaying fMRI results with different tools (JJ)             |
+| 6        | Using Matlab to make publication-ready figures   (DS)         |
+| 7        | **wrapup** Module wrap-up, Q&A and preparing for the assignment (JJ) |
+
 
 ---
 
@@ -138,7 +143,7 @@ echo "alias ls='ls --color=auto' " >> ~/.zshrc
 
 ---
 
-## Has setup worked? `fsl`
+## Has setup worked? `fsl` (optional)
 
 Look at some existing anatomies with ``fsleyes`` :heavy_check_mark:
 
@@ -184,7 +189,7 @@ Start as soon as we have the data
 Currently w/ Student Services, *date to-be-confirmed*
 
 - turn-it-in submission on moodle page
-- **deadline: end of March** (the week after last class of this module - check moodle page for details)
+- **deadline: check moodle page for details**
 
 ---
 
@@ -206,7 +211,7 @@ Currently w/ Student Services, *date to-be-confirmed*
 
 ---
 
-## SPM/FSL analysis
+## SPM analysis
 
 - get data from sessions ``S001``to ``S004`` into a common folder ``data``
 - make folders, copy files by "drag & drop"
@@ -217,7 +222,6 @@ Currently w/ Student Services, *date to-be-confirmed*
 ```bash
 cd ~/data/S001/  # for example
 # run SPM analysis in matlab (JJ)
-# run FSL analysis (DS)
 ```
 
 ---
@@ -275,7 +279,7 @@ Everyone should sign up for a free ``github`` account, so we can work together o
 
 ## ``matlab`` - reading images (1)
 
-- we'll learn/revisirt how to read imaging data into ``matlab`` (``nifti`` files)
+- we'll learn/revisit how to read imaging data into ``matlab`` (``nifti`` files)
 
 ```matlab
 % > R2017b
@@ -354,7 +358,7 @@ s = returnSlice(array, sliceNum, orientation);
 
 - make sure you complete screening form (and/or get in touch with any concerns)
 
-- to volunteer for a scan, send me an e-mail: <a href="mailto:denis.schluppeck@nottingham.ac.uk?subject=SPMIC-scanning,%202022-10-07">denis.schluppeck@nottingham.ac.uk</a>  
+- to volunteer for a scan, send me an e-mail: <a href="mailto:denis.schluppeck@nottingham.ac.uk?subject=SPMIC-scanning,%202025-02-06">denis.schluppeck@nottingham.ac.uk</a>  
 
 - next week: see you at `SPMIC` for your timeslot - if you don't know where on campus, google `SPMIC`... first hit is imaging centre w/ directions
 
