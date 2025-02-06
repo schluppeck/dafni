@@ -22,12 +22,12 @@ eval(evalargs(varargin));
 
 % setup default arguments
 if ieNotDefined('debug'), debug=0; end
-if ieNotDefined('displayname'), displayname = ''; end
+if ieNotDefined('displayname'), displayname = '3T-Achieva'; end
 
 
 % scanning params
 if ieNotDefined('TR'), TR=1.5; end
-if ieNotDefined('flipHV'), flipHV = [0 0]; end
+if ieNotDefined('flipHV'), flipHV = [0 1]; end
 
 if ieNotDefined('cycleLength'), cycleLength = 16; end
 if ieNotDefined('numBlocks'), numBlocks = 10; end
@@ -316,7 +316,7 @@ if stimulus.faces.display
   % pick the appropriate texture for this display
   tex = stimulus.faces.tex{ myscreen.currentCategory }(stimulus.faces.exemplar);
   aspectRatio = tex.imageWidth ./ tex.imageHeight;
-  % usedt o blt textures. 180º / upside down as images are read in that way.
+  % usedt o blt textures. 180ï¿½ / upside down as images are read in that way.
   % now with mglMetal
   mglBltTexture(tex,...
       [0, 0, stimulus.displayWidth, stimulus.displayWidth/aspectRatio], ...
