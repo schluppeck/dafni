@@ -6,11 +6,10 @@
 |:---------|:-------------------------------------------------|
 | 2 :star: | Data acquisition (**scanning on 3T**)            |
 
-<b style="color:darkorange;">-- Watch out for changes for 2024/25 -- </b>
 
 ## Data acquisition in the scanner
 
-fMRI data will be acquired in ~30min sessions (in small groups) on one of our 3T scanners. Have a look at
+fMRI data ~~will be~~ was acquired in ~30min sessions (in small groups) on one of our 3T scanners. Have a look at
 [the webpage for the 3T scanners on campus](https://www.nottingham.ac.uk/research/groups/spmic/facilities/facilities.aspx) to learn a bit more about the machines.  Up until last year we ran our experiments on the 3t Achieva, but the SPMIC has now decommisioned that machine to make space for the [new, national 11.7T facility](https://www.nottingham.ac.uk/research/groups/spmic/research/national-facility-for-ultra-high-field-11.7t-human-mri-scanning/index.aspx) which is currently being planned in detail.
 
 Two important sets of things to consider:
@@ -39,7 +38,7 @@ There are a couple of short youtube videos explaining a version of <a href="http
 
 The experiment runs as a simple block design in the following order:
 
->[faces, rest] , [objects, rest] - ...
+>[rest, faces] , [rest, objects] - ...
 
 The length of each ``[stimulus, rest]`` cycle is determined by the ``cycleLength`` (in TRs).
 
@@ -55,11 +54,11 @@ To run at the MR centre, we also want to specify TR, not to run in a small windo
 FFAlocaliser('TR=1.5', 'debug=0', 'numBlocks=10', 'cycleLength=12')
 ```
 
-## Scanner - actual numbers from the day (2023/24)
+## Scanner - actual numbers from the day (2024/25)
 
-2024-02-07, Denis Schluppeck
+2025-02-06, Denis Schluppeck
 
-4 volunteers (``sub-01`` .. ``sub-04``), scanned on the 3T GE scanner at the SPMIC QMC site. Scanner operator: AC. Start time 1400h.
+3 volunteers (``sub-01`` .. ``sub-03``), scanned on the 3T Philips Ingenia scanner at the SPMIC UP site. Scanner operator: AC. Start times 930h, 1015h, 1100h.
 
 (Data available via `moodle` link to a zip file on OneDrive). 
 
@@ -67,25 +66,34 @@ For each person we obtained several scans. See `json` sidecar copied along for s
 
 - T1w MPRAGE (1mm isotropic)
 - T2w FLAIR  (1mm isotropic)
-- one or two repeats of an fMRI experiment (`FFAlocaliser.m`); 2.2mm isotropic, TR/TE 1500ms/35ms
+- two repeats of an fMRI experiment (`FFAlocaliser.m`); 
+2.167mm inplane, 2.5mm slice thickness (so not quite isotropic), TR/TE 1500ms/30ms
+
+![mprage](./sub-01-mprage.png)
+
+![flair](./sub-01-flair.png)
+
+![fmri](./sub-01-fmri.png)
 
 ## fMRI experiment and timing
 
-- the original scan was 168 timepoints long, but the first 8TRs (12s) were cut to allow for steady state. 
-- after removing these initial dummies, the time series is 160 timepoints long
-- timing of the experiment is (Faces-rest-Obj-rest)*5)
+- the original scan was 160 timepoints long, some "dummy" volumes were not saved on the scanner to allow for steady state. 
+- timing of the experiment is (rest-Faces-rest-Obj)*5)
 
 ```
-12s ON (faces)
-12s OFF (gray)
+12s OFF (gray).   |
+12s ON (faces).   |
+                  |
+12s OFF (gray).   |
+12s ON (objects). |
 
-12s ON (objects)
-12s OFF (gray)
-
-... then each repeated for a total of 10 stimulus-rest blocks 
+... then each repeated for a total of 10 stimulus-rest blocks (5 faces, 5 objects)
 ```
+
 
 ## Previous scanning sessions
+
+- [2023-24 cohort](./2023-24-scanning.md)
 
 - [2022-23 cohort](./2022-23-scanning.md)
 
