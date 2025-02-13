@@ -8,7 +8,7 @@
 >
 > Because this unit fall into University of Nottingham's reading week, these exercises are made ot be self-paced. They will help you with your coursework and also research placement and project - but they are not assessed.
 
-## 1. UNIX, the "shell" or "Terminal
+## 1. UNIX, the "shell" or "Terminal"
 
 <img src="BASH_logo-transparent-bg-bw.png" width="40%">
 
