@@ -12,18 +12,33 @@
 
 <img src="BASH_logo-transparent-bg-bw.png" width="40%">
 
+### TASK - background tutorial
 
-**TASK**: complete the interactive tutorial at <https://www.terminaltutor.com/> and take a screenshot of the completion screen.
+Complete the interactive tutorial at <https://www.terminaltutor.com/> and take a screenshot of the completion screen.
 
 The website says it takes around 30min to complete the first bit, but you might find that you are much faster - it's definitely time well spent.
 
-**TASK**: post any comments ideas, questions, ...
+### TASK - three scenarios
+
+Think about the following 3 scenearios and write down some ideas of how you might solve them. These are all situations you will often encounter in real (academic /research) life. Knowing how to solve them might save you hours of work down the line... there are many ways to solve these problems, but the UNIX command line is a really powerful tool for this.
+
+You are allowed to talk to each other, use *google* / *stackoverflow* search or even get a large language model (*chatGPT?*) to help you out. **But make sure you understand the solution, in enough detail that you could explain it to someone else!**
+
+1. You have a folder with about 1000 files in it. They are labelled by participant id ('A', 'B', etc.) and a timestamp in the following way: ``A_2022-10-01.dat``, ``B_2022-10-01.dat``, ... etc. **Can you come up with a quick way to count exactly how many files there are for each participant?**
+
+2. You have a folder that contains a bunch of files, some of which are text files (ending in `.txt`), some of which are images (`*.png`), and some of which are data files (`.json`). **Can you make 3 sub-folders called `text`, `images`, and `data` and move the correct files to the corresponding folders?**
+
+3. (**a bit more tricky**). There is a large text file on the web (the url is "https://schluppeck.github.io/dafni/richard_iii.txt"). 
+   - Make a folder called `textAnalysis` in your home directory, download the file to that folder (hints: `curl`, redirect to file). 
+   - How many lines does this file contain? How many words? (hint: `wc`)
+   - How many times does the word "horse" or "Horse" appear in the text? (hint: `grep` ... look at flags for case-insensitive search)
+   - on which line(s) does the phrase "A Horse, a Horse, my Kingdome for a Horse" appear? (hint: `grep` with line numbers)
+
+### FEEDBACK - post any comments ideas, questions
 
 <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/x678uali6b3ou27w" frameborder="0" allow="camera;microphone;geolocation" style="width:100%;height:400px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Made with Padlet"></div></a></div></div>
 
-
 Some more details on how to use features of UNIX/bash that are particularly helpful for organising and processing data in the resources just below
-
 
 ### Resources
 
@@ -62,7 +77,6 @@ Some really useful background is available in some brief videos produced by http
   ``1:13min`` for configuring ``user.name`` and ``user.email`` - keeping in mind you'll probably want to use a value for ``user.email`` that is your generic / non-university e-mail.
 
 We don't actually need to install this in the computer labs - but on your personal machines you might have to do this. You can use ``which git`` in the Terminal. If you get a valid path back, then you know it's installed. You could also try ``git --version`` to find out which version you have installed on your machine.
-
 
 ### Git basics
 
