@@ -51,14 +51,14 @@ FFAlocaliser % quick test to see what's going on
 To run at the MR centre, we also want to specify TR, not to run in a small window, etc. So probably worth setting a few parameters in the call like this:
 
 ```matlab
-FFAlocaliser('TR=1.5', 'debug=0', 'numBlocks=10', 'cycleLength=12')
+FFAlocaliser('TR=1.5', 'debugMode=0', 'numBlocks=10', 'cycleLength=12')
 ```
 
-## Scanner - actual numbers from the day (2024/25)
+## Scanner - actual numbers from the day (2025/26)
 
-2025-02-06, Denis Schluppeck
+2026-02-xx, Denis Schluppeck
 
-3 volunteers (``sub-01`` .. ``sub-03``), scanned on the 3T Philips Ingenia scanner at the SPMIC UP site. Scanner operator: AC. Start times 930h, 1015h, 1100h.
+2 volunteers (``sub-01``, ``sub-02``), scanned on the 3T Philips Ingenia scanner at the SPMIC UP site. Scanner operator: JA. Start times 10:00h, 1045h.
 
 (Data available via `moodle` link to a zip file on OneDrive). 
 
@@ -69,11 +69,14 @@ For each person we obtained several scans. See `json` sidecar copied along for s
 - two repeats of an fMRI experiment (`FFAlocaliser.m`); 
 2.167mm inplane, 2.5mm slice thickness (so not quite isotropic), TR/TE 1500ms/30ms
 
+<!-->
 ![mprage](./sub-01-mprage.png)
 
 ![flair](./sub-01-flair.png)
 
 ![fmri](./sub-01-fmri.png)
+!--->
+
 
 ## fMRI experiment and timing
 
@@ -92,6 +95,8 @@ For each person we obtained several scans. See `json` sidecar copied along for s
 
 
 ## Previous scanning sessions
+
+- [2024-25 cohort](./2024-25-scanning.md)
 
 - [2023-24 cohort](./2023-24-scanning.md)
 
