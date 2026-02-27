@@ -4,6 +4,7 @@ The aims of this lesson are:
 
   - refresh your memory about ``matlab``
   - see how to load ``nifti`` images (pre-2017b we need a toolbox, [now support is native](https://uk.mathworks.com/help/images/ref/niftiread.html)). See the first exercise below.
+- make some bespoke plots with data from your `spm` sessions.
 
 ## Matlab, two ways...
 
@@ -18,6 +19,7 @@ For the first part of the session, I will do a coding walk-through with some nar
 
 If you want, you can also have a more detailed look at the files and exercises in the [matlab_images folder](./matlab_images/Readme.md).
 
+
 ### `getTimecourse()`
 
 In the second part of the session, we want you to make use of the ideas we introduced in the first part to:
@@ -27,11 +29,20 @@ In the second part of the session, we want you to make use of the ideas we intro
 - your function help / documentation should explain this behaviour to make sure your users don't get confused with it.
 - and should return 1 ouput (call it `tcourse` inside the function)
 
+This would give you a function signature like this:
+
 ```matlab
-%  tcourse = returnTimecourse(data, xcoord, ycoord, zcoord);
-% so you can use it with 
-cd('fmri.feat') % go into the folder
-data = niftiread('filtered_func_data.nii.gz');
+function tcourse = returnTimecourse(data, xcoord, ycoord, zcoord)
+
+% code
+
+end
+
+```
+
+
+```matlab
+% SPM data...
 
 % use it like this...
 t = returnTimecourse(data, 30, 5, 2);
@@ -39,6 +50,21 @@ plot(t, 'linewidth',2)
 xlabel('Time'); 
 ylabel('fMRI response')
 ``` 
+<details>
+<summary>FSL/FEAT equivalent</summary>
+<p>
+If you had data analysed in a FEAT session, you could look at the pre-processed data like this:
+</p>
+
+<code>
+% so you can use it with 
+cd('fmri.feat') % go into the folder
+data = niftiread('filtered_func_data.nii.gz');
+</code>
+</details>
+
+
+<br>
 
 ![correct version](./matlab_images/tcourse.png)
 
